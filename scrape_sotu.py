@@ -11,7 +11,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleW
 
 sotu_raw_transcripts = []
 presidents = []
-dates = []
+sotu_dates = []
 
 dates = list(range(1793, 2021)) # Dates 1793-2020
 dates_str = [str(d) for d in dates]
@@ -40,7 +40,7 @@ for date in dates_str:
         date = soup.find('span', class_='date-display-single').get_text()
         sotu_raw_transcripts.append(text)
         presidents.append(pres_name)
-        dates.append(date)
+        sotu_dates.append(date)
         driver.close()
     except:
         print(f'Could not get record for {date}')
