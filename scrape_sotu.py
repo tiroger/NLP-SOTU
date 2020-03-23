@@ -34,7 +34,7 @@ for date in dates_str:
         soup = BeautifulSoup(r.content, 'html.parser')
         #print(soup.prettify())
         # Using BeautifulSoup to extract transcript
-        text = soup.find('div', class_='field-docs-content').get_text()
+        text = soup.find('div', class_='field-docs-content').get_text() # For early dates
         #text = soup.find('div', class_='node-documents').get_text()
         pres_name = soup.find('h3', class_='diet-title').get_text()
         date = soup.find('span', class_='date-display-single').get_text()
@@ -57,6 +57,6 @@ with open('./pickled_files/sotu_raw_transcripts.pkl', 'wb') as f:
 with open('./pickled_files/presidents.pkl', 'wb') as f:
     pickle.dump(presidents, f)
 
-# Opening picled list of raw transcripts
-with open('./pickled_files/sotu_raw_transcripts.pkl', 'rb') as f:
-    sotu_raw_transcripts = pickle.load(f)
+# Pickling dates
+with open('./pickled_files/dates.pkl', 'wb') as f:
+    pickle.dump(sotu_dates, f)
