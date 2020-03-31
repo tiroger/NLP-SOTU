@@ -9,4 +9,4 @@
 
 ![image](figures/abe_lincoln.png)
 
-3. Sentiment Analysis, Topic Modeling and Text Generation were done on cleaned corpus using NLTK.
+3. Sentiment Analysis, Topic Modeling and Text Generation were done on cleaned corpus using Spacy and TextBlob.
