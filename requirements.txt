@@ -6,7 +6,7 @@ chardet==3.0.4
 cymem==2.0.3
 en-core-web-sm==2.2.5
 idna==2.9
-joblib==0.14.1
+joblib==1.2.0
 mkl-fft==1.0.15
 mkl-service==2.3.0
 murmurhash==1.0.2
