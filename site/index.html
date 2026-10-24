@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>State of the Union in Data</title>
+  <meta name="description" content="Natural-language analysis of every U.S. State of the Union message, 1790 to today: length, reading level, tone, emotion, topics, and the words that define each president.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232a78d6'/><path d='M6 24h20M9 24V13m5 11V13m4 11V13m5 11V13M5 13h22L16 6z' stroke='white' stroke-width='2' fill='none'/></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.2.0"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <div class="masthead-row">
+        <p class="eyebrow">Natural-language analysis · 1790 – <span data-summary="last-year">today</span></p>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+        </button>
+      </div>
+      <h1>The State of the Union, in data</h1>
+      <p class="lede">Every annual message a U.S. president has sent or delivered to Congress, read by machine: how long and how complex they are, how they feel, what they talk about, and the words that set each president apart.</p>
+      <dl class="tiles">
+        <div class="tile"><dt>Messages</dt><dd data-summary="speeches">—</dd></div>
+        <div class="tile"><dt>Presidents</dt><dd data-summary="presidents">—</dd></div>
+        <div class="tile"><dt>Words analyzed</dt><dd data-summary="words">—</dd></div>
+        <div class="tile"><dt>Most recent</dt><dd data-summary="latest">—</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Sections">
+    <div class="wrap">
+      <a href="#length">Length</a><a href="#tone">Tone</a><a href="#topics">Topics</a><a href="#language">Language</a><a href="#words">Word trends</a><a href="#map">Map</a><a href="#explore">Read a speech</a><a href="#methods">Methods</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="length">
+      <h2>Shorter sentences, plainer words</h2>
+      <p class="section-lede">From Jefferson (1801) until Wilson revived the spoken address in 1913, the State of the Union was a written report, and the reports got long. Spoken addresses are shorter, and since the arrival of radio and television the reading level has fallen sharply.</p>
+      <figure class="card" data-chart="length" data-table="speeches:president,date,delivery,words">
+        <figcaption><strong>Words per message</strong><span>One mark per message. Line: LOESS trend. Click a mark to open the speech.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
+      <div class="grid-2">
+        <figure class="card" data-chart="grade" data-table="speeches:president,date,grade_level,words_per_sentence">
+          <figcaption><strong>Reading grade level</strong><span>Flesch–Kincaid: years of schooling needed to follow the text.</span></figcaption>
+          <div class="chart"></div>
+        </figure>
+        <figure class="card" data-chart="diversity" data-table="speeches:president,date,lexical_diversity">
+          <figcaption><strong>Vocabulary richness</strong><span>MTLD lexical diversity. Unlike counting unique words, it doesn't reward long texts.</span></figcaption>
+          <div class="chart"></div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="tone">
+      <h2>Tone and emotion</h2>
+      <p class="section-lede">Each of the <span data-summary="sentences">~100,000</span> sentences is scored by a RoBERTa sentiment model as positive, neutral or negative. A message's <em>net tone</em> is the average of P(positive) − P(negative) across its sentences. For most of the 19th century the average message was close to neutral, sometimes negative. Since the 1940s, with the address now aimed at a radio and then television audience, it has been reliably upbeat.</p>
+      <figure class="card" data-chart="tone" data-table="speeches:president,date,tone,positive_share,negative_share">
+        <figcaption><strong>Net tone of every message</strong><span>Above zero: more upbeat than downbeat sentences. Vertical lines mark major crises.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
+      <div class="grid-2">
+        <figure class="card" data-chart="president_tone" data-table="presidents:president,party,speeches,tone_mean,tone_min,tone_max">
+          <figcaption><strong>Presidents ranked by tone</strong><span>Dot: average across their messages. Bar: lowest to highest.</span></figcaption>
+          <div class="chart"></div>
+        </figure>
+        <figure class="card" data-chart="emotions" data-table="emotions_by_decade:decade,emotion,share">
+          <figcaption><strong>Emotions by decade</strong><span>Share of sentences whose strongest emotion (DistilRoBERTa, Ekman's six + neutral) is each one. Scales differ per panel.</span></figcaption>
+          <div class="chart"></div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="topics">
+      <h2>What they talk about</h2>
+      <p class="section-lede">Every paragraph is embedded with a sentence-transformer and assigned to the closest of <span data-summary="topic-count">19</span> policy topics. Native American affairs, currency and territorial expansion fade out; health care, education, immigration and the economy rise.</p>
+      <figure class="card" data-chart="topics" data-table="topics_by_decade:decade,topic,share">
+        <figcaption><strong>Share of words by topic and decade</strong><span>Darker = more attention. Ceremonial and unclassified passages are left out.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
+    </section>
+
+    <section id="language">
+      <h2>The words that define them</h2>
+      <p class="section-lede">Distinctive words are found with a log-odds ratio with an informative Dirichlet prior (Monroe, Colaresi &amp; Quinn, 2008). It ranks words a speaker over-uses relative to everyone else, while discounting rare words that would top a raw-frequency list by chance.</p>
+      <div class="grid-2">
+        <figure class="card" data-chart="distinctive" data-bind data-table="distinctive_words:president,word,count,z">
+          <figcaption><strong>Most distinctive words by president</strong><span>Pick a president to compare against every other message.</span></figcaption>
+          <div class="bind"></div>
+          <div class="chart"></div>
+        </figure>
+        <figure class="card" data-chart="party_words" data-table="party_words:word,side,dem,rep,z">
+          <figcaption><strong>Democrats vs. Republicans since 1965</strong><span>Words and phrases each party's presidents favor.</span></figcaption>
+          <div class="chart"></div>
+        </figure>
+      </div>
+      <figure class="card" data-chart="pronouns" data-table="speeches:president,date,i_per_1k,we_per_1k">
+        <figcaption><strong>“I” versus “we”</strong><span>First-person pronouns per 1,000 words, averaged by decade.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
+    </section>
+
+    <section id="words">
+      <h2>Word trends</h2>
+      <p class="section-lede">Track any word or two-word phrase across 236 years. Separate up to five terms with commas.</p>
+      <figure class="card">
+        <form class="trend-form" autocomplete="off">
+          <label for="trend-input" class="visually-hidden">Terms</label>
+          <input id="trend-input" type="search" value="war, peace" placeholder="e.g. slavery, freedom">
+          <button type="submit">Plot</button>
+        </form>
+        <div class="presets" aria-label="Examples">
+          <button type="button" data-terms="slavery, freedom">slavery, freedom</button>
+          <button type="button" data-terms="indians, immigration">indians, immigration</button>
+          <button type="button" data-terms="gold, inflation">gold, inflation</button>
+          <button type="button" data-terms="health care, social security">health care, social security</button>
+          <button type="button" data-terms="soviet, china, russia">soviet, china, russia</button>
+          <button type="button" data-terms="terrorism, terrorists">terrorism, terrorists</button>
+          <button type="button" data-terms="climate change, energy">climate change, energy</button>
+        </div>
+        <p class="trend-note" role="status"></p>
+        <div class="chart" id="trend-chart"></div>
+      </figure>
+    </section>
+
+    <section id="map">
+      <h2>A map of 236 years of speeches</h2>
+      <p class="section-lede">Each message becomes a single vector (the average of its paragraph embeddings), and UMAP flattens those vectors onto a page. Speeches that sit close together read alike. The map sorts itself by era almost on its own, because the language changed more over time than it differs between parties.</p>
+      <figure class="card" data-chart="map" data-table="speeches:president,date,party,top_topic">
+        <figcaption><strong>Speech similarity map</strong><span>Hover for details; click to open.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
+    </section>
+
+    <section id="explore">
+      <h2>Read a speech</h2>
+      <div class="picker">
+        <label for="speech-select">Message</label>
+        <select id="speech-select"></select>
+      </div>
+      <article class="card speech" aria-live="polite">
+        <header class="speech-head">
+          <p class="eyebrow" id="sp-meta"></p>
+          <h3 id="sp-title"></h3>
+          <p id="sp-source"></p>
+        </header>
+        <dl class="tiles small" id="sp-tiles"></dl>
+        <div class="grid-2">
+          <div>
+            <h4>Tone through the speech</h4>
+            <div class="chart" id="arc-chart"></div>
+          </div>
+          <div>
+            <h4>Topics</h4>
+            <div class="chart" id="speech-topics-chart"></div>
+          </div>
+        </div>
+        <div class="grid-2 facts">
+          <div><h4>Dominant emotions</h4><ul class="chips" id="sp-emotions"></ul></div>
+          <div><h4>Places mentioned</h4><ul class="chips" id="sp-places"></ul></div>
+        </div>
+        <h4>Most similar messages</h4>
+        <ul class="chips links" id="sp-similar"></ul>
+        <div class="reader-head">
+          <h4>Full text</h4>
+          <label class="switch"><input type="checkbox" id="tone-toggle"> Highlight sentence tone</label>
+        </div>
+        <p class="tone-legend" hidden><span class="neg">negative</span><span class="pos">positive</span> Shading strength is proportional to the model's confidence.</p>
+        <div class="reader" id="sp-text"></div>
+      </article>
+    </section>
+
+    <section id="methods" class="methods">
+      <h2>Methods and caveats</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Data</h3>
+          <p>Texts come from <a href="https://www.presidency.ucsb.edu/documents/presidential-documents-archive-guidebook/annual-messages-congress-the-state-the-union">The American Presidency Project</a> at UC Santa Barbara. All of its listed messages are included, among them first-year addresses to joint sessions that are not technically State of the Union addresses. Audience reactions, heckles, editorial notes and signatures are removed before analysis.</p>
+          <h3>Models</h3>
+          <ul>
+            <li><strong>Tone:</strong> <code>cardiffnlp/twitter-roberta-base-sentiment-latest</code>, sentence level.</li>
+            <li><strong>Emotion:</strong> <code>j-hartmann/emotion-english-distilroberta-base</code>, sentence level.</li>
+            <li><strong>Topics &amp; map:</strong> <code>all-mpnet-base-v2</code> paragraph embeddings, nearest topic centroid, then UMAP.</li>
+            <li><strong>Sentences &amp; places:</strong> spaCy <code>en_core_web_sm</code>.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Caveats</h3>
+          <ul>
+            <li>The models were trained on modern English. Scores for 18th- and 19th-century prose are less reliable, so read the early decades as rough trends.</li>
+            <li>Written messages (most of 1801–1912) were reports to Congress, not speeches to the public, so compare eras with care.</li>
+            <li>Sentiment is not approval. A sentence about a war's victims scores negative even when the president is honoring them.</li>
+            <li>Topic labels are a fixed taxonomy, not discovered clusters, and anything that matches no topic well is left as “other.”</li>
+          </ul>
+          <p>Code, notebooks and data: <a href="https://github.com/tiroger/NLP-SOTU">github.com/tiroger/NLP-SOTU</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Built with spaCy, Hugging Face Transformers, sentence-transformers, UMAP and Altair / Vega-Lite. Data updated through <span data-summary="last">—</span>.</p>
+  </footer>
+</body>
+</html>

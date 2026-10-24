@@ -1,0 +1,38 @@
+# Monthly check of The American Presidency Project for messages not yet in
+# data/speeches.jsonl. The NLP models are too heavy for CI, so this only opens
+# an issue; the update itself runs locally (see README).
+name: Check for new speeches
+
+on:
+  schedule:
+    - cron: "0 14 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10
+      - id: check
+        run: |
+          set +e
+          uv run --no-project --python 3.12 --with requests --with beautifulsoup4 \
+            python -m sotu.scrape --check | tee check.txt
+          echo "found=$([ ${PIPESTATUS[0]} -eq 1 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+      - if: steps.check.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="New State of the Union message available"
+          if [ -z "$(gh issue list --state open --search "$title in:title" --json number -q '.[].number')" ]; then
+            { echo "The archive lists messages that aren't in the dataset yet:"; echo; echo '```'; cat check.txt; echo '```';
+              echo; echo "Update locally:"; echo; echo '```bash';
+              echo "uv run python -m sotu.scrape && uv run python -m sotu.process && uv run python -m sotu.build";
+              echo '```'; } > body.md
+            gh issue create --title "$title" --body-file body.md
+          fi
