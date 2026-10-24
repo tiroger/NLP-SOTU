@@ -11,7 +11,11 @@ import altair as alt
 # --- Palette (validated with the dataviz skill's palette checker) ----------
 SURFACE, INK, INK_2, MUTED, GRID, AXIS = "#fcfcfb", "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
 SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
-SEQUENTIAL = ["#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"]
+# Binned (ordinal) blue ramp for the topic heatmap. Five steps is the most the
+# light ramp can hold with visibly distinct neighbours, and the lightest step
+# still clears 2:1 against the surface (validated with --ordinal).
+TOPIC_BINS = [0.01, 0.03, 0.08, 0.16]
+SEQUENTIAL = ["#86b6ef", "#5598e7", "#256abf", "#184f95", "#0d366b"]
 
 PARTY_GROUPS = ["Democratic", "Republican", "Earlier parties"]
 PARTY_COLORS = ["#2a78d6", "#e34948", "#1baf7a"]
@@ -23,7 +27,7 @@ DARK_SWAP = {
     SURFACE: "#1a1a19", INK: "#f0efec", INK_2: "#c3c2b7", GRID: "#2c2c2a", AXIS: "#383835",
     "#2a78d6": "#3987e5", "#eb6834": "#d95926", "#1baf7a": "#199e70", "#eda100": "#c98500",
     "#e87ba4": "#d55181", "#6250d6": "#9085e9", "#e34948": "#e66767",
-    **dict(zip(SEQUENTIAL, ["#183a64", "#1c4f8a", "#2465b0", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"])),
+    **dict(zip(SEQUENTIAL, ["#184f95", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"])),
 }
 
 FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif'
@@ -180,12 +184,22 @@ def emotion_chart(data):
     ).resolve_scale(y="independent")
 
 
+def _topic_bin_labels() -> list[str]:
+    pct = [f"{b:.0%}" for b in TOPIC_BINS]
+    return [f"<{pct[0]}"] + [f"{a}–{b}" for a, b in zip(pct, pct[1:])] + [f"{pct[-1]}+"]
+
+
 def topic_heatmap(data, topics: list[str]):
-    return alt.Chart(data).mark_rect(stroke=SURFACE, strokeWidth=2, cornerRadius=2).encode(
+    labels = _topic_bin_labels()
+    # Shares are heavily skewed (median ~3%, max ~31%), so a linear ramp crushes
+    # most cells into one shade; roughly doubling bins spread them out.
+    expr = "".join(f"datum.share < {b} ? '{l}' : " for b, l in zip(TOPIC_BINS, labels)) + f"'{labels[-1]}'"
+    return alt.Chart(data).transform_calculate(level=expr).mark_rect(stroke=SURFACE, strokeWidth=2, cornerRadius=2).encode(
         x=alt.X("decade:O", title=None, axis=alt.Axis(labelAngle=-90, labelExpr="datum.value % 20 == 0 ? datum.value : ''")),
         y=alt.Y("topic:N", title=None, sort=topics, axis=alt.Axis(labelLimit=200)),
-        color=alt.Color("share:Q", title="Share of words", scale=alt.Scale(range=[SEQUENTIAL[0], SEQUENTIAL[-1]]),
-                        legend=alt.Legend(format=".0%", orient="top", gradientLength=180)),
+        color=alt.Color("level:O", title="Share of words", scale=alt.Scale(domain=labels, range=SEQUENTIAL),
+                        legend=alt.Legend(orient="top", direction="horizontal", symbolType="square",
+                                          symbolSize=160, symbolStrokeWidth=0, columnPadding=14)),
         tooltip=[alt.Tooltip("topic:N", title="Topic"), alt.Tooltip("decade:O", title="Decade"),
                  alt.Tooltip("share:Q", title="Share of words", format=".1%")],
     ).properties(width="container", height=alt.Step(18))
