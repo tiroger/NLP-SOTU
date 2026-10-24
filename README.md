@@ -27,6 +27,12 @@ Natural-language analysis of **every U.S. State of the Union message, 1790–202
 | Word & phrase trends | Per-speech unigram/bigram index, searchable in the browser |
 | Speech similarity map | Speech embeddings → UMAP, plus an era-removed view (Gaussian-weighted era average subtracted); nearest neighbours and "kindred speeches from other eras" per speech |
 | Places mentioned, “I” vs “we” | spaCy NER and pronoun rates |
+| World map of attention | Place names resolved to present-day countries (pycountry + historical aliases), share of mentions by decade |
+| Anatomy of every message | Each message as a strip of paragraphs colored by topic group |
+| How messages open and close | Sentence tone across each message, averaged by era |
+| Words that arrived | Terms that first became common in each decade |
+| Sentence length | Distribution of words per sentence by decade |
+| President profiles | z-scores on six measures, against all presidents or each president's own era |
 
 Every chart is defined once in Altair ([`sotu/charts.py`](sotu/charts.py)). The marimo notebooks render the charts directly, and the build step exports them as Vega-Lite specs for the website.
 
@@ -42,6 +48,8 @@ sotu/                 Python package
   build.py            Aggregation, statistics, site data + chart specs
   validate_topics.py  Topic-classifier validation (Policy Agendas benchmark + Claude-labeled history) and the classifier the build uses
   charts.py           Altair charts + palette
+  visuals.py          Data for the map, anatomy, arcs, new words, sentence lengths, profiles
+  places.py           Place name -> present-day country (ISO numeric) resolution
 notebooks/            marimo notebooks (01 data · 02 EDA · 03 sentiment · 04 topics · 05 generator)
 data/speeches.jsonl   The corpus: one JSON object per message (metadata + paragraphs)
 data/derived/         Tidy outputs for analysis (speech features, sentence scores, paragraph topics)

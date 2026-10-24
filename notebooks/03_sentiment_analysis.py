@@ -216,5 +216,23 @@ def _(mo, sentences, speech):
     return
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## How messages open and close
+
+    Average tone from the first sentence to the last, by era.
+    """)
+    return
+
+
+@app.cell
+def _(SITE_DATA, charts, pd):
+    from sotu.visuals import ERAS
+
+    charts.arcs_era_chart(pd.read_json(SITE_DATA / "arcs_by_era.json"), [label for _, _, label in ERAS])
+    return
+
+
 if __name__ == "__main__":
     app.run()

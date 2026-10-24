@@ -56,39 +56,60 @@ function themed(spec) {
   return JSON.parse(json);
 }
 
-async function render(container, name, { datasets, bind, onClick, adjust } = {}) {
+async function render(container, name, { datasets, bind, onClick, adjust, renderer } = {}) {
   let entry = rendered.find((r) => r.container === container);
   if (!entry) {
     entry = { container, name };
     rendered.push(entry);
   }
-  Object.assign(entry, { datasets, bind, onClick, adjust });
-  const spec = structuredClone(await loadJSON(`charts/${name}.json`));
+  Object.assign(entry, { datasets, bind, onClick, adjust, renderer });
+  const narrow = container.clientWidth < 600;
+  const specName = narrow && name === "new_words" ? "new_words_compact" : name;
+  const spec = structuredClone(await loadJSON(`charts/${specName}.json`));
   if (datasets) spec.datasets = { ...(spec.datasets || {}), ...datasets };
   if (adjust) adjust(spec, container);
   if (container.clientWidth < 480) {
-    // Let legends wrap instead of running off the edge on phones.
+    // Let legends wrap instead of running off the edge on phones, including
+    // legends a chart configures itself.
     spec.config = { ...spec.config, legend: { ...spec.config?.legend, columns: 2, symbolLimit: 0 } };
+    const walk = (node) => {
+      if (!node || typeof node !== "object") return;
+      if (node.legend && typeof node.legend === "object" && node.legend.columns > 2) node.legend.columns = 2;
+      Object.values(node).forEach(walk);
+    };
+    walk(spec);
   }
   entry.view?.finalize();
   container.classList.add("loading");
   if (bind) bind.replaceChildren();
   const result = await vegaEmbed(container, themed(spec), {
     actions: false,
-    renderer: "svg",
+    renderer: renderer || "svg",
     bind: bind || undefined,
     tooltip: { theme: isDark() ? "dark" : "light" },
   });
   container.classList.remove("loading");
   entry.view = result.view;
   if (onClick) {
-    result.view.addEventListener("click", (_, item) => item?.datum?.id && onClick(item.datum.id));
+    result.view.addEventListener("click", (_, item) => item?.datum && onClick(item.datum));
   }
   return result.view;
 }
 
 function rerenderAll() {
   for (const r of rendered) render(r.container, r.name, r);
+}
+
+// The world map keeps its aspect ratio instead of a fixed height.
+function fitMap(spec, container) {
+  spec.height = Math.max(220, Math.round((container.clientWidth || 800) * 0.5));
+}
+
+// Six column labels don't fit side by side on a phone; angle them.
+function fitProfiles(spec, container) {
+  if (container.clientWidth < 600) {
+    Object.assign(spec.encoding.x.axis, { labelAngle: -40, labelAlign: "left", labelLimit: 90 });
+  }
 }
 
 // Emotions is a 3-column facet; size its panels to the card width.
@@ -279,13 +300,21 @@ document.head.append(style);
 async function main() {
   palette = await loadJSON("charts/palette.json");
   fillSummary();
-  const clickable = new Set(["length", "grade", "diversity", "tone", "map"]);
+  const clickable = new Set(["length", "grade", "diversity", "tone", "map", "anatomy"]);
+  const plotTerm = (datum) => {
+    const terms = datum.term || datum.terms; // compact layout: a whole decade's terms
+    if (!terms) return;
+    $("#trend-input").value = terms;
+    plotTrend(terms);
+    $("#trend-chart").scrollIntoView({ block: "center" });
+  };
   for (const figure of $$("figure[data-chart]")) {
     const name = figure.dataset.chart;
     render($(".chart", figure), name, {
       bind: figure.hasAttribute("data-bind") ? $(".bind", figure) : undefined,
-      onClick: clickable.has(name) ? (id) => openSpeech(id) : undefined,
-      adjust: name === "emotions" ? fitFacet : undefined,
+      onClick: clickable.has(name) ? (d) => d.id && openSpeech(d.id) : name === "new_words" ? plotTerm : undefined,
+      adjust: { emotions: fitFacet, world: fitMap, profiles: fitProfiles }[name],
+      renderer: figure.dataset.renderer,
     });
     if (figure.dataset.table) addTableView(figure);
   }
@@ -297,8 +326,9 @@ let resizeTimer;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
-    const facet = rendered.find((r) => r.name === "emotions");
-    if (facet) render(facet.container, facet.name, facet);
+    for (const r of rendered.filter((x) => ["emotions", "world", "profiles", "new_words"].includes(x.name))) {
+      render(r.container, r.name, r);
+    }
   }, 250);
 });
 

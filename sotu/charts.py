@@ -17,6 +17,12 @@ SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#62
 TOPIC_BINS = [0.01, 0.03, 0.08, 0.16]
 SEQUENTIAL = ["#86b6ef", "#5598e7", "#256abf", "#184f95", "#0d366b"]
 
+# Ordered eras use a one-hue ramp (validated --ordinal, both modes).
+ERA_RAMP = ["#86b6ef", "#5598e7", "#256abf", "#0d366b"]
+# Diverging, for "below / above typical": orange <-> blue with a gray midpoint.
+# Not red/blue, which already mean Republican/Democratic on this site.
+DIVERGING = ["#c4491a", "#ee9268", "#e6e5e0", "#86b6ef", "#1c5cab"]
+
 PARTY_GROUPS = ["Democratic", "Republican", "Earlier parties"]
 PARTY_COLORS = ["#2a78d6", "#e34948", "#1baf7a"]
 PARTY_SHAPES = ["circle", "square", "triangle-up"]
@@ -28,6 +34,7 @@ DARK_SWAP = {
     "#2a78d6": "#3987e5", "#eb6834": "#d95926", "#1baf7a": "#199e70", "#eda100": "#c98500",
     "#e87ba4": "#d55181", "#6250d6": "#9085e9", "#e34948": "#e66767",
     **dict(zip(SEQUENTIAL, ["#184f95", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"])),
+    "#c4491a": "#f08a5d", "#ee9268": "#8a3c18", "#e6e5e0": "#3a3a37", "#1c5cab": "#86b6ef",
 }
 
 FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif'
@@ -340,3 +347,129 @@ def speech_topics_chart(data=None):
         y=alt.Y("topic:N", title=None, sort="-x", axis=alt.Axis(labelLimit=200)),
         tooltip=[alt.Tooltip("topic:N", title="Topic"), alt.Tooltip("share:Q", title="Share of words", format=".1%")],
     ).properties(width="container", height=alt.Step(20))
+
+
+# --- Second set of visuals -------------------------------------------------------
+
+def _binned_share(expr_field: str):
+    labels = _topic_bin_labels()
+    expr = "".join(f"datum.{expr_field} < {b} ? '{l}' : " for b, l in zip(TOPIC_BINS, labels)) + f"'{labels[-1]}'"
+    return labels, expr
+
+
+def world_map_chart(places, world_url: str, default_decade: int = 1940):
+    """Countries shaded by their share of foreign-country mentions in the chosen decade."""
+    decade = alt.param(name="decade", value=default_decade,
+                       bind=alt.binding_range(min=1790, max=2020, step=10, name="Decade "))
+    countries = alt.topo_feature(world_url, "countries")
+    base = alt.Chart(countries).transform_filter("datum.id != 10").mark_geoshape(
+        fill=GRID, stroke=SURFACE, strokeWidth=0.5
+    ).project(type="equalEarth")
+    labels, expr = _binned_share("share")
+    shaded = alt.Chart(places).transform_filter(alt.datum.decade == decade).transform_lookup(
+        lookup="id", from_=alt.LookupData(data=countries, key="id"), as_="geo"
+    ).transform_calculate(level=expr).mark_geoshape(stroke=SURFACE, strokeWidth=0.5).encode(
+        shape="geo:G",
+        color=alt.Color("level:O", title="Share of mentions", scale=alt.Scale(domain=labels, range=SEQUENTIAL),
+                        legend=alt.Legend(orient="top", direction="horizontal", symbolType="square",
+                                          symbolSize=160, symbolStrokeWidth=0, columnPadding=14)),
+        tooltip=[alt.Tooltip("country:N", title="Country"), alt.Tooltip("decade:Q", title="Decade", format="d"),
+                 alt.Tooltip("mentions:Q", title="Mentions"), alt.Tooltip("share:Q", title="Share", format=".1%")],
+    ).project(type="equalEarth")
+    return alt.layer(base, shaded).add_params(decade).properties(width="container", height=430)
+
+
+def anatomy_chart(data, groups: list[str], years: list[int]):
+    """Every message as a strip of its paragraphs, colored by topic group, positioned by words."""
+    # Label the y axis with the year of the first message in each 20-year span.
+    ticks = [i for i, y in enumerate(years) if i == 0 or y // 20 != years[i - 1] // 20]
+    label_expr = f"{[years[i] for i in range(len(years))]}[datum.value]"
+    colors = SERIES[: len(groups) - 1] + [AXIS]  # last group is ceremony / unclassified
+    return alt.Chart(data).transform_calculate(row2="datum.row + 0.8").mark_rect().encode(
+        x=alt.X("s:Q", title="Position in the message (share of words)", axis=alt.Axis(format=".0%", tickCount=5),
+                scale=alt.Scale(domain=[0, 1], nice=False)),
+        x2="e:Q",
+        y=alt.Y("row:Q", title=None, scale=alt.Scale(domain=[0, len(years)], nice=False, reverse=True),
+                axis=alt.Axis(values=ticks, labelExpr=label_expr, grid=False)),
+        y2="row2:Q",
+        color=alt.Color("group:N", title=None, scale=alt.Scale(domain=groups, range=colors),
+                        legend=alt.Legend(orient="top", columns=4, symbolType="square")),
+        tooltip=[alt.Tooltip("id:N", title="Message"), alt.Tooltip("group:N", title="Topic group")],
+    ).properties(width="container", height=820)
+
+
+def arcs_era_chart(data, eras: list[str]):
+    """Average tone across a message, by era."""
+    color = alt.Color("era:O", title=None, scale=alt.Scale(domain=eras, range=ERA_RAMP), sort=eras)
+    base = alt.Chart(data)
+    zero = alt.Chart(alt.Data(values=[{"y": 0}])).mark_rule(color=AXIS).encode(y="y:Q")
+    lines = base.mark_line(interpolate="monotone").encode(
+        x=alt.X("position:Q", title="Progress through the message", axis=alt.Axis(format=".0%", tickCount=5)),
+        y=alt.Y("tone:Q", title="Average net tone"),
+        color=color,
+        tooltip=[alt.Tooltip("era:N", title="Era"), alt.Tooltip("position:Q", title="Position", format=".0%"),
+                 alt.Tooltip("tone:Q", title="Tone", format="+.2f")],
+    )
+    ends = base.transform_filter("datum.position == 1").mark_text(align="left", dx=6, fontSize=12, color=INK_2).encode(
+        x="position:Q", y="tone:Q", text="era:N"
+    )
+    return alt.layer(zero, lines, ends).properties(width="container", height=300)
+
+
+def new_words_chart(data):
+    """Terms that first became common in each decade; click one to plot it."""
+    return alt.Chart(data).mark_text(align="left", baseline="middle", fontSize=13, color=INK, limit=150).encode(
+        x=alt.X("rank:O", title=None, axis=None),
+        y=alt.Y("decade:O", title=None, axis=alt.Axis(labelColor=MUTED, ticks=False, domain=False)),
+        text="term:N",
+        tooltip=[alt.Tooltip("term:N", title="Term"), alt.Tooltip("decade:O", title="Breaks out in"),
+                 alt.Tooltip("rate:Q", title="Uses per million words", format=",.0f")],
+    ).properties(width="container", height=alt.Step(26))
+
+
+def new_words_compact_chart(data):
+    """Phone layout: one wrapped line of terms per decade; click a line to plot its terms."""
+    return alt.Chart(data).mark_text(align="left", baseline="middle", fontSize=13, color=INK, lineBreak="\n",
+                                     lineHeight=17).encode(
+        x=alt.value(0),
+        y=alt.Y("decade:O", title=None, axis=alt.Axis(labelColor=MUTED, ticks=False, domain=False)),
+        text="line:N",
+        tooltip=[alt.Tooltip("decade:O", title="Decade"), alt.Tooltip("terms:N", title="Terms")],
+    ).properties(width="container", height=alt.Step(58))
+
+
+def sentence_length_chart(data):
+    """Distribution of sentence length by decade: 10th-90th percentile range,
+    interquartile bar, median tick."""
+    base = alt.Chart(data).encode(x=alt.X("decade:Q", title=None, axis=alt.Axis(format="d"),
+                                          scale=alt.Scale(domain=[1785, 2025], nice=False, zero=False)))
+    tip = [alt.Tooltip("decade:Q", title="Decade", format="d"), alt.Tooltip("p10:Q", title="10th pct"),
+           alt.Tooltip("p25:Q", title="25th pct"), alt.Tooltip("p50:Q", title="Median"),
+           alt.Tooltip("p75:Q", title="75th pct"), alt.Tooltip("p90:Q", title="90th pct"),
+           alt.Tooltip("over_40:Q", title="Over 40 words", format=".0%")]
+    whisker = base.mark_rule(color=AXIS, strokeWidth=2).encode(y=alt.Y("p10:Q", title="Words per sentence"), y2="p90:Q")
+    box = base.mark_bar(color=SERIES[0], size=9, cornerRadius=3).encode(y="p25:Q", y2="p75:Q", tooltip=tip)
+    median = base.mark_tick(color=INK, thickness=2, size=14, orient="horizontal").encode(y="p50:Q", tooltip=tip)
+    return alt.layer(whisker, box, median).properties(width="container", height=300)
+
+
+PROFILE_LEVELS = ["Much lower", "Lower", "Typical", "Higher", "Much higher"]
+
+
+def profile_chart(data, presidents: list[str], metrics: list[str]):
+    """Presidents x measures, shaded by how far each sits from typical."""
+    compare = alt.param(name="compare", value="era", bind=alt.binding_radio(
+        options=["era", "all"], labels=["Their era", "All presidents"], name="Compared with "))
+    level = ("datum.z <= -1.5 ? 'Much lower' : datum.z <= -0.5 ? 'Lower' : datum.z < 0.5 ? 'Typical' : "
+             "datum.z < 1.5 ? 'Higher' : 'Much higher'")
+    return alt.Chart(data).transform_calculate(
+        z="compare == 'era' ? datum.z_era : datum.z_all"
+    ).transform_calculate(level=level).mark_rect(stroke=SURFACE, strokeWidth=2, cornerRadius=2).encode(
+        x=alt.X("metric:N", title=None, sort=metrics, axis=alt.Axis(orient="top", labelAngle=0, labelLimit=110)),
+        y=alt.Y("president:N", title=None, sort=presidents, axis=alt.Axis(labelLimit=200)),
+        color=alt.Color("level:O", title=None, scale=alt.Scale(domain=PROFILE_LEVELS, range=DIVERGING),
+                        legend=alt.Legend(orient="top", direction="horizontal", symbolType="square", symbolSize=160,
+                                          symbolStrokeWidth=0, columnPadding=14)),
+        tooltip=[alt.Tooltip("president:N", title="President"), alt.Tooltip("metric:N", title="Measure"),
+                 alt.Tooltip("value:Q", title="Average", format=",.2f"), alt.Tooltip("z:Q", title="z-score", format="+.1f")],
+    ).add_params(compare).properties(width="container", height=alt.Step(18))

@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 from spacy.lang.en.stop_words import STOP_WORDS
 
-from sotu import charts, models, topics
+from sotu import charts, models, topics, visuals
 from sotu.process import ROOT, load_processed, load_speeches
 from sotu.validate_topics import topic_classifier
 
@@ -312,7 +312,8 @@ def main() -> None:
     # Tidy tables for the notebooks
     DERIVED.mkdir(parents=True, exist_ok=True)
     df.drop(columns=["topics", "places", "similar", "kindred"]).to_csv(DERIVED / "speech_features.csv", index=False)
-    sentence_table(df, processed).to_parquet(DERIVED / "sentences.parquet", compression="zstd")
+    sentences = sentence_table(df, processed)
+    sentences.to_parquet(DERIVED / "sentences.parquet", compression="zstd")
     topic_df.to_csv(DERIVED / "speech_topics.csv", index=False)
     paragraph_df.to_parquet(DERIVED / "paragraph_topics.parquet", compression="zstd")
 
@@ -335,6 +336,27 @@ def main() -> None:
     export_chart("map", charts.map_chart(url("speeches")))
     export_chart("arc", charts.arc_chart())
     export_chart("speech_topics", charts.speech_topics_chart())
+
+    # Second set of visuals
+    arcs = {sid: tone_arc(p["tone"]) for sid, p in zip(df.id, processed)}
+    write_json(SITE_DATA / "places_by_decade.json", visuals.places_by_decade(df, processed).to_dict("records"))
+    write_json(SITE_DATA / "anatomy.json", visuals.anatomy(df, paragraph_df).to_dict("records"))
+    eras = [label for _, _, label in visuals.ERAS]
+    write_json(SITE_DATA / "arcs_by_era.json", visuals.arcs_by_era(df, arcs).to_dict("records"))
+    nw = visuals.new_words(df, processed)
+    write_json(SITE_DATA / "new_words.json", nw.to_dict("records"), digits=1)
+    write_json(SITE_DATA / "new_words_lines.json", visuals.new_words_lines(nw).to_dict("records"))
+    write_json(SITE_DATA / "sentence_lengths.json", visuals.sentence_lengths(sentences).to_dict("records"))
+    profiles = visuals.president_profiles(df)
+    write_json(SITE_DATA / "president_profiles.json", profiles.to_dict("records"))
+    export_chart("world", charts.world_map_chart(url("places_by_decade"), "data/world-110m.json"))
+    export_chart("anatomy", charts.anatomy_chart(url("anatomy"), list(visuals.TOPIC_GROUPS), df.year.tolist()))
+    export_chart("arcs_era", charts.arcs_era_chart(url("arcs_by_era"), eras))
+    export_chart("new_words", charts.new_words_chart(url("new_words")))
+    export_chart("new_words_compact", charts.new_words_compact_chart(url("new_words_lines")))
+    export_chart("sentence_lengths", charts.sentence_length_chart(url("sentence_lengths")))
+    pres_chrono = presidents.sort_values("first_year").president.tolist()
+    export_chart("profiles", charts.profile_chart(url("president_profiles"), pres_chrono, list(visuals.PROFILE_METRICS.values())))
 
     write_json(SITE_DATA / "summary.json", {
         "speeches": len(df), "presidents": df.president.nunique(), "words": int(df.words.sum()),

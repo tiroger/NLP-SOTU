@@ -23,6 +23,7 @@ dependencies = [
     "pyarrow>=26.0.0",
     "anthropic>=2.3.0",
     "python-dotenv>=1.2.4",
+    "pycountry>=26.2.16",
 ]
 
 [dependency-groups]

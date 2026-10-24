@@ -89,3 +89,43 @@ def test_era_adjustment_removes_shared_time_trend():
     adj = era_adjusted(e, when)
     corr = lambda x: abs(np.corrcoef(x @ np.ones(16), np.sin(when / 40))[0, 1])
     assert corr(e) > 0.9 and corr(adj) < 0.3
+
+
+def test_place_names_resolve_to_modern_countries():
+    from sotu.places import country_code
+
+    assert country_code("Prussia") == 276  # Germany
+    assert country_code("Soviet Union") == country_code("Russia") == 643
+    assert country_code("London") == 826
+    assert country_code("Georgia") is None  # usually the U.S. state
+    assert country_code("Texas") is None and country_code("United States") is None
+
+
+def test_anatomy_runs_tile_each_speech():
+    import pandas as pd
+
+    from sotu.visuals import anatomy
+
+    df = pd.DataFrame({"id": ["a", "b"]})
+    paras = pd.DataFrame({
+        "speech_id": ["a"] * 4 + ["b"] * 2,
+        "topic": ["Other", "Foreign affairs", "Defense & war", "Health care", "Education", "Education"],
+        "text": ["one two", "x " * 6, "y " * 2, "z", "w", "v v v"],
+    })
+    runs = anatomy(df, paras)
+    for sid, g in runs.groupby("id"):
+        g = g.sort_values("s")
+        assert g.s.iloc[0] == 0 and abs(g.e.iloc[-1] - 1) < 1e-9
+        assert (g.s.iloc[1:].to_numpy() == g.e.iloc[:-1].to_numpy()).all()  # contiguous
+    # Foreign affairs + Defense & war share a group, so they merge into one run.
+    assert len(runs[runs.id == "a"]) == 3 and len(runs[runs.id == "b"]) == 1
+
+
+def test_new_words_lines_wrap():
+    import pandas as pd
+
+    from sotu.visuals import new_words_lines
+
+    rows = pd.DataFrame({"decade": [1900] * 3, "rank": [1, 2, 3], "term": ["monroe doctrine", "hague", "forest reserves"]})
+    line = new_words_lines(rows, width=20).line.iloc[0]
+    assert all(len(part) <= 20 for part in line.split("\n")) and "hague" in line

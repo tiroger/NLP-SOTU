@@ -195,5 +195,57 @@ def _(SITE_DATA, charts, pd, terms):
     return
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## How long is a sentence?
+
+    The 10th–90th percentile range, the middle half and the median, by decade.
+    """)
+    return
+
+
+@app.cell
+def _(SITE_DATA, charts, pd):
+    charts.sentence_length_chart(pd.read_json(SITE_DATA / "sentence_lengths.json"))
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## Words that arrived, decade by decade
+
+    Terms that first became common in each decade (`sotu.visuals.new_words`).
+    """)
+    return
+
+
+@app.cell
+def _(SITE_DATA, charts, pd):
+    charts.new_words_chart(pd.read_json(SITE_DATA / "new_words.json"))
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## Presidents compared
+
+    z-scores on six measures. "Their era" compares each president with
+    messages given within about a decade; use the radio control to switch to
+    all presidents.
+    """)
+    return
+
+
+@app.cell
+def _(SITE_DATA, charts, pd, speeches):
+    _profiles = pd.read_json(SITE_DATA / "president_profiles.json")
+    _order = speeches.drop_duplicates("president").president.tolist()
+    charts.profile_chart(_profiles, _order, _profiles.metric.drop_duplicates().tolist())
+    return
+
+
 if __name__ == "__main__":
     app.run()

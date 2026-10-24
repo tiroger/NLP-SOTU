@@ -141,5 +141,42 @@ def _(chart, mo):
     return
 
 
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## The anatomy of every message
+
+    One strip per message, paragraphs colored by topic group and sized by words.
+    """)
+    return
+
+
+@app.cell
+def _(SITE_DATA, charts, pd, speeches):
+    from sotu.visuals import TOPIC_GROUPS
+
+    charts.anatomy_chart(pd.read_json(SITE_DATA / "anatomy.json"), list(TOPIC_GROUPS), speeches.year.tolist())
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ## Where presidents look
+
+    Share of foreign-country mentions by decade; use the slider.
+    """)
+    return
+
+
+@app.cell
+def _(SITE_DATA, charts, pd):
+    charts.world_map_chart(
+        pd.read_json(SITE_DATA / "places_by_decade.json"),
+        "https://cdn.jsdelivr.net/npm/vega-datasets@2.11.0/data/world-110m.json",
+    )
+    return
+
+
 if __name__ == "__main__":
     app.run()

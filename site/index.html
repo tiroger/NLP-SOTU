@@ -34,7 +34,7 @@
 
   <nav class="toc" aria-label="Sections">
     <div class="wrap">
-      <a href="#length">Length</a><a href="#tone">Tone</a><a href="#topics">Topics</a><a href="#language">Language</a><a href="#words">Word trends</a><a href="#map">Map</a><a href="#explore">Read a speech</a><a href="#methods">Methods</a>
+      <a href="#length">Length</a><a href="#tone">Tone</a><a href="#topics">Topics</a><a href="#world">World</a><a href="#language">Language</a><a href="#words">Word trends</a><a href="#map">Map</a><a href="#presidents">Presidents</a><a href="#explore">Read a speech</a><a href="#methods">Methods</a>
     </div>
   </nav>
 
@@ -56,6 +56,10 @@
           <div class="chart"></div>
         </figure>
       </div>
+      <figure class="card" data-chart="sentence_lengths" data-table="sentence_lengths:decade,p10,p25,p50,p75,p90,over_40">
+        <figcaption><strong>How long is a sentence?</strong><span>Words per sentence by decade. Thin line: 10th to 90th percentile; bar: middle half; tick: median. The median fell from 32–34 words through the 1850s to 11 today, and sentences over 40 words went from more than a third of all sentences to 2%.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
     </section>
 
     <section id="tone">
@@ -67,6 +71,10 @@
       </figure>
       <figure class="card" data-chart="tone_mix" data-table="speeches:president,date,positive_share,negative_share">
         <figcaption><strong>Not just happier: more emphatic</strong><span>Share of sentences that are clearly upbeat, clearly downbeat, or in between, averaged by decade. After WWII upbeat sentences doubled while downbeat ones never fell. Today they are as common as during the Depression, so the rise in net tone comes from fewer neutral sentences, not fewer negative ones.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
+      <figure class="card" data-chart="arcs_era" data-table="arcs_by_era:era,position,tone">
+        <figcaption><strong>How messages open and close</strong><span>Average tone from the first sentence to the last, by era. Every era opens warm, sinks as the message turns to business, and rises at the close. Since 1913 addresses end higher than they begin (1913–1964: +0.18 to +0.26; since 1965: +0.30 to +0.42). Nineteenth-century messages dipped below zero in their first third and ended a little below where they started.</span></figcaption>
         <div class="chart"></div>
       </figure>
       <div class="grid-2">
@@ -86,6 +94,20 @@
       <p class="section-lede">Every paragraph is embedded with a sentence-transformer and classified into one of <span data-summary="topic-count">19</span> policy topics by a model trained on 26,000 hand-coded State of the Union sentences plus 750 historical paragraphs labeled by Claude. Native American affairs, currency and territorial expansion fade out in the 20th century; health care, education, immigration and the economy rise.</p>
       <figure class="card" data-chart="topics" data-table="topics_by_decade:decade,topic,share">
         <figcaption><strong>Share of words by topic and decade</strong><span><b class="light-only">Darker</b><b class="dark-only">Brighter</b> = more attention. Ceremonial and unclassified passages are left out.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
+      <figure class="card" data-chart="anatomy" data-renderer="canvas" data-table="anatomy:id,group,s,e">
+        <figcaption><strong>The anatomy of every message</strong><span>One strip per message, oldest at top, each paragraph colored by its topic group and sized by its words. Modern addresses wrap policy in ceremony: since 1965 it fills 55% of a message's first tenth and 59% of its last, against 10% of the middle. The written reports of 1861–1912 went straight to business, with 11% and 5%. Hover for details; click to open a message.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
+    </section>
+
+    <section id="world">
+      <h2>Where presidents look</h2>
+      <p class="section-lede">Every country a message names, matched to today's borders (Prussia counts as Germany, Persia as Iran, the Soviet Union as Russia). Drag the slider: Britain, Spain and France dominate the early decades, China and the Philippines around 1900, Japan and Germany in the 1940s, the Soviet Union through the Cold War, Iraq in the 2000s, Ukraine and China today.</p>
+      <figure class="card" data-chart="world" data-bind data-table="places_by_decade:decade,country,mentions,share">
+        <figcaption><strong>Share of foreign-country mentions, by decade</strong><span>Countries named via spaCy entity recognition; mentions of capitals (“our minister at London”) count for their country.</span></figcaption>
+        <div class="bind"></div>
         <div class="chart"></div>
       </figure>
     </section>
@@ -113,6 +135,10 @@
     <section id="words">
       <h2>Word trends</h2>
       <p class="section-lede">Track any word or two-word phrase across 236 years. Separate up to five terms with commas.</p>
+      <figure class="card" data-chart="new_words" data-table="new_words:decade,rank,term,rate">
+        <figcaption><strong>Words that arrived, decade by decade</strong><span>Terms that first became common in each decade: at least 15 uses per million words, in two or more messages, after never reaching a tenth of that rate before. Click a term (on a phone, a decade) to plot it below.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
       <figure class="card">
         <form class="trend-form" autocomplete="off">
           <label for="trend-input" class="visually-hidden">Terms</label>
@@ -139,6 +165,16 @@
       <p class="section-lede"><strong>Era removed</strong> subtracts, from each speech, the average of the speeches given within about a decade of it, leaving only how it differs from its contemporaries. Neighbors are then typically 20 years apart instead of 4, and speeches group by president. Party adds almost nothing: among a speech's five closest matches by <em>other</em> presidents, the share from the same party is 52%, no better than chance.</p>
       <figure class="card" data-chart="map" data-bind data-table="speeches:president,date,party,top_topic">
         <figcaption><strong>Speech similarity map</strong><span>Hover for details; click to open.</span></figcaption>
+        <div class="bind"></div>
+        <div class="chart"></div>
+      </figure>
+    </section>
+
+    <section id="presidents">
+      <h2>Presidents compared</h2>
+      <p class="section-lede">Each president's average on six measures, shaded by how far it sits from typical. Against <strong>all presidents</strong>, era dominates: every modern president reads at a low grade level and says “we” often. Against <strong>their era</strong> (messages within about a decade), what's left is personal style.</p>
+      <figure class="card" data-chart="profiles" data-bind data-table="president_profiles:president,metric,value,z_era,z_all">
+        <figcaption><strong>President profiles</strong><span>Shading: within ±0.5 standard deviations is typical; beyond ±1.5 is much higher or lower. Orange and blue mark direction only, not good or bad.</span></figcaption>
         <div class="bind"></div>
         <div class="chart"></div>
       </figure>
