@@ -171,6 +171,37 @@ def pronoun_chart(data):
     return alt.layer(lines, dots, end_labels).properties(width="container", height=300)
 
 
+def tone_mix_chart(data):
+    """Decade averages of upbeat, downbeat and in-between sentence shares.
+
+    Net tone mixes two things: how often presidents say anything evaluative,
+    and which way it leans. Splitting the shares shows both.
+    """
+    fields = {"positive_share": "Upbeat (tone > +0.5)", "negative_share": "Downbeat (tone < −0.5)", "neutral_share": "In between"}
+    long = alt.Chart(data).transform_calculate(
+        neutral_share="1 - datum.positive_share - datum.negative_share"
+    ).transform_fold(list(fields), as_=["kind", "share"]).transform_calculate(
+        decade="floor(datum.year / 10) * 10",
+        label=" : ".join(f"datum.kind == '{k}' ? '{v}'" for k, v in fields.items()) + " : ''",
+    ).transform_aggregate(share="mean(share)", groupby=["decade", "label"])
+    labels = list(fields.values())
+    color = alt.Color("label:N", title=None, scale=alt.Scale(domain=labels, range=[SERIES[0], SERIES[1], MUTED]))
+    lines = long.mark_line(interpolate="monotone").encode(
+        x=alt.X("decade:Q", title=None, axis=alt.Axis(format="d")),
+        y=alt.Y("share:Q", title="Share of sentences", axis=alt.Axis(format=".0%")),
+        color=color,
+    )
+    dots = long.mark_point(filled=True, size=70, opacity=0).encode(
+        x="decade:Q", y="share:Q", color=color,
+        tooltip=[alt.Tooltip("decade:Q", title="Decade", format="d"), alt.Tooltip("label:N", title="Sentences"),
+                 alt.Tooltip("share:Q", title="Share", format=".0%")],
+    )
+    end_labels = long.transform_filter("datum.decade == 2020").mark_text(align="left", dx=6, fontSize=12, color=INK_2).encode(
+        x="decade:Q", y="share:Q", text="label:N"
+    )
+    return alt.layer(lines, dots, end_labels).properties(width="container", height=300)
+
+
 def emotion_chart(data):
     """Small multiples: share of sentences whose strongest emotion is each label, by decade."""
     return alt.Chart(data).mark_line(color=SERIES[0], interpolate="monotone").encode(
@@ -268,14 +299,23 @@ def trend_chart(data=None):
 
 
 def map_chart(data):
-    """2-D UMAP projection of speech embeddings; nearby speeches read alike."""
-    return alt.Chart(data).mark_point(filled=True, size=70, opacity=0.85, stroke=SURFACE, strokeWidth=1.5).encode(
-        x=alt.X("map_x:Q", axis=None),
-        y=alt.Y("map_y:Q", axis=None),
+    """2-D UMAP projection of speech embeddings; nearby speeches read alike.
+
+    A radio control switches to the era-adjusted projection, where each
+    speech's vector has its era's shared language removed (see build.era_adjusted).
+    """
+    view = alt.param(name="view", value="raw", bind=alt.binding_radio(
+        options=["raw", "adjusted"], labels=["As written", "Era removed"], name="Map "))
+    return alt.Chart(data).transform_calculate(
+        x="view == 'raw' ? datum.map_x : datum.adj_x",
+        y="view == 'raw' ? datum.map_y : datum.adj_y",
+    ).mark_point(filled=True, size=70, opacity=0.85, stroke=SURFACE, strokeWidth=1.5).encode(
+        x=alt.X("x:Q", axis=None),
+        y=alt.Y("y:Q", axis=None),
         color=alt.Color("party_group:N", scale=_party_scale(), title=None),
         shape=alt.Shape("party_group:N", scale=alt.Scale(domain=PARTY_GROUPS, range=PARTY_SHAPES), title=None),
         tooltip=SPEECH_TOOLTIP + [alt.Tooltip("top_topic:N", title="Main topic")],
-    ).properties(width="container", height=460)
+    ).add_params(view).properties(width="container", height=460)
 
 
 def arc_chart(data=None):

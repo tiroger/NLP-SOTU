@@ -242,10 +242,12 @@ async function openSpeech(id, scroll = true) {
     .map((e) => [e, s[`emotion_${e}`]]).sort((a, b) => b[1] - a[1]).slice(0, 4);
   $("#sp-emotions").replaceChildren(...emotions.map(([e, v]) => el("li", {}, el("b", { textContent: e }), ` ${pct(v)} of sentences`)));
   $("#sp-places").replaceChildren(...(s.places.length ? s.places : ["none detected"]).map((p) => el("li", { textContent: p })));
-  $("#sp-similar").replaceChildren(...s.similar.map((sid) => {
+  const speechLinks = (ids) => ids.map((sid) => {
     const o = speechesById.get(sid);
     return el("li", {}, el("a", { href: `#speech=${sid}`, textContent: `${o.president.split(" ").at(-1)} ${o.date.slice(0, 4)}` }));
-  }));
+  });
+  $("#sp-similar").replaceChildren(...speechLinks(s.similar));
+  $("#sp-kindred").replaceChildren(...speechLinks(s.kindred));
 
   const arcs = await loadJSON("data/arcs.json");
   const arc = arcs[id].map((tone, i, a) => ({ position: i / (a.length - 1), tone }));

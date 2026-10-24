@@ -68,35 +68,52 @@ def _(mo):
     ## Do Democrats and Republicans sound different? (1965–present)
 
     The original notebook compared party means after 1965 and stopped there.
-    With roughly 30 speeches per party, part of any difference is noise, so
-    below is a permutation test on the difference in mean tone and a
-    bootstrap 95% confidence interval.
+    Treating each speech as independent overstates the evidence: four Reagan
+    addresses are not four separate data points about Republicans. So the unit
+    here is the **president** (his speeches averaged). With 11 presidents
+    there are only C(11, 5) = 462 ways to split them into 5 and 6, so the
+    permutation test enumerates all of them (an exact p-value), and the
+    confidence interval comes from a bootstrap that resamples presidents.
+    The naive speech-level p-value is shown for comparison.
     """)
     return
 
 
 @app.cell
 def _(mo, np, pd, speeches):
+    from itertools import combinations
+
     _modern = speeches[(speeches.year >= 1965) & speeches.party_group.isin(["Democratic", "Republican"])]
     _rng = np.random.default_rng(0)
 
-    def _test(col):
+    _by_pres = _modern.groupby(["president", "party_group"]).mean(numeric_only=True).reset_index()
+
+    def _speech_level_p(col):
         d = _modern[_modern.party_group == "Democratic"][col].to_numpy()
         r = _modern[_modern.party_group == "Republican"][col].to_numpy()
-        observed = r.mean() - d.mean()
-        pooled = np.concatenate([d, r])
-        perms = np.array([
-            (lambda x: x[len(d):].mean() - x[:len(d)].mean())(_rng.permutation(pooled)) for _ in range(10_000)
-        ])
-        boots = np.array([
-            _rng.choice(r, len(r)).mean() - _rng.choice(d, len(d)).mean() for _ in range(10_000)
-        ])
+        observed, pooled = r.mean() - d.mean(), np.concatenate([d, r])
+        perms = np.array([(lambda x: x[len(d):].mean() - x[:len(d)].mean())(_rng.permutation(pooled)) for _ in range(10_000)])
+        return (np.abs(perms) >= abs(observed)).mean()
+
+    def _test(col):
+        d = _by_pres[_by_pres.party_group == "Democratic"][col].to_numpy()
+        r = _by_pres[_by_pres.party_group == "Republican"][col].to_numpy()
+        observed, pooled = r.mean() - d.mean(), np.concatenate([d, r])
+        # Exact permutation test over every way to assign len(d) presidents to "Democratic".
+        diffs = []
+        for dem_idx in combinations(range(len(pooled)), len(d)):
+            mask = np.zeros(len(pooled), bool)
+            mask[list(dem_idx)] = True
+            diffs.append(pooled[~mask].mean() - pooled[mask].mean())
+        diffs = np.array(diffs)
+        boots = np.array([_rng.choice(r, len(r)).mean() - _rng.choice(d, len(d)).mean() for _ in range(10_000)])
         return {
             "measure": col, "Democratic mean": d.mean(), "Republican mean": r.mean(),
             "difference (R − D)": observed,
-            "95% CI": f"[{np.percentile(boots, 2.5):+.3f}, {np.percentile(boots, 97.5):+.3f}]",
-            "permutation p": (np.abs(perms) >= abs(observed)).mean(),
-            "n (D / R)": f"{len(d)} / {len(r)}",
+            "95% CI (president bootstrap)": f"[{np.percentile(boots, 2.5):+.3f}, {np.percentile(boots, 97.5):+.3f}]",
+            "exact p (presidents)": (np.abs(diffs) >= abs(observed) - 1e-12).mean(),
+            "naive p (speeches)": _speech_level_p(col),
+            "presidents (D / R)": f"{len(d)} / {len(r)}",
         }
 
     party_tests = pd.DataFrame([_test(c) for c in ["tone", "positive_share", "negative_share", "grade_level", "we_per_1k", "i_per_1k"]])

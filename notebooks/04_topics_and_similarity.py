@@ -12,30 +12,34 @@ def _():
 
     from sotu import charts
     from sotu.process import ROOT
-    from sotu.topics import MIN_SIMILARITY, TOPICS
+    from sotu.topics import TOPICS
 
     DERIVED = ROOT / "data" / "derived"
     SITE_DATA = ROOT / "site" / "data"
-    return DERIVED, MIN_SIMILARITY, SITE_DATA, TOPICS, alt, charts, mo, pd
+    return DERIVED, SITE_DATA, TOPICS, alt, charts, mo, pd
 
 
 @app.cell
-def _(MIN_SIMILARITY, mo):
-    mo.md(rf"""
+def _(mo):
+    mo.md(r"""
     # 4 · Topics and speech similarity
 
-    Each paragraph is embedded with `all-mpnet-base-v2`. Each topic in
-    `sotu/topics.py` is described by a few sentences written in both modern
-    and 19th-century phrasing, and the topic's centroid is the average of
-    their embeddings. A paragraph gets the closest topic if its cosine
-    similarity is at least **{MIN_SIMILARITY}**; otherwise it is “Other”
-    (greetings, applause lines, ceremony).
+    Each paragraph is embedded with `all-mpnet-base-v2` and classified into
+    one of 19 policy topics (or “Other”: greetings, applause lines, ceremony)
+    by a logistic regression trained on:
 
-    A fixed taxonomy gives stable, comparable labels from year to year,
-    which matters on a site that gets a new speech every year. An
-    unsupervised model (LDA, BERTopic) would rediscover different clusters on
-    every re-run. To change the taxonomy, edit `TOPICS` and re-run
-    `python -m sotu.build`. Embeddings are cached, so that takes about a minute.
+    - 26,000 State of the Union sentences from 1946–2025, hand-coded by the
+      [Policy Agendas Project](https://comparativeagendas.net/us/datasets);
+    - 750 paragraphs from every era, labeled by Claude under a written rubric
+      (`sotu/validate_topics.py`), so the model also learns 19th-century
+      topics such as Native American affairs, currency and territories,
+      which the modern benchmark barely covers;
+    - the topic descriptions in `sotu/topics.py`, as anchors.
+
+    Without the Claude labels the build falls back to the original method:
+    the nearest topic description by cosine similarity. A fixed taxonomy gives
+    stable, comparable labels from year to year, which matters on a site that
+    gets a new speech every year.
     """)
     return
 
@@ -57,11 +61,23 @@ def _(by_decade, charts, summary):
 
 @app.cell
 def _(mo):
+    from sotu.validate_topics import REPORT_PATH
+
+    mo.md(
+        REPORT_PATH.read_text().replace("# Topic classifier validation", "## How accurate is it?")
+        if REPORT_PATH.exists()
+        else "## How accurate is it?\n\nRun `uv run python -m sotu.validate_topics evaluate` to generate the validation report."
+    )
+    return
+
+
+@app.cell
+def _(mo):
     mo.md(r"""
     ## Spot-check the classifier
 
-    Pick a topic to see random paragraphs assigned to it, along with their
-    similarity scores. Paragraphs near the threshold are where
+    Pick a topic to see random paragraphs assigned to it, with the
+    classifier's confidence. Low-confidence paragraphs are where
     misclassifications live.
     """)
     return
@@ -81,7 +97,7 @@ def _(era, mo, paragraphs, topic):
     _sample = _sel.sample(min(12, len(_sel)), random_state=0).sort_values("year")
     mo.vstack([
         mo.md(f"{len(_sel):,} paragraphs labelled **{topic.value}** in {era.value[0]}–{era.value[1]}."),
-        mo.ui.table(_sample[["year", "speech_id", "similarity", "text"]].round(3), selection=None, page_size=12),
+        mo.ui.table(_sample[["year", "speech_id", "score", "text"]].round(3), selection=None, page_size=12),
     ])
     return
 

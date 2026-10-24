@@ -60,9 +60,13 @@
 
     <section id="tone">
       <h2>Tone and emotion</h2>
-      <p class="section-lede">Each of the <span data-summary="sentences">~100,000</span> sentences is scored by a RoBERTa sentiment model as positive, neutral or negative. A message's <em>net tone</em> is the average of P(positive) − P(negative) across its sentences. For most of the 19th century the average message was close to neutral, sometimes negative. Since the 1940s, with the address now aimed at a radio and then television audience, it has been reliably upbeat.</p>
+      <p class="section-lede">Each of the <span data-summary="sentences">~100,000</span> sentences is scored by a RoBERTa sentiment model as positive, neutral or negative. A message's <em>net tone</em> is the average of P(positive) − P(negative) across its sentences. For most of the 19th century the average message was close to neutral, sometimes negative. Since the 1940s, with the address aimed at a radio and then television audience, it has been reliably upbeat.</p>
       <figure class="card" data-chart="tone" data-table="speeches:president,date,tone,positive_share,negative_share">
         <figcaption><strong>Net tone of every message</strong><span>Above zero: more upbeat than downbeat sentences. Vertical lines mark major crises.</span></figcaption>
+        <div class="chart"></div>
+      </figure>
+      <figure class="card" data-chart="tone_mix" data-table="speeches:president,date,positive_share,negative_share">
+        <figcaption><strong>Not just happier: more emphatic</strong><span>Share of sentences that are clearly upbeat, clearly downbeat, or in between, averaged by decade. After WWII upbeat sentences doubled while downbeat ones never fell. Today they are as common as during the Depression, so the rise in net tone comes from fewer neutral sentences, not fewer negative ones.</span></figcaption>
         <div class="chart"></div>
       </figure>
       <div class="grid-2">
@@ -79,7 +83,7 @@
 
     <section id="topics">
       <h2>What they talk about</h2>
-      <p class="section-lede">Every paragraph is embedded with a sentence-transformer and assigned to the closest of <span data-summary="topic-count">19</span> policy topics. Native American affairs, currency and territorial expansion fade out; health care, education, immigration and the economy rise.</p>
+      <p class="section-lede">Every paragraph is embedded with a sentence-transformer and classified into one of <span data-summary="topic-count">19</span> policy topics by a model trained on 26,000 hand-coded State of the Union sentences plus 750 historical paragraphs labeled by Claude. Native American affairs, currency and territorial expansion fade out in the 20th century; health care, education, immigration and the economy rise.</p>
       <figure class="card" data-chart="topics" data-table="topics_by_decade:decade,topic,share">
         <figcaption><strong>Share of words by topic and decade</strong><span><b class="light-only">Darker</b><b class="dark-only">Brighter</b> = more attention. Ceremonial and unclassified passages are left out.</span></figcaption>
         <div class="chart"></div>
@@ -96,7 +100,7 @@
           <div class="chart"></div>
         </figure>
         <figure class="card" data-chart="party_words" data-table="party_words:word,side,dem,rep,z">
-          <figcaption><strong>Democrats vs. Republicans since 1965</strong><span>Words and phrases each party's presidents favor.</span></figcaption>
+          <figcaption><strong>Democrats vs. Republicans since 1965</strong><span>Words and phrases each party's presidents favor in spoken addresses, with every address weighted equally so that a few very long written reports don't dominate.</span></figcaption>
           <div class="chart"></div>
         </figure>
       </div>
@@ -132,8 +136,10 @@
     <section id="map">
       <h2>A map of 236 years of speeches</h2>
       <p class="section-lede">Each message becomes a single vector (the average of its paragraph embeddings), and UMAP flattens those vectors onto a page. Speeches that sit close together read alike. The map sorts itself by era almost on its own, because the language changed more over time than it differs between parties.</p>
-      <figure class="card" data-chart="map" data-table="speeches:president,date,party,top_topic">
+      <p class="section-lede"><strong>Era removed</strong> subtracts, from each speech, the average of the speeches given within about a decade of it, leaving only how it differs from its contemporaries. Neighbors are then typically 20 years apart instead of 4, and speeches group by president. Party adds almost nothing: among a speech's five closest matches by <em>other</em> presidents, the share from the same party is 52%, no better than chance.</p>
+      <figure class="card" data-chart="map" data-bind data-table="speeches:president,date,party,top_topic">
         <figcaption><strong>Speech similarity map</strong><span>Hover for details; click to open.</span></figcaption>
+        <div class="bind"></div>
         <div class="chart"></div>
       </figure>
     </section>
@@ -167,6 +173,8 @@
         </div>
         <h4>Most similar messages</h4>
         <ul class="chips links" id="sp-similar"></ul>
+        <h4>Kindred speeches from other eras</h4>
+        <ul class="chips links" id="sp-kindred"></ul>
         <div class="reader-head">
           <h4>Full text</h4>
           <label class="switch"><input type="checkbox" id="tone-toggle"> Highlight sentence tone</label>
@@ -186,7 +194,8 @@
           <ul>
             <li><strong>Tone:</strong> <code>cardiffnlp/twitter-roberta-base-sentiment-latest</code>, sentence level.</li>
             <li><strong>Emotion:</strong> <code>j-hartmann/emotion-english-distilroberta-base</code>, sentence level.</li>
-            <li><strong>Topics &amp; map:</strong> <code>all-mpnet-base-v2</code> paragraph embeddings, nearest topic centroid, then UMAP.</li>
+            <li><strong>Topics:</strong> logistic regression on <code>all-mpnet-base-v2</code> paragraph embeddings, trained on the <a href="https://comparativeagendas.net/us/datasets">Policy Agendas Project</a>'s hand-coded State of the Union sentences (1946–2025) plus 750 paragraphs from every era labeled by Claude (<code>claude-opus-5-5</code>) under a written rubric.</li>
+            <li><strong>Map:</strong> word-weighted mean of paragraph embeddings per speech, projected with UMAP. The era-removed view subtracts a Gaussian-weighted (σ = 10 years) average of neighboring speeches first.</li>
             <li><strong>Sentences &amp; places:</strong> spaCy <code>en_core_web_sm</code>.</li>
           </ul>
         </div>
@@ -196,7 +205,7 @@
             <li>The models were trained on modern English. Scores for 18th- and 19th-century prose are less reliable, so read the early decades as rough trends.</li>
             <li>Written messages (most of 1801–1912) were reports to Congress, not speeches to the public, so compare eras with care.</li>
             <li>Sentiment is not approval. A sentence about a war's victims scores negative even when the president is honoring them.</li>
-            <li>Topic labels are a fixed taxonomy, not discovered clusters, and anything that matches no topic well is left as “other.”</li>
+            <li>Topic labels are a fixed taxonomy, not discovered clusters. Validated against held-out data, the classifier gets 69% of 1790–1860 paragraphs right, 76% for 1861–1945 and 81% since 1946 (scored against Claude's labels; a version trained on the benchmark alone gets 62% of individual modern sentences right against human coders). Read the heatmap as decade-level trends, not paragraph-level facts. Full numbers: <a href="https://github.com/tiroger/NLP-SOTU/blob/main/data/validation/report.md">validation report</a>.</li>
           </ul>
           <p>Code, notebooks and data: <a href="https://github.com/tiroger/NLP-SOTU">github.com/tiroger/NLP-SOTU</a>.</p>
         </div>

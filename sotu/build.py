@@ -16,6 +16,7 @@ from spacy.lang.en.stop_words import STOP_WORDS
 
 from sotu import charts, models, topics
 from sotu.process import ROOT, load_processed, load_speeches
+from sotu.validate_topics import topic_classifier
 
 SITE_DATA = ROOT / "site" / "data"
 SITE_CHARTS = ROOT / "site" / "charts"
@@ -85,15 +86,15 @@ def tone_arc(tone: np.ndarray) -> list[float]:
 
 # --- Build steps -------------------------------------------------------------
 
-def speech_table(speeches, processed, topic_names, centroids):
+def speech_table(speeches, processed, topic_names, classify):
     rows, topic_rows, para_rows, embeddings = [], [], [], []
     for s, p in zip(speeches, processed):
         emb = p["paragraph_embeddings"].astype(np.float32)
         para_words = np.array([len(x.split()) for x in p["paragraphs"]], dtype=float)
-        labels, scores = topics.assign(emb, topic_names, centroids)
+        labels, scores = classify(emb)
         para_rows.append(pd.DataFrame({
             "speech_id": s["id"], "year": int(s["date"][:4]), "paragraph": np.arange(len(labels)),
-            "topic": labels, "similarity": scores.astype(np.float32), "text": p["paragraphs"],
+            "topic": labels, "score": scores.astype(np.float32), "text": p["paragraphs"],
         }))
         shares = Counter()
         for label, n in zip(labels, para_words):
@@ -125,14 +126,43 @@ def speech_table(speeches, processed, topic_names, centroids):
     return pd.DataFrame(rows), pd.DataFrame(topic_rows), pd.concat(para_rows, ignore_index=True), np.stack(embeddings)
 
 
+ERA_BANDWIDTH = 10  # years; Gaussian window for the era-adjusted map
+
+
+def era_adjusted(embeddings: np.ndarray, when: np.ndarray, sigma: float = ERA_BANDWIDTH) -> np.ndarray:
+    """Remove the shared language of each era from the speech vectors.
+
+    Each vector minus the Gaussian-weighted average of the other speeches near
+    it in time, so what's left is how a speech differs from its contemporaries.
+    """
+    w = np.exp(-0.5 * ((when[:, None] - when[None, :]) / sigma) ** 2)
+    np.fill_diagonal(w, 0)
+    resid = embeddings - (w @ embeddings) / w.sum(axis=1, keepdims=True)
+    return resid / np.linalg.norm(resid, axis=1, keepdims=True)
+
+
 def add_map_and_neighbors(df: pd.DataFrame, embeddings: np.ndarray) -> None:
     import umap
 
-    xy = umap.UMAP(n_neighbors=12, min_dist=0.35, metric="cosine", random_state=42).fit_transform(embeddings)
+    def project(x):
+        return umap.UMAP(n_neighbors=12, min_dist=0.35, metric="cosine", random_state=42).fit_transform(x)
+
+    xy = project(embeddings)
     df["map_x"], df["map_y"] = xy[:, 0], xy[:, 1]
     sims = embeddings @ embeddings.T
     np.fill_diagonal(sims, -1)
     df["similar"] = [[df.id.iloc[j] for j in np.argsort(-row)[:5]] for row in sims]
+
+    adjusted = era_adjusted(embeddings, df["when"].to_numpy())
+    xy = project(adjusted)
+    df["adj_x"], df["adj_y"] = xy[:, 0], xy[:, 1]
+    # Kindred speeches from other eras: closest after removing era, at least 20
+    # years apart and by a different president.
+    sims = adjusted @ adjusted.T
+    far = (np.abs(df.year.to_numpy()[:, None] - df.year.to_numpy()[None, :]) >= 20) & (
+        df.president.to_numpy()[:, None] != df.president.to_numpy()[None, :])
+    sims[~far] = -9
+    df["kindred"] = [[df.id.iloc[j] for j in np.argsort(-row)[:5]] for row in sims]
 
 
 def decade_topics(topic_df: pd.DataFrame, speeches_df: pd.DataFrame, topic_names: list[str]) -> pd.DataFrame:
@@ -181,18 +211,27 @@ def distinctive_words(df, processed, top_n=15, min_count=5) -> pd.DataFrame:
 
 
 def party_words(df, processed, top_n=20) -> pd.DataFrame:
-    dem, rep = Counter(), Counter()
-    for (year, group), p in zip(zip(df.year, df.party_group), processed):
-        if year >= MODERN_PARTY_ERA:
-            words = content_words(p["unigrams"]) + content_words(p["bigrams"])
-            (dem if group == "Democratic" else rep if group == "Republican" else Counter()).update(words)
-    prior = dem + rep
-    prior = Counter({w: n for w, n in prior.items() if n >= 15})
+    """Words Democratic vs Republican presidents favor in spoken addresses since 1965.
+
+    Each address is rescaled to the same length before pooling. Otherwise a few
+    very long texts dominate: Carter's 1978-81 written reports alone were 35%
+    of all Democratic words, so his report vocabulary read as "Democratic".
+    """
+    keep = (df.year >= MODERN_PARTY_ERA) & (df.delivery == "spoken") & df.party_group.isin(["Democratic", "Republican"])
+    target_len = df[keep].words.mean()
+    weighted = {"Democratic": Counter(), "Republican": Counter()}
+    raw = {"Democratic": Counter(), "Republican": Counter()}
+    for group, words, p in zip(df.party_group[keep], df.words[keep], (p for p, k in zip(processed, keep) if k)):
+        counts = content_words(p["unigrams"]) + content_words(p["bigrams"])
+        raw[group].update(counts)
+        scale = target_len / words
+        weighted[group].update({w: n * scale for w, n in counts.items()})
+    dem, rep = weighted["Democratic"], weighted["Republican"]
+    prior = Counter({w: n for w, n in (dem + rep).items() if n >= 15})
     z = log_odds_z(rep, dem, prior)
     ranked = sorted(z, key=z.get)
-    rows = [{"word": w, "z": z[w], "side": "Democratic", "dem": dem[w], "rep": rep[w]} for w in ranked[:top_n]]
-    rows += [{"word": w, "z": z[w], "side": "Republican", "dem": dem[w], "rep": rep[w]} for w in ranked[-top_n:]]
-    return pd.DataFrame(rows)
+    row = lambda w, side: {"word": w, "z": z[w], "side": side, "dem": raw["Democratic"][w], "rep": raw["Republican"][w]}
+    return pd.DataFrame([row(w, "Democratic") for w in ranked[:top_n]] + [row(w, "Republican") for w in ranked[-top_n:]])
 
 
 def word_index(df, processed) -> dict:
@@ -238,9 +277,8 @@ def export_chart(name: str, chart: alt.TopLevelMixin) -> None:
 def main() -> None:
     speeches = load_speeches()
     processed = load_processed(speeches)
-    topic_names, cents = topics.centroids(models.embed)
-
-    df, topic_df, paragraph_df, embeddings = speech_table(speeches, processed, topic_names, cents)
+    topic_names = list(topics.TOPICS)
+    df, topic_df, paragraph_df, embeddings = speech_table(speeches, processed, topic_names, topic_classifier())
     add_map_and_neighbors(df, embeddings)
 
     by_decade_topics = decade_topics(topic_df, df, topic_names)
@@ -273,7 +311,7 @@ def main() -> None:
 
     # Tidy tables for the notebooks
     DERIVED.mkdir(parents=True, exist_ok=True)
-    df.drop(columns=["topics", "places", "similar"]).to_csv(DERIVED / "speech_features.csv", index=False)
+    df.drop(columns=["topics", "places", "similar", "kindred"]).to_csv(DERIVED / "speech_features.csv", index=False)
     sentence_table(df, processed).to_parquet(DERIVED / "sentences.parquet", compression="zstd")
     topic_df.to_csv(DERIVED / "speech_topics.csv", index=False)
     paragraph_df.to_parquet(DERIVED / "paragraph_topics.parquet", compression="zstd")
@@ -286,6 +324,7 @@ def main() -> None:
     export_chart("diversity", charts.diversity_chart(url("speeches")))
     export_chart("tone", charts.tone_chart(url("speeches")))
     export_chart("pronouns", charts.pronoun_chart(url("speeches")))
+    export_chart("tone_mix", charts.tone_mix_chart(url("speeches")))
     export_chart("emotions", charts.emotion_chart(url("emotions_by_decade")))
     export_chart("topics", charts.topic_heatmap(url("topics_by_decade"), topic_order))
     export_chart("president_tone", charts.president_tone_chart(url("presidents")))

@@ -60,3 +60,32 @@ def test_tone_arc_shape():
 
     arc = tone_arc(np.linspace(-1, 1, 500))
     assert len(arc) == 40 and arc[0] < 0 < arc[-1]
+
+
+def test_cap_mapping_splits_macro_and_public_lands():
+    from sotu.validate_topics import LABELS, cap_to_topic
+
+    assert cap_to_topic(1, 105) == "Taxes & budget"
+    assert cap_to_topic(1, 104) == "Banking & currency"
+    assert cap_to_topic(1, 103) == "Economy & jobs"
+    assert cap_to_topic(21, 2102) == "Native American affairs"
+    assert cap_to_topic(21, 2105) == "Territories & expansion"
+    assert cap_to_topic(21, 2101) == "Energy & environment"
+    assert cap_to_topic(-555, -555) == "Other"
+    assert all(cap_to_topic(m, m * 100) in LABELS for m in range(0, 24))
+
+
+def test_era_adjustment_removes_shared_time_trend():
+    import numpy as np
+
+    from sotu.build import era_adjusted
+
+    rng = np.random.default_rng(0)
+    when = np.linspace(1790, 2026, 200)
+    trend = np.outer(np.sin(when / 40), np.ones(16))  # language drifting with time
+    speech = rng.normal(size=(200, 16))
+    e = trend * 5 + speech
+    e /= np.linalg.norm(e, axis=1, keepdims=True)
+    adj = era_adjusted(e, when)
+    corr = lambda x: abs(np.corrcoef(x @ np.ones(16), np.sin(when / 40))[0, 1])
+    assert corr(e) > 0.9 and corr(adj) < 0.3

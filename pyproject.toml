@@ -21,6 +21,8 @@ dependencies = [
     "altair>=6.3.0",
     "marimo>=0.25.2",
     "pyarrow>=26.0.0",
+    "anthropic>=2.3.0",
+    "python-dotenv>=1.2.4",
 ]
 
 [dependency-groups]

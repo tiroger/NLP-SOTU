@@ -1,10 +1,12 @@
 """Policy-topic taxonomy for paragraph classification.
 
-Each paragraph is embedded and assigned to the topic whose centroid (the mean
-embedding of the descriptions below) is most similar, provided the similarity
-clears MIN_SIMILARITY; otherwise it is "Other" (greetings, applause lines,
-ceremonial passages). Descriptions mix modern and 19th-century phrasing so
-both eras land in the right place.
+The build classifies paragraphs with the supervised model in
+sotu/validate_topics.py, which uses the descriptions below as training
+anchors and as the rubric Claude labels with. Without Claude labels it falls
+back to this module's method: the topic whose centroid (the mean embedding of
+its descriptions) is most similar, if the similarity clears MIN_SIMILARITY,
+else "Other". Descriptions mix modern and 19th-century phrasing so both eras
+land in the right place.
 """
 
 import numpy as np
