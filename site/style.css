@@ -48,6 +48,16 @@
   --neg: 217, 89, 38;
 }
 
+/* Copy that differs by theme (e.g. the heatmap ramp flips in dark mode). */
+.dark-only { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .light-only { display: none; }
+  :root:not([data-theme="light"]) .dark-only { display: inline; }
+}
+:root[data-theme="dark"] .light-only { display: none; }
+:root[data-theme="dark"] .dark-only { display: inline; }
+.light-only, .dark-only { font-weight: inherit; }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 56px; }
 body {
