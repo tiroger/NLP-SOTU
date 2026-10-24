@@ -2,9 +2,17 @@
 
 Natural-language analysis of **every U.S. State of the Union message, 1790–2026**: 243 messages from 43 presidents, about 2 million words.
 
-**Live site: <https://tiroger.github.io/NLP-SOTU/>**
+**Live site: <https://tiroger.github.io/NLP-SOTU/>**  ·  [![Deploy site to GitHub Pages](https://github.com/tiroger/NLP-SOTU/actions/workflows/pages.yml/badge.svg)](https://github.com/tiroger/NLP-SOTU/actions/workflows/pages.yml)
 
 ![Screenshot of the site](docs/screenshot.png)
+
+## Key findings
+
+- **Plainer language.** Average Flesch–Kincaid grade level fell from about 19 in the 1790s to 16 around 1900, 12 in the 1950s and 8 in the 2020s.
+- **The upbeat turn.** Net tone averaged slightly negative through the 19th century (−0.08 in the 1850s) and has been clearly positive since the 1940s (+0.14 in the 1950s, +0.16 in the 1980s), as the address moved to radio and television.
+- **From "the Government" to "we."** First-person plural pronouns rose from about 10 per 1,000 words in the written-message era to about 40 after World War II.
+- **New agendas.** Native American affairs, currency and territorial expansion all but vanish after 1900. Health care and immigration each grow from 1–2% of words to about 6–7% in the 2020s.
+- **Parties sound alike in tone.** Since 1965, Republican messages average slightly more positive than Democratic ones (+0.156 vs. +0.137), but the gap is not significant (permutation p ≈ 0.39, n = 35 / 32). Word choice separates the parties far more than sentiment does.
 
 ## What's in it
 
@@ -51,10 +59,19 @@ uv run python -m sotu.build               # write site/data and site/charts
 python -m http.server -d site 8000        # preview at http://localhost:8000
 ```
 
-Notebooks:
+### Notebooks (marimo)
+
+| Notebook | Contents |
+|---|---|
+| [`01_collect_data.py`](notebooks/01_collect_data.py) | Scraping, corpus overview, spoken vs. written, cleaning before/after |
+| [`02_exploratory_analysis.py`](notebooks/02_exploratory_analysis.py) | Length, reading level, MTLD vs. unique words, distinctive words, word trends |
+| [`03_sentiment_analysis.py`](notebooks/03_sentiment_analysis.py) | Tone and emotion, party comparison with permutation test and bootstrap CI, VADER cross-check |
+| [`04_topics_and_similarity.py`](notebooks/04_topics_and_similarity.py) | Topic heatmap, classifier spot-checks, interactive UMAP map |
+| [`05_speech_generator.py`](notebooks/05_speech_generator.py) | Party-specific Markov-chain speech generator |
 
 ```bash
-uv run marimo edit notebooks/03_sentiment_analysis.py
+uv run marimo edit notebooks/03_sentiment_analysis.py   # interactive editor
+uv run marimo run notebooks/05_speech_generator.py      # app mode
 ```
 
 The notebooks read the committed files in `data/` and `site/data/`, so they work right after cloning without re-running the models.
