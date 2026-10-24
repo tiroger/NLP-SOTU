@@ -89,16 +89,6 @@ git add data site && git commit -m "Add <year> address" && git push
 
 Only the new speech goes through the models; everything else comes from the cache. Pushing changes under `site/` redeploys the site.
 
-## What changed from the original (2020–2023) version
-
-- **Data:** 229 → 243 messages. The Selenium scraper clicked the first link per year, so it missed 1790–92 and every year with two messages. It now covers 2023–2026 and records whether each message was spoken or written.
-- **Parties:** the Whig presidents were mislabelled "democratic_republican", and Nixon had no party because of a name mismatch.
-- **Sentiment:** TextBlob ran on text with punctuation already stripped, which destroyed sentence boundaries and negation. It's replaced by sentence-level transformer models on the cleaned original text.
-- **Vocabulary:** the "unique words per president" chart mostly measured how much each president wrote (Spearman ρ = 0.97 with total words). It's replaced by MTLD.
-- **Word clouds** are replaced by log-odds distinctive words, per president and per party.
-- **Speech generator:** the Keras char-LSTM trained its "Republican" model on Democratic text and fed characters as scalars. It's replaced by a word-level Markov chain in [`05_speech_generator.py`](notebooks/05_speech_generator.py).
-- **Tooling:** Jupyter → marimo, pip/conda pins → `uv` + `pyproject.toml`, matplotlib/seaborn → Altair. About 250 MB of pickles and model weights are no longer tracked.
-
 ## Data source and caveats
 
 Texts come from [The American Presidency Project](https://www.presidency.ucsb.edu/documents/presidential-documents-archive-guidebook/annual-messages-congress-the-state-the-union), UC Santa Barbara. The models were trained on modern English, so read scores for 18th- and 19th-century prose as rough trends. Most messages from 1801–1912 were written reports, not speeches, so compare eras with care.
