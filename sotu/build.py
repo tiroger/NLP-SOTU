@@ -16,7 +16,9 @@ from spacy.lang.en.stop_words import STOP_WORDS
 
 from sotu import charts, models, topics, visuals
 from sotu.process import ROOT, load_processed, load_speeches
-from sotu.validate_topics import topic_classifier
+from sotu.validate_topics import topic_classifier, CAP_PATH, LABELS_PATH, SAMPLE_PATH
+from sotu.provenance import pipeline_manifest, file_hash, fingerprint
+from sotu.statistics import comparison_report
 
 SITE_DATA = ROOT / "site" / "data"
 SITE_CHARTS = ROOT / "site" / "charts"
@@ -108,16 +110,18 @@ def speech_table(speeches, processed, topic_names, classify):
         dominant = np.asarray(p["emotions"], dtype=np.float32).argmax(axis=1)
         emotion_share = Counter(p["emotion_labels"][i] for i in dominant)
         n_sent = max(len(dominant), 1)
-        day = pd.Timestamp(s["date"]).dayofyear
+        day = pd.Timestamp(s["date"]).day_of_year
         named = {t: v for t, v in shares.items() if t != "Other"}
+        tone_class = np.asarray(p["tone_probs"]).argmax(axis=1)
         rows.append({
             "id": s["id"], "president": s["president"], "party": s["party"], "party_group": party_group(s["party"]),
             "date": s["date"], "year": int(s["date"][:4]), "when": int(s["date"][:4]) + day / 366,
             "delivery": s["delivery"], "formal_sotu": s["formal_sotu"], "title": s["title"], "url": s["url"],
             **p["stats"],
             "tone": float(np.mean(p["tone"])),
-            "positive_share": float(np.mean(p["tone"] > 0.5)),
-            "negative_share": float(np.mean(p["tone"] < -0.5)),
+            **{f"{label}_share": float(np.mean(tone_class == i)) for i, label in enumerate(p["tone_labels"])},
+            **{f"strong_{label}_{threshold}": float(np.mean(sign * p["tone"] > threshold))
+               for label, sign in [("positive", 1), ("negative", -1)] for threshold in (0.25, 0.5, 0.75)},
             **{f"emotion_{e}": emotion_share.get(e, 0) / n_sent for e in p["emotion_labels"]},
             "top_topic": max(named, key=named.get) if named else "Other",
             "topics": {t: v for t, v in sorted(shares.items(), key=lambda kv: -kv[1]) if v >= 0.01},
@@ -170,7 +174,18 @@ def decade_topics(topic_df: pd.DataFrame, speeches_df: pd.DataFrame, topic_names
     totals = speeches_df.assign(decade=speeches_df.year // 10 * 10).groupby("decade").words.sum()
     out = topic_df.groupby(["decade", "topic"]).words.sum().reset_index()
     out["share"] = out.words / out.decade.map(totals)
-    return out[["decade", "topic", "share"]]
+    # Resample whole messages, preserving each message's topic composition.
+    # These intervals describe corpus sampling variation, not classifier error.
+    rng = np.random.default_rng(0)
+    intervals = []
+    for decade, g in speeches_df.groupby(speeches_df.year // 10 * 10):
+        sub = topic_df[topic_df.decade == decade].pivot(index="id", columns="topic", values="words").reindex(g.id).fillna(0)
+        idx = rng.integers(0, len(g), size=(1000, len(g)))
+        draws = sub.to_numpy()[idx].sum(axis=1) / g.words.to_numpy()[idx].sum(axis=1)[:, None]
+        for i, topic in enumerate(sub.columns):
+            lo, hi = np.quantile(draws[:, i], [0.025, 0.975])
+            intervals.append({"decade": decade, "topic": topic, "ci_low": lo, "ci_high": hi, "n_speeches": len(g)})
+    return out[["decade", "topic", "share"]].merge(pd.DataFrame(intervals), on=["decade", "topic"])
 
 
 def decade_emotions(df: pd.DataFrame) -> pd.DataFrame:
@@ -265,6 +280,9 @@ def sentence_table(df, processed) -> pd.DataFrame:
             "text": p["sentences"], "tone": p["tone"].astype(np.float32),
             "emotion": [p["emotion_labels"][i] for i in probs.argmax(axis=1)],
             "emotion_score": probs.max(axis=1),
+            "tone_label": [p["tone_labels"][i] for i in np.asarray(p["tone_probs"]).argmax(axis=1)],
+            **{f"tone_p_{e}": np.asarray(p["tone_probs"])[:, i] for i, e in enumerate(p["tone_labels"])},
+            **{f"emotion_p_{e}": probs[:, i] for i, e in enumerate(p["emotion_labels"])},
         }))
     return pd.concat(frames, ignore_index=True)
 
@@ -280,6 +298,18 @@ def main() -> None:
     topic_names = list(topics.TOPICS)
     df, topic_df, paragraph_df, embeddings = speech_table(speeches, processed, topic_names, topic_classifier())
     add_map_and_neighbors(df, embeddings)
+    write_json(SITE_DATA / "comparisons.json", comparison_report(df, embeddings, era_adjusted), digits=6)
+    manifest = {"pipeline": pipeline_manifest(), "corpus_sha256": file_hash(ROOT / "data" / "speeches.jsonl"),
+                "analysis_sources": {p.name: file_hash(p) for p in sorted((ROOT / "sotu").glob("*.py"))},
+                "publication_sources": {str(p.relative_to(ROOT)): file_hash(p) for p in [ROOT / "site" / "index.html", ROOT / "site" / "app.js", ROOT / "site" / "style.css"]},
+                "topic_inputs": {p.name: file_hash(p) for p in [CAP_PATH, LABELS_PATH, SAMPLE_PATH] if p.exists()},
+                "topic_method": "hybrid" if LABELS_PATH.exists() else "centroid fallback",
+                "human_validation": {"historical_topics": "pending", "sentiment": "pending", "emotion": "pending"},
+                "runtime_device": models.device(), "umap_seed": 42,
+                "annotation_sample_sha256": file_hash(ROOT / "data" / "validation" / "human_review.jsonl"),
+                "topic_interval_scope": "message bootstrap; excludes classification error", "bootstrap_seed": 0}
+    manifest["build_id"] = fingerprint(manifest)
+    write_json(SITE_DATA / "manifest.json", manifest)
 
     by_decade_topics = decade_topics(topic_df, df, topic_names)
     topic_order = by_decade_topics.groupby("topic").share.mean().sort_values(ascending=False).index.tolist()
@@ -359,6 +389,7 @@ def main() -> None:
     export_chart("profiles", charts.profile_chart(url("president_profiles"), pres_chrono, list(visuals.PROFILE_METRICS.values())))
 
     write_json(SITE_DATA / "summary.json", {
+        "build_id": manifest["build_id"],
         "speeches": len(df), "presidents": df.president.nunique(), "words": int(df.words.sum()),
         "first": df.date.min(), "last": df.date.max(), "latest": df.iloc[-1][["id", "president", "date"]].to_dict(),
         "spoken": int((df.delivery == "spoken").sum()), "written": int((df.delivery == "written").sum()),

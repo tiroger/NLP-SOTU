@@ -22,7 +22,7 @@
         </button>
       </div>
       <h1>The State of the Union, in data</h1>
-      <p class="lede">Every annual message a U.S. president has sent or delivered to Congress, read by machine: how long and how complex they are, how they feel, what they talk about, and the words that set each president apart.</p>
+      <p class="lede">Every annual message a U.S. president has sent or delivered to Congress, read by machine: how long and how complex they are, model-estimated tone, what they talk about, and the words that set each president apart.</p>
       <dl class="tiles">
         <div class="tile"><dt>Messages</dt><dd data-summary="speeches">—</dd></div>
         <div class="tile"><dt>Presidents</dt><dd data-summary="presidents">—</dd></div>
@@ -41,18 +41,18 @@
   <main class="wrap">
     <section id="length">
       <h2>Shorter sentences, plainer words</h2>
-      <p class="section-lede">From Jefferson (1801) until Wilson revived the spoken address in 1913, the State of the Union was a written report, and the reports got long. Spoken addresses are shorter, and since the arrival of radio and television the reading level has fallen sharply.</p>
+      <p class="section-lede">From Jefferson (1801) until Wilson revived the spoken address in 1913, the State of the Union was a written report, and the reports got long. Spoken addresses are shorter, and the Flesch–Kincaid reading-level estimate has declined over time. Delivery format, audience and historical language all change together; this comparison does not identify their separate effects.</p>
       <figure class="card" data-chart="length" data-table="speeches:president,date,delivery,words">
         <figcaption><strong>Words per message</strong><span>One mark per message. Line: LOESS trend. Click a mark to open the speech.</span></figcaption>
         <div class="chart"></div>
       </figure>
       <div class="grid-2">
         <figure class="card" data-chart="grade" data-table="speeches:president,date,grade_level,words_per_sentence">
-          <figcaption><strong>Reading grade level</strong><span>Flesch–Kincaid: years of schooling needed to follow the text.</span></figcaption>
+          <figcaption><strong>Reading grade level</strong><span>Flesch–Kincaid formula estimate, based on sentence length and syllables. It does not directly test comprehension.</span></figcaption>
           <div class="chart"></div>
         </figure>
         <figure class="card" data-chart="diversity" data-table="speeches:president,date,lexical_diversity">
-          <figcaption><strong>Vocabulary richness</strong><span>MTLD lexical diversity. Unlike counting unique words, it doesn't reward long texts.</span></figcaption>
+          <figcaption><strong>Vocabulary richness</strong><span>MTLD lexical diversity, which reduces dependence on text length compared with counting unique words.</span></figcaption>
           <div class="chart"></div>
         </figure>
       </div>
@@ -64,17 +64,17 @@
 
     <section id="tone">
       <h2>Tone and emotion</h2>
-      <p class="section-lede">Each of the <span data-summary="sentences">~100,000</span> sentences is scored by a RoBERTa sentiment model as positive, neutral or negative. A message's <em>net tone</em> is the average of P(positive) − P(negative) across its sentences. For most of the 19th century the average message was close to neutral, sometimes negative. Since the 1940s, with the address aimed at a radio and then television audience, it has been reliably upbeat.</p>
+      <p class="section-lede">Each of the <span data-summary="sentences">~74,000</span> sentences receives positive, neutral and negative probabilities from a RoBERTa model. A message's <em>net tone</em> averages P(positive) − P(negative). These are model estimates of textual valence, with no independent human validation across historical eras yet. Changes in scores may reflect subject matter, delivery format or model bias as well as rhetoric.</p>
       <figure class="card" data-chart="tone" data-table="speeches:president,date,tone,positive_share,negative_share">
-        <figcaption><strong>Net tone of every message</strong><span>Above zero: more upbeat than downbeat sentences. Vertical lines mark major crises.</span></figcaption>
+        <figcaption><strong>Net tone of every message</strong><span>Above zero: higher average positive than negative probability. This is not a count of positive sentences. Vertical lines mark major crises.</span></figcaption>
         <div class="chart"></div>
       </figure>
-      <figure class="card" data-chart="tone_mix" data-table="speeches:president,date,positive_share,negative_share">
-        <figcaption><strong>Not just happier: more emphatic</strong><span>Share of sentences that are clearly upbeat, clearly downbeat, or in between, averaged by decade. After WWII upbeat sentences doubled while downbeat ones never fell. Today they are as common as during the Depression, so the rise in net tone comes from fewer neutral sentences, not fewer negative ones.</span></figcaption>
+      <figure class="card" data-chart="tone_mix" data-table="speeches:president,date,positive_share,negative_share,neutral_share">
+        <figcaption><strong>Model-assigned sentiment classes</strong><span>Each sentence is assigned its highest-probability class: positive, negative or neutral. Shares are averaged equally across messages within each decade. These classes differ from net-score threshold bands; uncertainty and mixed valence can remain within every class.</span></figcaption>
         <div class="chart"></div>
       </figure>
       <figure class="card" data-chart="arcs_era" data-table="arcs_by_era:era,position,tone">
-        <figcaption><strong>How messages open and close</strong><span>Average tone from the first sentence to the last, by era. Every era opens warm, sinks as the message turns to business, and rises at the close. Since 1913 addresses end higher than they begin (1913–1964: +0.18 to +0.26; since 1965: +0.30 to +0.42). Nineteenth-century messages dipped below zero in their first third and ended a little below where they started.</span></figcaption>
+        <figcaption><strong>How messages open and close</strong><span>Smoothed model-estimated tone from the first sentence to the last, averaged equally across messages by era. Broad era groupings combine different presidents, subjects and delivery formats.</span></figcaption>
         <div class="chart"></div>
       </figure>
       <div class="grid-2">
@@ -83,7 +83,7 @@
           <div class="chart"></div>
         </figure>
         <figure class="card" data-chart="emotions" data-table="emotions_by_decade:decade,emotion,share">
-          <figcaption><strong>Emotions by decade</strong><span>Share of sentences whose strongest emotion (DistilRoBERTa, Ekman's six + neutral) is each one. Scales differ per panel.</span></figcaption>
+          <figcaption><strong>Model-assigned emotions by decade</strong><span>Share of sentences assigned each emotion by DistilRoBERTa (six emotions plus neutral). These labels describe the model’s reading of the text, not the president’s psychological state. Historical human validation is pending. Scales differ per panel.</span></figcaption>
           <div class="chart"></div>
         </figure>
       </div>
@@ -91,22 +91,22 @@
 
     <section id="topics">
       <h2>What they talk about</h2>
-      <p class="section-lede">Every paragraph is embedded with a sentence-transformer and classified into one of <span data-summary="topic-count">19</span> policy topics by a model trained on 26,000 hand-coded State of the Union sentences plus 750 historical paragraphs labeled by Claude. Native American affairs, currency and territorial expansion fade out in the 20th century; health care, education, immigration and the economy rise.</p>
-      <figure class="card" data-chart="topics" data-table="topics_by_decade:decade,topic,share">
-        <figcaption><strong>Share of words by topic and decade</strong><span><b class="light-only">Darker</b><b class="dark-only">Brighter</b> = more attention. Ceremonial and unclassified passages are left out.</span></figcaption>
+      <p class="section-lede">Every paragraph is embedded with a sentence-transformer, with long passages split into complete chunks and pooled by length, then assigned a dominant label from <span data-summary="topic-count">19</span> policy topics by a model trained on 26,000 hand-coded State of the Union sentences plus 750 paragraphs from across eras labeled by Claude. These are estimates under a fixed taxonomy; historical labels are weak supervision, not independent human ground truth.</p>
+      <figure class="card" data-chart="topics" data-table="topics_by_decade:decade,topic,share,ci_low,ci_high,n_speeches">
+        <figcaption><strong>Estimated topic attention by decade</strong><span><b class="light-only">Darker</b><b class="dark-only">Brighter</b> = more estimated attention. Every word inherits its paragraph’s dominant topic. Other is hidden but stays in the denominator. Hover for message-bootstrap intervals, which exclude classification error; aggregation does not remove systematic model bias.</span></figcaption>
         <div class="chart"></div>
       </figure>
       <figure class="card" data-chart="anatomy" data-renderer="canvas" data-table="anatomy:id,group,s,e">
-        <figcaption><strong>The anatomy of every message</strong><span>One strip per message, oldest at top, each paragraph colored by its topic group and sized by its words. Modern addresses wrap policy in ceremony: since 1965 it fills 55% of a message's first tenth and 59% of its last, against 10% of the middle. The written reports of 1861–1912 went straight to business, with 11% and 5%. Hover for details; click to open a message.</span></figcaption>
+        <figcaption><strong>The anatomy of every message</strong><span>One strip per message, oldest at top, each paragraph colored by its topic group and sized by its words. The Other label includes ceremony, transitions and passages with no policy point; it is not a direct measure of ceremony alone. Hover for details; click to open a message.</span></figcaption>
         <div class="chart"></div>
       </figure>
     </section>
 
     <section id="world">
       <h2>Where presidents look</h2>
-      <p class="section-lede">Every country a message names, matched to today's borders (Prussia counts as Germany, Persia as Iran, the Soviet Union as Russia). Drag the slider: Britain, Spain and France dominate the early decades, China and the Philippines around 1900, Japan and Germany in the 1940s, the Soviet Union through the Cold War, Iraq in the 2000s, Ukraine and China today.</p>
+      <p class="section-lede">Detected place names are matched to present-day country proxies: Prussia is displayed as Germany, Persia as Iran, and the Soviet Union as Russia. These historical aliases simplify changing borders; they do not describe territorial continuity. Ambiguous and unresolved names are omitted, and recognition quality can vary by era.</p>
       <figure class="card" data-chart="world" data-bind data-table="places_by_decade:decade,country,mentions,share">
-        <figcaption><strong>Share of foreign-country mentions, by decade</strong><span>Countries named via spaCy entity recognition; mentions of capitals (“our minister at London”) count for their country.</span></figcaption>
+        <figcaption><strong>Share of foreign-country mentions, by decade</strong><span>Share among resolved foreign-country mentions, not all words or all place mentions. Recognized capitals (“our minister at London”) count for their country. Historical empires are represented by single country proxies.</span></figcaption>
         <div class="bind"></div>
         <div class="chart"></div>
       </figure>
@@ -161,8 +161,9 @@
 
     <section id="map">
       <h2>A map of 236 years of speeches</h2>
-      <p class="section-lede">Each message becomes a single vector (the average of its paragraph embeddings), and UMAP flattens those vectors onto a page. Speeches that sit close together read alike. The map sorts itself by era almost on its own, because the language changed more over time than it differs between parties.</p>
-      <p class="section-lede"><strong>Era removed</strong> subtracts, from each speech, the average of the speeches given within about a decade of it, leaving only how it differs from its contemporaries. Neighbors are then typically 20 years apart instead of 4, and speeches group by president. Party adds almost nothing: among a speech's five closest matches by <em>other</em> presidents, the share from the same party is 52%, no better than chance.</p>
+      <p class="section-lede">Each message becomes a word-weighted average of complete paragraph embeddings. UMAP projects these vectors to two dimensions for exploration. Apparent distances and clusters can change with projection settings; nearest-neighbor calculations use the original embedding space.</p>
+      <p class="section-lede"><strong>Era adjusted</strong> subtracts a Gaussian-weighted average of other messages near each speech in time (σ = 10 years). This leaves differences from contemporaries, which still mix president, party, topic and delivery format. It does not isolate personal style or a causal party effect.</p>
+      <p class="section-lede" id="party-comparison">Party comparisons use presidents as the inference unit. Exact permutations preserve each president’s speeches; a non-significant result does not establish that the parties are equivalent. <a href="data/comparisons.json">Computed results and sensitivity checks</a>.</p>
       <figure class="card" data-chart="map" data-bind data-table="speeches:president,date,party,top_topic">
         <figcaption><strong>Speech similarity map</strong><span>Hover for details; click to open.</span></figcaption>
         <div class="bind"></div>
@@ -172,7 +173,7 @@
 
     <section id="presidents">
       <h2>Presidents compared</h2>
-      <p class="section-lede">Each president's average on six measures, shaded by how far it sits from typical. Against <strong>all presidents</strong>, era dominates: every modern president reads at a low grade level and says “we” often. Against <strong>their era</strong> (messages within about a decade), what's left is personal style.</p>
+      <p class="section-lede">Each president's average on six measures, shaded by how far it sits from typical. Against <strong>all presidents</strong>, historical era is a major source of variation in reading-level estimates and pronoun rates. Against <strong>their era</strong> (messages within about a decade), the residual still reflects subject matter, delivery format and model error as well as personal style.</p>
       <figure class="card" data-chart="profiles" data-bind data-table="president_profiles:president,metric,value,z_era,z_all">
         <figcaption><strong>President profiles</strong><span>Shading: within ±0.5 standard deviations is typical; beyond ±1.5 is much higher or lower. Orange and blue mark direction only, not good or bad.</span></figcaption>
         <div class="bind"></div>
@@ -215,7 +216,7 @@
           <h4>Full text</h4>
           <label class="switch"><input type="checkbox" id="tone-toggle"> Highlight sentence tone</label>
         </div>
-        <p class="tone-legend" hidden><span class="neg">negative</span><span class="pos">positive</span> Shading strength is proportional to the model's confidence.</p>
+        <p class="tone-legend" hidden><span class="neg">negative</span><span class="pos">positive</span> Shading strength follows the magnitude of the model’s net score; probabilities are not calibrated confidence.</p>
         <div class="reader" id="sp-text"></div>
       </article>
     </section>
@@ -230,19 +231,20 @@
           <ul>
             <li><strong>Tone:</strong> <code>cardiffnlp/twitter-roberta-base-sentiment-latest</code>, sentence level.</li>
             <li><strong>Emotion:</strong> <code>j-hartmann/emotion-english-distilroberta-base</code>, sentence level.</li>
-            <li><strong>Topics:</strong> logistic regression on <code>all-mpnet-base-v2</code> paragraph embeddings, trained on the <a href="https://comparativeagendas.net/us/datasets">Policy Agendas Project</a>'s hand-coded State of the Union sentences (1946–2025) plus 750 paragraphs from every era labeled by Claude (<code>claude-opus-5-5</code>) under a written rubric.</li>
-            <li><strong>Map:</strong> word-weighted mean of paragraph embeddings per speech, projected with UMAP. The era-removed view subtracts a Gaussian-weighted (σ = 10 years) average of neighboring speeches first.</li>
+            <li><strong>Topics:</strong> logistic regression on <code>all-mpnet-base-v2</code> embeddings of complete paragraphs (long inputs are chunked and pooled), trained on the <a href="https://comparativeagendas.net/us/datasets">Policy Agendas Project</a>'s hand-coded State of the Union sentences (1946–2025) plus 750 paragraphs from every era labeled by Claude (<code>claude-opus-5-5</code>) under a written rubric.</li>
+            <li><strong>Map:</strong> word-weighted mean of paragraph embeddings per speech, projected with UMAP. The era-adjusted view subtracts a Gaussian-weighted (σ = 10 years) average of neighboring speeches first.</li>
             <li><strong>Sentences &amp; places:</strong> spaCy <code>en_core_web_sm</code>.</li>
           </ul>
         </div>
         <div>
           <h3>Caveats</h3>
           <ul>
-            <li>The models were trained on modern English. Scores for 18th- and 19th-century prose are less reliable, so read the early decades as rough trends.</li>
+            <li>Sentiment and emotion were trained on modern sources, including social media. Independent human validation across eras is pending. Treat these as exploratory model scores, not established changes in presidential happiness or emotion; automated cross-checks do not establish accuracy.</li>
             <li>Written messages (most of 1801–1912) were reports to Congress, not speeches to the public, so compare eras with care.</li>
             <li>Sentiment is not approval. A sentence about a war's victims scores negative even when the president is honoring them.</li>
-            <li>Topic labels are a fixed taxonomy, not discovered clusters. Validated against held-out data, the classifier gets 69% of 1790–1860 paragraphs right, 76% for 1861–1945 and 81% since 1946 (scored against Claude's labels; a version trained on the benchmark alone gets 62% of individual modern sentences right against human coders). Read the heatmap as decade-level trends, not paragraph-level facts. Full numbers: <a href="https://github.com/tiroger/NLP-SOTU/blob/main/data/validation/report.md">validation report</a>.</li>
+            <li>Topic labels are a fixed taxonomy. Validation holds out presidents from both benchmark and paragraph training sources. Claude agrees with human benchmark coders on 67.3% overall, and 81% of its high-confidence subset; repeatability is not accuracy. The original paragraph reference excludes texts under 20 words. Independent human historical and short-passage validation is pending. Classification errors can bias decade trends. Full results: <a href="https://github.com/tiroger/NLP-SOTU/blob/main/data/validation/report.md">validation report</a>.</li>
           </ul>
+          <p>Reproducibility: <a href="data/manifest.json">model revisions, data and code hashes</a>. Independent annotation: <a href="https://github.com/tiroger/NLP-SOTU/blob/main/docs/annotation.md">human review protocol</a>. Build <code data-summary="build-id">pending</code>.</p>
           <p>Code, notebooks and data: <a href="https://github.com/tiroger/NLP-SOTU">github.com/tiroger/NLP-SOTU</a>.</p>
         </div>
       </div>

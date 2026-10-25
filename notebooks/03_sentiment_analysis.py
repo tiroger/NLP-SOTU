@@ -24,19 +24,14 @@ def _(mo):
     mo.md(r"""
     # 3 · Tone and emotion
 
-    **What changed from the original analysis.** The first version ran
-    TextBlob over text that had already been lower-cased and stripped of
-    punctuation, then took one polarity score per speech. TextBlob is a word
-    lexicon that averages adjective scores. It can't read negation (“not
-    good”) or context, and with punctuation gone it couldn't even split
-    sentences.
-
     Now every sentence is scored by a 3-class RoBERTa model
     (`cardiffnlp/twitter-roberta-base-sentiment-latest`):
     **net tone = P(positive) − P(negative)**, averaged over the sentences of
     a speech. A DistilRoBERTa emotion model
     (`j-hartmann/emotion-english-distilroberta-base`) adds Ekman's six basic
-    emotions plus neutral.
+    emotions plus neutral. Probabilities are uncalibrated estimates; historical
+    human validation is pending. Neutral class shares use all three model classes,
+    rather than a net-score threshold band.
     """)
     return
 
@@ -74,52 +69,24 @@ def _(mo):
     there are only C(11, 5) = 462 ways to split them into 5 and 6, so the
     permutation test enumerates all of them (an exact p-value), and the
     confidence interval comes from a bootstrap that resamples presidents.
-    The naive speech-level p-value is shown for comparison.
+    Spoken-only sensitivity and graph-label permutations use the same committed
+    comparison results as the website. This is an observational comparison
+    assuming exchangeable presidents, not a randomized experiment.
     """)
     return
 
 
 @app.cell
-def _(mo, np, pd, speeches):
-    from itertools import combinations
+def _(SITE_DATA, mo, pd):
+    import json
 
-    _modern = speeches[(speeches.year >= 1965) & speeches.party_group.isin(["Democratic", "Republican"])]
-    _rng = np.random.default_rng(0)
-
-    _by_pres = _modern.groupby(["president", "party_group"]).mean(numeric_only=True).reset_index()
-
-    def _speech_level_p(col):
-        d = _modern[_modern.party_group == "Democratic"][col].to_numpy()
-        r = _modern[_modern.party_group == "Republican"][col].to_numpy()
-        observed, pooled = r.mean() - d.mean(), np.concatenate([d, r])
-        perms = np.array([(lambda x: x[len(d):].mean() - x[:len(d)].mean())(_rng.permutation(pooled)) for _ in range(10_000)])
-        return (np.abs(perms) >= abs(observed)).mean()
-
-    def _test(col):
-        d = _by_pres[_by_pres.party_group == "Democratic"][col].to_numpy()
-        r = _by_pres[_by_pres.party_group == "Republican"][col].to_numpy()
-        observed, pooled = r.mean() - d.mean(), np.concatenate([d, r])
-        # Exact permutation test over every way to assign len(d) presidents to "Democratic".
-        diffs = []
-        for dem_idx in combinations(range(len(pooled)), len(d)):
-            mask = np.zeros(len(pooled), bool)
-            mask[list(dem_idx)] = True
-            diffs.append(pooled[~mask].mean() - pooled[mask].mean())
-        diffs = np.array(diffs)
-        boots = np.array([_rng.choice(r, len(r)).mean() - _rng.choice(d, len(d)).mean() for _ in range(10_000)])
-        return {
-            "measure": col, "Democratic mean": d.mean(), "Republican mean": r.mean(),
-            "difference (R − D)": observed,
-            "95% CI (president bootstrap)": f"[{np.percentile(boots, 2.5):+.3f}, {np.percentile(boots, 97.5):+.3f}]",
-            "exact p (presidents)": (np.abs(diffs) >= abs(observed) - 1e-12).mean(),
-            "naive p (speeches)": _speech_level_p(col),
-            "presidents (D / R)": f"{len(d)} / {len(r)}",
-        }
-
-    party_tests = pd.DataFrame([_test(c) for c in ["tone", "positive_share", "negative_share", "grade_level", "we_per_1k", "i_per_1k"]])
-    mo.ui.table(party_tests.round(3), selection=None)
+    _results = json.loads((SITE_DATA / "comparisons.json").read_text())
+    mo.vstack([
+        mo.md("Exploratory president-level comparisons, including spoken-only sensitivity. Non-significance does not establish equivalence; party and era were not randomized."),
+        mo.ui.table(pd.DataFrame(_results["party"]).round(3), selection=None),
+        mo.ui.table(pd.DataFrame(_results["neighbor_party"]).round(3), selection=None),
+    ])
     return
-
 
 @app.cell
 def _(alt, charts, speeches):
@@ -132,7 +99,7 @@ def _(alt, charts, speeches):
         color=alt.Color("party_group:N", scale=_scale, legend=None),
         tooltip=["president:N", "date:N", alt.Tooltip("tone:Q", format="+.2f")],
     ).transform_calculate(jitter="random()")
-    _mean = alt.Chart(_modern).mark_tick(thickness=3, size=36, color=charts.INK).encode(
+    _mean = alt.Chart(_modern.groupby(["president", "party_group"]).tone.mean().reset_index()).mark_tick(thickness=3, size=36, color=charts.INK).encode(
         y="party_group:N", x="mean(tone):Q"
     )
     (_strip + _mean).properties(width="container", height=160)
@@ -144,8 +111,8 @@ def _(mo):
     mo.md(r"""
     ## Sanity check: transformer vs. lexicon
 
-    VADER is a widely used rule-based sentiment lexicon. Where it and the
-    transformer agree, the trend is robust to the method. Where they diverge,
+    VADER is a widely used rule-based sentiment lexicon. Agreement with the
+    transformer is a method comparison, not independent accuracy validation. Where they diverge,
     the speeches are worth reading closely. Running VADER on a sample of
     sentences takes a few seconds.
     """)

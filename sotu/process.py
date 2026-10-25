@@ -4,7 +4,6 @@ Usage:
     uv run python -m sotu.process
 """
 
-import hashlib
 import json
 import pickle
 from collections import Counter
@@ -15,12 +14,12 @@ from tqdm import tqdm
 
 from sotu import models
 from sotu.text import analyze, clean_paragraphs
+from sotu.provenance import fingerprint, pipeline_manifest
 
 ROOT = Path(__file__).resolve().parent.parent
 SPEECHES_PATH = ROOT / "data" / "speeches.jsonl"
 CACHE_DIR = ROOT / ".cache" / "processed"
-# Bump to invalidate every cached result after changing cleaning or models.
-PIPELINE_VERSION = "1"
+# Pipeline code, model revisions and dependency versions are hashed automatically.
 
 
 def load_speeches() -> list[dict]:
@@ -29,7 +28,7 @@ def load_speeches() -> list[dict]:
 
 
 def _cache_path(speech: dict) -> Path:
-    digest = hashlib.sha1((PIPELINE_VERSION + json.dumps(speech["paragraphs"])).encode()).hexdigest()[:12]
+    digest = fingerprint({"pipeline": pipeline_manifest(), "paragraphs": speech["paragraphs"]})[:20]
     return CACHE_DIR / f"{speech['id']}-{digest}.pkl"
 
 
@@ -45,6 +44,7 @@ def process_speech(speech: dict) -> dict:
     paragraphs = clean_paragraphs(speech["paragraphs"])
     a = analyze(paragraphs)
     emotion_labels, emotion_probs = models.emotions(a["sentences"])
+    tone_labels, tone_probs = models.tone_probabilities(a["sentences"])
     return {
         "id": speech["id"],
         "paragraphs": paragraphs,
@@ -54,7 +54,10 @@ def process_speech(speech: dict) -> dict:
         "entities": a["entities"],
         "unigrams": Counter(a["tokens"]),
         "bigrams": bigrams(a["tokens"]),
-        "tone": models.tone(a["sentences"]),
+        "tone": tone_probs[:, tone_labels.index("positive")] - tone_probs[:, tone_labels.index("negative")],
+        "tone_labels": tone_labels,
+        "tone_probs": tone_probs,
+        "provenance": pipeline_manifest(),
         "emotion_labels": emotion_labels,
         "emotions": emotion_probs.astype(np.float16),
         "paragraph_embeddings": models.embed(paragraphs).astype(np.float16),
@@ -63,7 +66,7 @@ def process_speech(speech: dict) -> dict:
 
 def load_processed(speeches: list[dict] | None = None) -> list[dict]:
     """Return processed results for every speech, computing any that are missing."""
-    speeches = speeches or load_speeches()
+    speeches = load_speeches() if speeches is None else speeches
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     results = []
     for speech in tqdm(speeches, desc="speeches"):
@@ -72,11 +75,11 @@ def load_processed(speeches: list[dict] | None = None) -> list[dict]:
             with path.open("rb") as f:
                 results.append(pickle.load(f))
             continue
-        for stale in CACHE_DIR.glob(f"{speech['id']}-*.pkl"):
-            stale.unlink()
         result = process_speech(speech)
-        with path.open("wb") as f:
+        temporary = path.with_suffix(".tmp")
+        with temporary.open("wb") as f:
             pickle.dump(result, f)
+        temporary.replace(path)
         results.append(result)
     return results
 

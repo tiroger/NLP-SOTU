@@ -37,11 +37,11 @@ session = requests.Session()
 session.headers.update(HEADERS)
 
 
-def fetch(url: str) -> str:
+def fetch(url: str, refresh: bool = False) -> str:
     """GET a URL, caching the body on disk so re-runs don't hit the server."""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     path = CACHE_DIR / (hashlib.sha1(url.encode()).hexdigest() + ".html")
-    if path.exists():
+    if path.exists() and not refresh:
         return path.read_text()
     time.sleep(REQUEST_DELAY)
     r = session.get(url, timeout=30)
@@ -120,7 +120,9 @@ def load_existing() -> dict[str, dict]:
 def check() -> int:
     """Print messages listed in the index but missing locally. Returns how many."""
     existing = load_existing()
-    new = [e for e in parse_index(session.get(INDEX_URL, timeout=30).text) if e["url"] not in existing]
+    response = session.get(INDEX_URL, timeout=30)
+    response.raise_for_status()
+    new = [e for e in parse_index(response.text) if e["url"] not in existing]
     for e in new:
         print(f"NEW: {e['index_year']} {e['president']} {e['url']}")
     print(f"{len(new)} new message(s)")
@@ -129,7 +131,7 @@ def check() -> int:
 
 def main(refresh: bool = False) -> None:
     existing = {} if refresh else load_existing()
-    entries = parse_index(fetch(INDEX_URL))
+    entries = parse_index(fetch(INDEX_URL, refresh=True))
     print(f"Index lists {len(entries)} messages; {len(existing)} already scraped")
 
     speeches, taken = [], set()
@@ -138,7 +140,7 @@ def main(refresh: bool = False) -> None:
             speech = existing[entry["url"]]
         else:
             print(f"  fetching {entry['index_year']} {entry['president']}")
-            speech = {**entry, **parse_speech(fetch(entry["url"]))}
+            speech = {**entry, **parse_speech(fetch(entry["url"], refresh=refresh))}
             speech["party"] = party_of(entry["president"])
         speech["id"] = speech_id(speech, speech["date"], taken)
         taken.add(speech["id"])

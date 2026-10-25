@@ -17,6 +17,8 @@ Usage:
 """
 
 import argparse
+import gzip
+import hashlib
 import json
 from pathlib import Path
 
@@ -25,7 +27,9 @@ import pandas as pd
 import requests
 
 from sotu import models, topics
-from sotu.process import ROOT
+from sotu.process import ROOT, load_speeches
+from sotu.provenance import file_hash, fingerprint
+from sotu.presidents import canonical_name
 
 VALIDATION_DIR = ROOT / "data" / "validation"
 SAMPLE_PATH = VALIDATION_DIR / "sample.jsonl"
@@ -35,6 +39,8 @@ REPORT_PATH = VALIDATION_DIR / "report.md"
 CAP_URL = "https://minio.la.utexas.edu/compagendas/datasetfiles/US-Exec_SOTU_2025.csv"
 CAP_PATH = ROOT / ".cache" / "external" / "US-Exec_SOTU_2025.csv"
 CAP_EMB_PATH = ROOT / ".cache" / "external" / "cap_embeddings.npy"
+CAP_ARCHIVE = ROOT / "data" / "reference" / "US-Exec_SOTU_2025.csv.gz"
+CAP_SHA256 = "dfa6801aaf93a795f7e8ecb51e7a9f4f38983f5198e3ad0869207e84998b97ee"
 
 MODEL = "claude-opus-5-5"
 ERAS = [(1790, 1860), (1861, 1912), (1913, 1945), (1946, 2030)]
@@ -64,33 +70,57 @@ def cap_to_topic(major: int, sub: int) -> str:
 def load_cap() -> pd.DataFrame:
     if not CAP_PATH.exists():
         CAP_PATH.parent.mkdir(parents=True, exist_ok=True)
-        r = requests.get(CAP_URL, timeout=120)
-        r.raise_for_status()
-        CAP_PATH.write_bytes(r.content)
+        if CAP_ARCHIVE.exists():
+            content = gzip.decompress(CAP_ARCHIVE.read_bytes())
+        else:
+            r = requests.get(CAP_URL, timeout=120)
+            r.raise_for_status()
+            content = r.content
+        if hashlib.sha256(content).hexdigest() != CAP_SHA256:
+            raise ValueError("Benchmark content differs from the pinned reference snapshot")
+        CAP_PATH.write_bytes(content)
+    if file_hash(CAP_PATH) != CAP_SHA256:
+        raise ValueError("Cached benchmark differs from the pinned reference snapshot")
     cap = pd.read_csv(CAP_PATH, encoding_errors="replace").dropna(subset=["description"]).reset_index(drop=True)
+    cap["president"] = cap.president.map(canonical_name)
     cap["label"] = [cap_to_topic(int(m), int(s)) for m, s in zip(cap.majortopic, cap.subtopic)]
     return cap
 
 
+def embedding_key(texts):
+    return fingerprint({"texts": list(texts), "model": models.REVISIONS[models.EMBEDDING_MODEL],
+                        "implementation": file_hash(ROOT / "sotu" / "models.py")})
+
+
 def cap_embeddings(cap: pd.DataFrame) -> np.ndarray:
-    if CAP_EMB_PATH.exists():
-        emb = np.load(CAP_EMB_PATH)
-        if len(emb) == len(cap):
-            return emb.astype(np.float32)
-    emb = models.embed(cap.description.tolist())
-    np.save(CAP_EMB_PATH, emb.astype(np.float16))
-    return emb.astype(np.float32)
+    key = embedding_key(cap.description.tolist())
+    meta = CAP_EMB_PATH.with_suffix(".sha256")
+    if CAP_EMB_PATH.exists() and meta.exists() and meta.read_text() == key:
+        return np.load(CAP_EMB_PATH).astype(np.float32)
+    emb = models.embed(cap.description.tolist()).astype(np.float32)
+    CAP_EMB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    np.save(CAP_EMB_PATH, emb)
+    meta.write_text(key)
+    return emb
+
+
+def benchmark_training_mask(cap, held_out_presidents):
+    """Exclude entire presidents across *both* training sources, not just paragraphs."""
+    held = {canonical_name(p) for p in held_out_presidents}
+    return ~cap.president.map(canonical_name).isin(held).to_numpy()
 
 
 # --- Sampling ------------------------------------------------------------------
 
 def sample() -> None:
+    if SAMPLE_PATH.exists() and LABELS_PATH.exists():
+        raise FileExistsError("Preserve the labeled development sample; use human_review prepare for an independent audit")
     paras = pd.read_parquet(ROOT / "data" / "derived" / "paragraph_topics.parquet")
-    paras = paras[paras.text.str.split().str.len() >= 20]
     rows = []
     for era in ERAS:
         pool = paras[paras.year.between(*era)]
-        pick = pool.sample(PER_ERA[era], random_state=7)
+        # Include short passages, which production also classifies.
+        pick = pool.sample(min(PER_ERA[era], len(pool)), random_state=7)
         rows += [{"key": f"p-{r.speech_id}-{r.paragraph}", "source": "paragraph", "speech_id": r.speech_id,
                   "year": int(r.year), "era": f"{era[0]}-{min(era[1], 2026)}", "text": r.text} for r in pick.itertuples()]
     cap = load_cap()
@@ -236,21 +266,24 @@ def topic_classifier():
     """Return ``classify(embeddings) -> (labels, confidence)`` for paragraph embeddings.
 
     With Claude labels present: logistic regression on the benchmark's human
-    codes plus the Claude-labeled historical paragraphs (the "hybrid" that won
-    every era in `evaluate`). Without them: the description-centroid method.
+    codes plus the Claude-labeled paragraphs (the hybrid evaluated with
+    president-grouped folds). Without them: the description-centroid method.
     """
     if not LABELS_PATH.exists():
         names, cents = topics.centroids(models.embed)
         return lambda emb: topics.assign(emb, names, cents)
 
-    import hashlib
-
     import joblib
 
-    key = hashlib.sha1(b"".join([
-        LABELS_PATH.read_bytes(), SAMPLE_PATH.read_bytes(), json.dumps(topics.TOPICS).encode(),
-        str(HISTORICAL_WEIGHT).encode(), CAP_URL.encode(),
-    ])).hexdigest()
+    cap = load_cap()
+    key = fingerprint({
+        "labels": file_hash(LABELS_PATH), "sample": file_hash(SAMPLE_PATH),
+        "topics": topics.TOPICS, "historical_weight": HISTORICAL_WEIGHT,
+        "benchmark": file_hash(CAP_PATH), "embedding": embedding_key(cap.description.tolist()),
+        "implementation": file_hash(Path(__file__)),
+        "president_normalization": file_hash(ROOT / "sotu" / "presidents.py"),
+        "sklearn": __import__("sklearn").__version__,
+    })
     if CLASSIFIER_PATH.exists():
         cached = joblib.load(CLASSIFIER_PATH)
         if cached["key"] == key:
@@ -294,7 +327,10 @@ def _supervised(X, y, extra_X=None, extra_y=None, C=2.0):
     if extra_X is not None:
         parts_X.append(extra_X)
         parts_y.append(extra_y)
-    return LogisticRegression(C=C, max_iter=3000).fit(np.vstack(parts_X), np.concatenate(parts_y))
+    from threadpoolctl import threadpool_limits
+
+    with threadpool_limits(limits=4):
+        return LogisticRegression(C=C, max_iter=3000).fit(np.vstack(parts_X), np.concatenate(parts_y))
 
 
 def evaluate() -> None:
@@ -305,12 +341,12 @@ def evaluate() -> None:
     names, cents = topics.centroids(models.embed)
     lines = ["# Topic classifier validation", ""]
 
-    # 1. Benchmark (1946-2025), leave-president-out.
+    # 1. Benchmark (1946-2025), president-grouped folds.
     centroid_pred, _ = topics.assign(X_cap, names, cents)
     oof = np.empty(len(cap), dtype=object)
     for tr, te in GroupKFold(n_splits=6).split(X_cap, cap.label, cap.president):
         oof[te] = _supervised(X_cap[tr], cap.label.to_numpy()[tr]).predict(X_cap[te])
-    lines += ["## Policy Agendas Project benchmark, 1946-2025 (sentence level, leave-president-out)", "",
+    lines += ["## Policy Agendas Project benchmark, 1946-2025 (sentence level, president-grouped folds)", "",
               "| classifier | n | accuracy | macro-F1 |", "|---|---|---|---|"]
     for name, pred in [("centroid (original method)", centroid_pred), ("supervised (benchmark-trained)", oof)]:
         s = _scores(cap.label, pred)
@@ -348,13 +384,21 @@ def evaluate() -> None:
     Xp = models.embed(paras.text.tolist()).astype(np.float32)
     yp = paras.topic.to_numpy()
     cen = np.array(topics.assign(Xp, names, cents)[0])
-    sup = _supervised(X_cap, cap.label.to_numpy()).predict(Xp)
-    # Benchmark + Claude-labeled historical paragraphs, cross-validated by speech.
-    hyb = np.empty(len(paras), dtype=object)
-    for tr, te in GroupKFold(n_splits=5).split(Xp, yp, paras.speech_id):
-        hyb[te] = _supervised(X_cap, cap.label.to_numpy(), np.repeat(Xp[tr], 5, axis=0), np.repeat(yp[tr], 5)).predict(Xp[te])
+    president_of = {s["id"]: s["president"] for s in load_speeches()}
+    paras["president"] = paras.speech_id.map(president_of)
+    if paras.president.isna().any():
+        raise ValueError("Validation paragraphs must map to corpus presidents")
+    sup, hyb = np.empty(len(paras), dtype=object), np.empty(len(paras), dtype=object)
+    for tr, te in GroupKFold(n_splits=5).split(Xp, yp, paras.president):
+        keep = benchmark_training_mask(cap, paras.president.iloc[te])
+        sup[te] = _supervised(X_cap[keep], cap.label.to_numpy()[keep]).predict(Xp[te])
+        hyb[te] = _supervised(X_cap[keep], cap.label.to_numpy()[keep],
+                              np.repeat(Xp[tr], HISTORICAL_WEIGHT, axis=0),
+                              np.repeat(yp[tr], HISTORICAL_WEIGHT)).predict(Xp[te])
     lines += ["## Paragraph classifiers vs. Claude labels, by era", "",
               "| era | n | centroid (original method) | benchmark-trained | benchmark + historical labels (used by the site) |", "|---|---|---|---|---|"]
+    evaluation_notes = ["", "Five folds grouped by president. Every test president is removed from both the benchmark and paragraph training data.",
+              "The reference is Claude, not human historical ground truth. These labels were also used for method selection; this is not an untouched final test set.", ""]
     best = {}
     for era, g in paras.groupby("era", sort=True):
         idx = g.index.to_numpy()
@@ -362,7 +406,40 @@ def evaluate() -> None:
         best[era] = max(row, key=lambda k: row[k]["macro_F1"])
         cells = " | ".join(f"acc {row[k]['accuracy']:.2f} / F1 {row[k]['macro_F1']:.2f}" for k in ("centroid", "supervised", "hybrid"))
         lines.append(f"| {era} | {len(idx)} | {cells} |")
-    lines += ["", "Best classifier by macro-F1 per era: " + ", ".join(f"{e}: **{b}**" for e, b in best.items()), ""]
+    lines += evaluation_notes
+    from sklearn.metrics import classification_report
+
+    lines += ["## Per-topic paragraph agreement (out-of-fold, all eras)", "",
+              "| Topic | Precision | Recall | F1 | Reference support |", "|---|---|---|---|---|"]
+    metrics = classification_report(yp, hyb, labels=LABELS, output_dict=True, zero_division=0)
+    for topic in LABELS:
+        m = metrics[topic]
+        lines.append(f"| {topic} | {m['precision']:.3f} | {m['recall']:.3f} | {m['f1-score']:.3f} | {int(m['support'])} |")
+    # Production hybrid assessed on human benchmark labels with both sources held out.
+    human_hybrid = np.empty(len(cap), dtype=object)
+    for tr, te in GroupKFold(n_splits=6).split(X_cap, cap.label, cap.president):
+        held = set(cap.president.iloc[te].map(canonical_name))
+        hk = ~paras.president.map(canonical_name).isin(held).to_numpy()
+        human_hybrid[te] = _supervised(X_cap[tr], cap.label.to_numpy()[tr],
+            np.repeat(Xp[hk], HISTORICAL_WEIGHT, axis=0), np.repeat(yp[hk], HISTORICAL_WEIGHT)).predict(X_cap[te])
+    m = _scores(cap.label, human_hybrid)
+    lines += ["", "## Production hybrid vs. human benchmark labels", "",
+              f"Six president-grouped folds, removing each test president from both sources: accuracy {m['accuracy']:.3f}, macro-F1 {m['macro_F1']:.3f} (n={m['n']:,}).",
+              "", "## Limits and independent review", "",
+              "Claude-human agreement is 67.3% overall on the original 300 benchmark sentences; high-confidence agreement describes only a subset. Repeatability is not accuracy.",
+              "The existing labeled paragraph sample excludes passages shorter than 20 words. New sampling includes them, but their human validation remains pending.",
+              "No independent human historical topic, sentiment or emotion evaluation has been completed. See human_review.jsonl and the annotation protocol.",
+              "Paragraph accuracy does not establish unbiased topic prevalence. Per-decade bootstrap intervals describe speech sampling variation only, not classifier error.", ""]
+    predictions = paras[["key", "speech_id", "president", "year", "era", "topic"]].copy()
+    predictions["prediction"] = hyb
+    predictions.to_json(VALIDATION_DIR / "topic_oof.jsonl", orient="records", lines=True)
+    (VALIDATION_DIR / "evaluation_manifest.json").write_text(json.dumps({
+        "benchmark_sha256": file_hash(CAP_PATH), "sample_sha256": file_hash(SAMPLE_PATH),
+        "labels_sha256": file_hash(LABELS_PATH), "implementation_sha256": file_hash(Path(__file__)),
+        "president_normalization_sha256": file_hash(ROOT / "sotu" / "presidents.py"),
+        "embedding_key": embedding_key(cap.description.tolist()), "paragraph_group": "president", "folds": 5,
+        "human_reference": "modern benchmark only", "independent_historical_review": "pending",
+    }, indent=2) + "\n")
     REPORT_PATH.write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
 

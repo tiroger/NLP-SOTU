@@ -1,0 +1,28 @@
+{
+  "status": "pending",
+  "items": 440,
+  "tasks": {
+    "topic": {
+      "total": 240,
+      "adjudicated": 0,
+      "scored": 0,
+      "ambiguous": 0,
+      "status": "pending"
+    },
+    "sentiment": {
+      "total": 200,
+      "adjudicated": 0,
+      "scored": 0,
+      "ambiguous": 0,
+      "status": "pending"
+    },
+    "emotion": {
+      "total": 200,
+      "adjudicated": 0,
+      "scored": 0,
+      "ambiguous": 0,
+      "status": "pending"
+    }
+  },
+  "limits": "Only independent, adjudicated human labels are scored. Partial completion may be selected; this audit is not a population estimate until all strata are complete."
+}

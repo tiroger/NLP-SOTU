@@ -1,0 +1,12 @@
+{
+  "benchmark_sha256": "dfa6801aaf93a795f7e8ecb51e7a9f4f38983f5198e3ad0869207e84998b97ee",
+  "sample_sha256": "7c410c0f5ed3c1097647caa8216f581989436f01b1206b09c74aa5606cb7306f",
+  "labels_sha256": "5562489c3167ed30bfdf340483f0f75b23d084e13e057a7b2d87fd0b3c882053",
+  "implementation_sha256": "1641012f79f49c1b39d1de16f8765c4f71605d7816f602f625f6e19b3f683f02",
+  "president_normalization_sha256": "dea27ce8d0d9103585abb2b5d67bcd3a3346e2d11b981cb37185e99d253eeed7",
+  "embedding_key": "8fa3314efe2f4e45e3e86e135ec26e2845b1d7a56a03cf6b71800c0f8a2da8a9",
+  "paragraph_group": "president",
+  "folds": 5,
+  "human_reference": "modern benchmark only",
+  "independent_historical_review": "pending"
+}

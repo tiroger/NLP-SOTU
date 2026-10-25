@@ -77,7 +77,7 @@ def _(mo):
     ## Spot-check the classifier
 
     Pick a topic to see random paragraphs assigned to it, with the
-    classifier's confidence. Low-confidence paragraphs are where
+    classifier's uncalibrated score. Low-score paragraphs are where
     misclassifications live.
     """)
     return
@@ -116,6 +116,10 @@ def _(alt, charts, paragraphs):
 def _(mo):
     mo.md(r"""
     ## Speech similarity map
+
+    Complete paragraph text is chunked and pooled before projection. The map is exploratory;
+    era adjustment does not isolate party or personal style. Historical human topic validation
+    remains pending; Claude-reference agreement is not human accuracy.
 
     Each speech's vector is the word-weighted average of its paragraph
     embeddings, projected to 2-D with UMAP (cosine metric). The main axis of

@@ -179,15 +179,13 @@ def pronoun_chart(data):
 
 
 def tone_mix_chart(data):
-    """Decade averages of upbeat, downbeat and in-between sentence shares.
+    """Decade averages of the sentiment model's three argmax class shares.
 
     Net tone mixes two things: how often presidents say anything evaluative,
     and which way it leans. Splitting the shares shows both.
     """
-    fields = {"positive_share": "Upbeat (tone > +0.5)", "negative_share": "Downbeat (tone < −0.5)", "neutral_share": "In between"}
-    long = alt.Chart(data).transform_calculate(
-        neutral_share="1 - datum.positive_share - datum.negative_share"
-    ).transform_fold(list(fields), as_=["kind", "share"]).transform_calculate(
+    fields = {"positive_share": "Positive class", "negative_share": "Negative class", "neutral_share": "Neutral class"}
+    long = alt.Chart(data).transform_fold(list(fields), as_=["kind", "share"]).transform_calculate(
         decade="floor(datum.year / 10) * 10",
         label=" : ".join(f"datum.kind == '{k}' ? '{v}'" for k, v in fields.items()) + " : ''",
     ).transform_aggregate(share="mean(share)", groupby=["decade", "label"])
@@ -239,7 +237,10 @@ def topic_heatmap(data, topics: list[str]):
                         legend=alt.Legend(orient="top", direction="horizontal", symbolType="square",
                                           symbolSize=160, symbolStrokeWidth=0, columnPadding=14)),
         tooltip=[alt.Tooltip("topic:N", title="Topic"), alt.Tooltip("decade:O", title="Decade"),
-                 alt.Tooltip("share:Q", title="Share of words", format=".1%")],
+                 alt.Tooltip("share:Q", title="Estimated share", format=".1%"),
+                 alt.Tooltip("ci_low:Q", title="Message bootstrap low", format=".1%"),
+                 alt.Tooltip("ci_high:Q", title="Message bootstrap high", format=".1%"),
+                 alt.Tooltip("n_speeches:Q", title="Messages")],
     ).properties(width="container", height=alt.Step(18))
 
 
@@ -312,7 +313,7 @@ def map_chart(data):
     speech's vector has its era's shared language removed (see build.era_adjusted).
     """
     view = alt.param(name="view", value="raw", bind=alt.binding_radio(
-        options=["raw", "adjusted"], labels=["As written", "Era removed"], name="Map "))
+        options=["raw", "adjusted"], labels=["As written", "Era adjusted"], name="Map "))
     return alt.Chart(data).transform_calculate(
         x="view == 'raw' ? datum.map_x : datum.adj_x",
         y="view == 'raw' ? datum.map_y : datum.adj_y",

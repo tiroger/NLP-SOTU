@@ -6,14 +6,12 @@ Natural-language analysis of **every U.S. State of the Union message, 1790–202
 
 ![Screenshot of the site](docs/screenshot.png)
 
-## Key findings
+## Findings and their limits
 
-- **Plainer language.** Average Flesch–Kincaid grade level fell from about 19 in the 1790s to 16 around 1900, 12 in the 1950s and 8 in the 2020s.
-- **The upbeat turn.** Net tone averaged slightly negative through the 19th century (−0.08 in the 1850s) and has been clearly positive since the 1940s (+0.14 in the 1950s, +0.16 in the 1980s), as the address moved to radio and television.
-- **From "the Government" to "we."** First-person plural pronouns rose from about 10 per 1,000 words in the written-message era to about 40 after World War II.
-- **New agendas.** Native American affairs, currency and territorial expansion all but vanish in the 20th century. Health care grows from under 1% of words before 1920 to about 10% in the 2020s, and immigration from about 1% to 4%.
-- **More emphatic, not just happier.** After WWII the share of clearly upbeat sentences doubled (about 14% → 32%), but downbeat sentences never declined. At 20–21% today, they're as common as during the Depression. Net tone rose because neutral sentences fell from about 72% to 47%.
-- **Parties sound alike.** Since 1965, Republican presidents average slightly more positive than Democratic ones (+0.157 vs. +0.132), but the gap is not significant (exact permutation test over presidents, p = 0.41, 6 vs. 5 presidents). The parties differ in vocabulary (Democrats: *jobs, middle class, families, college*; Republicans: *freedom, federal government, spending, defense*). But once each speech's era is removed, a speech's closest matches by other presidents are no more likely to share its party than chance (52% vs. 50%).
+- **Language and format change together.** Word counts, sentence lengths, pronouns, Flesch–Kincaid estimates and MTLD describe the corpus; they do not isolate the effects of broadcasting, audience or delivery format.
+- **Tone and emotion are model estimates.** Net tone is mean P(positive) − P(negative). Class shares use each sentence’s highest-probability class, including the actual neutral class. Historical human validation is pending; these scores do not establish changes in presidential happiness or psychological emotion.
+- **Topic attention is estimated.** Every word inherits its paragraph’s dominant topic. Complete text is embedded using sentence-aware chunks; paragraph vectors pool all chunks. Decade bootstrap intervals describe message sampling variation, excluding classification error. Weak-reference agreement does not establish unbiased topic prevalence.
+- **Party comparisons are exploratory.** President-level exact tests and bootstrap intervals are exported in [`site/data/comparisons.json`](site/data/comparisons.json), with spoken-only comparisons, score-threshold sensitivity and similarity checks at 5/10/20-year era bandwidths. Non-significance does not establish equivalence. Similarity permutations relabel whole presidents and weight query presidents equally.
 
 ## What's in it
 
@@ -22,14 +20,14 @@ Natural-language analysis of **every U.S. State of the Union message, 1790–202
 | Length, reading level, vocabulary richness | Word counts, Flesch–Kincaid grade, MTLD lexical diversity (length-robust) |
 | Tone of every sentence | RoBERTa 3-class sentiment (`cardiffnlp/twitter-roberta-base-sentiment-latest`) |
 | Emotion | DistilRoBERTa, Ekman's six + neutral (`j-hartmann/emotion-english-distilroberta-base`) |
-| Policy topics by decade | `all-mpnet-base-v2` paragraph embeddings → logistic regression trained on Policy Agendas Project hand codes + Claude-labeled historical paragraphs ([validation report](data/validation/report.md)) |
+| Policy topics by decade | `all-mpnet-base-v2` complete-text chunk pooling → logistic regression trained on Policy Agendas Project hand codes + Claude-labeled paragraphs ([validation report](data/validation/report.md)) |
 | Words that define each president / party | Log-odds ratio with informative Dirichlet prior (Monroe, Colaresi & Quinn 2008) |
 | Word & phrase trends | Per-speech unigram/bigram index, searchable in the browser |
 | Speech similarity map | Speech embeddings → UMAP, plus an era-removed view (Gaussian-weighted era average subtracted); nearest neighbours and "kindred speeches from other eras" per speech |
 | Places mentioned, “I” vs “we” | spaCy NER and pronoun rates |
 | World map of attention | Place names resolved to present-day countries (pycountry + historical aliases), share of mentions by decade |
 | Anatomy of every message | Each message as a strip of paragraphs colored by topic group |
-| How messages open and close | Sentence tone across each message, averaged by era |
+| How messages open and close | Model-estimated sentence valence across each message, averaged by era |
 | Words that arrived | Terms that first became common in each decade |
 | Sentence length | Distribution of words per sentence by decade |
 | President profiles | z-scores on six measures, against all presidents or each president's own era |
@@ -50,10 +48,15 @@ sotu/                 Python package
   charts.py           Altair charts + palette
   visuals.py          Data for the map, anatomy, arcs, new words, sentence lengths, profiles
   places.py           Place name -> present-day country (ISO numeric) resolution
+  statistics.py       President-level party tests, exact graph-label permutations and sensitivity
+  provenance.py       Model/dependency/code fingerprints for caches and builds
+  human_review.py     Blind audit sampling and independent human-label scoring
+  verify_site.py      Publication checks run before deployment
 notebooks/            marimo notebooks (01 data · 02 EDA · 03 sentiment · 04 topics · 05 generator)
 data/speeches.jsonl   The corpus: one JSON object per message (metadata + paragraphs)
 data/derived/         Tidy outputs for analysis (speech features, sentence scores, paragraph topics)
-data/validation/      Validation sample, Claude labels and the validation report
+data/validation/      Development labels, independent human audit and validation report
+data/reference/       Compressed, checksum-pinned human-coded benchmark snapshot
 site/                 Static website deployed to GitHub Pages
 tests/                pytest suite
 ```
@@ -63,7 +66,7 @@ tests/                pytest suite
 Requires [uv](https://docs.astral.sh/uv/). Python 3.12 is installed automatically.
 
 ```bash
-uv sync                                   # install dependencies
+uv sync --locked                          # install the locked dependency environment
 uv run python -m sotu.scrape              # fetch any new messages (incremental)
 uv run python -m sotu.process             # spaCy + transformers; ~20 min the first time on Apple silicon, cached after
 uv run python -m sotu.build               # write site/data and site/charts
@@ -87,17 +90,18 @@ uv run marimo run notebooks/05_speech_generator.py      # app mode
 
 The notebooks read the committed files in `data/` and `site/data/`, so they work right after cloning without re-running the models.
 
-Tests: `uv run pytest`.
+Tests: `uv run pytest`. After rebuilding, run `uv run python -m sotu.verify_site`; GitHub Pages runs the same artifact checks before deployment. The committed benchmark snapshot permits rebuilding without depending on mutable upstream dataset bytes.
 
 ## Validating the topic classifier
 
-The [validation report](data/validation/report.md) scores topic classifiers against the [Policy Agendas Project](https://comparativeagendas.net/us/datasets)'s hand-coded State of the Union sentences (1946–2025). Because nothing comparable exists before 1946, it also scores them against 750 paragraphs from every era labeled by Claude under a written rubric. Those labels were themselves checked: they agree with the human coders on 81% of the sentences Claude labels high-confidence, and 96.5% of labels are identical across two independent runs.
+The [validation report](data/validation/report.md) scores topic classifiers against the [Policy Agendas Project](https://comparativeagendas.net/us/datasets)'s hand-coded State of the Union sentences (1946–2025). Because nothing comparable exists before 1946, it also scores them against 750 paragraphs from every era labeled by Claude under a written rubric. Claude agrees with the human coders on **67.3% overall**, and 81% on its high-confidence subset. The 96.5% agreement between two labeling runs measures repeatability, not accuracy. Paragraph evaluation removes held-out presidents from **both** training sources. The original labeled paragraph sample excludes passages under 20 words; the new independent human sample includes them. Per-topic scores and production-hybrid human benchmark results are in the report.
 
 ```bash
-uv run python -m sotu.validate_topics sample     # fixed, seeded sample (already committed)
-uv run python -m sotu.validate_topics label      # needs ANTHROPIC_API_KEY (e.g. in a git-ignored .env); about $9
+# The development sample and its Claude labels are already committed.
 uv run python -m sotu.validate_topics evaluate   # writes data/validation/report.md
 ```
+
+Independent historical topic, sentiment and emotion validation remains pending. [`docs/annotation.md`](docs/annotation.md) describes a blind two-reader audit, with a committed unlabeled sample in `data/validation/human_review.jsonl`. Run `uv run python -m sotu.human_review evaluate` after independent annotation; it never substitutes LLM labels for human judgments.
 
 With labels present, `sotu.build` uses the hybrid classifier. Without them it falls back to the description-centroid method.
 
@@ -110,8 +114,10 @@ uv run python -m sotu.scrape && uv run python -m sotu.process && uv run python -
 git add data site && git commit -m "Add <year> address" && git push
 ```
 
-Only the new speech goes through the models; everything else comes from the cache. Pushing changes under `site/` redeploys the site.
+The index is fetched fresh on every scrape; `--refresh` also bypasses transcript HTML caches. Unchanged speeches use caches keyed by complete input, preprocessing code, pinned model revisions and dependency versions. Changes to those inputs trigger recomputation. [`site/data/manifest.json`](site/data/manifest.json) records the build’s code/data hashes and model revisions. Pushing changes under `site/` redeploys the site.
 
 ## Data source and caveats
+
+Use `uv sync --locked` for a reproducible dependency environment. Models use immutable Hugging Face commit revisions.
 
 Texts come from [The American Presidency Project](https://www.presidency.ucsb.edu/documents/presidential-documents-archive-guidebook/annual-messages-congress-the-state-the-union), UC Santa Barbara. The models were trained on modern English, so read scores for 18th- and 19th-century prose as rough trends. Most messages from 1801–1912 were written reports, not speeches, so compare eras with care.

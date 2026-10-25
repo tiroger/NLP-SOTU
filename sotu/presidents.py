@@ -3,6 +3,13 @@
 # The UCSB index table uses a few spellings that differ from how presidents are
 # usually written; map them to a single canonical display name.
 NAME_FIXES = {
+    # Policy Agendas benchmark names must match the corpus for cross-source holdouts.
+    "Bill (William J. ) Clinton": "William J. Clinton",
+    "Donald Trump": "Donald J. Trump",
+    "George H.W. Bush": "George H. W. Bush",
+    "Jimmy (James E.) Carter": "Jimmy Carter",
+    "Joe Biden": "Joseph R. Biden",
+    "Ronald W. Reagan": "Ronald Reagan",
     "Donald J. Trump - I": "Donald J. Trump",
     "Donald J. Trump - II": "Donald J. Trump",
     "Harry S Truman": "Harry S. Truman",

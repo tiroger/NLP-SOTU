@@ -35,7 +35,7 @@ id,year,topic,words
 1790-washington-2,1790,Infrastructure,0.0
 1790-washington-2,1790,Native American affairs,144.0
 1790-washington-2,1790,Science & technology,0.0
-1790-washington-2,1790,Government & administration,224.0
+1790-washington-2,1790,Government & administration,40.0
 1790-washington-2,1790,Territories & expansion,0.0
 1791-washington,1791,Economy & jobs,0.0
 1791-washington,1791,Taxes & budget,424.6035447761194
@@ -155,7 +155,7 @@ id,year,topic,words
 1797-adams,1797,Taxes & budget,44.71643238002908
 1797-adams,1797,Trade & tariffs,0.0
 1797-adams,1797,Banking & currency,0.0
-1797-adams,1797,Foreign affairs,1464.7115850702858
+1797-adams,1797,Foreign affairs,1296.7765390208433
 1797-adams,1797,Defense & war,198.73969946679594
 1797-adams,1797,Health care,0.0
 1797-adams,1797,Education,0.0
@@ -166,7 +166,7 @@ id,year,topic,words
 1797-adams,1797,Social welfare,0.0
 1797-adams,1797,Agriculture,0.0
 1797-adams,1797,Infrastructure,0.0
-1797-adams,1797,Native American affairs,157.0043625787688
+1797-adams,1797,Native American affairs,324.93940862821137
 1797-adams,1797,Science & technology,0.0
 1797-adams,1797,Government & administration,157.0043625787688
 1797-adams,1797,Territories & expansion,0.0
@@ -193,8 +193,8 @@ id,year,topic,words
 1799-adams,1799,Taxes & budget,146.31627906976743
 1799-adams,1799,Trade & tariffs,0.0
 1799-adams,1799,Banking & currency,0.0
-1799-adams,1799,Foreign affairs,603.1813953488372
-1799-adams,1799,Defense & war,216.9860465116279
+1799-adams,1799,Foreign affairs,820.167441860465
+1799-adams,1799,Defense & war,0.0
 1799-adams,1799,Health care,0.0
 1799-adams,1799,Education,0.0
 1799-adams,1799,Immigration,0.0
@@ -540,13 +540,13 @@ id,year,topic,words
 1817-monroe,1817,Health care,0.0
 1817-monroe,1817,Education,94.78482446206115
 1817-monroe,1817,Immigration,0.0
-1817-monroe,1817,Energy & environment,111.74631936579841
+1817-monroe,1817,Energy & environment,0.0
 1817-monroe,1817,Crime & justice,0.0
 1817-monroe,1817,Civil rights,0.0
 1817-monroe,1817,Social welfare,98.77576443941109
 1817-monroe,1817,Agriculture,0.0
 1817-monroe,1817,Infrastructure,265.3975084937712
-1817-monroe,1817,Native American affairs,620.5911664779162
+1817-monroe,1817,Native American affairs,732.3374858437146
 1817-monroe,1817,Science & technology,0.0
 1817-monroe,1817,Government & administration,383.1302378255945
 1817-monroe,1817,Territories & expansion,0.0
@@ -554,7 +554,7 @@ id,year,topic,words
 1818-monroe,1818,Taxes & budget,240.17333638234618
 1818-monroe,1818,Trade & tariffs,342.8200320146352
 1818-monroe,1818,Banking & currency,0.0
-1818-monroe,1818,Foreign affairs,2057.916761948319
+1818-monroe,1818,Foreign affairs,2223.347358792591
 1818-monroe,1818,Defense & war,359.76171964326545
 1818-monroe,1818,Health care,0.0
 1818-monroe,1818,Education,0.0
@@ -568,7 +568,7 @@ id,year,topic,words
 1818-monroe,1818,Native American affairs,579.0070889549509
 1818-monroe,1818,Science & technology,0.0
 1818-monroe,1818,Government & administration,231.20420763777724
-1818-monroe,1818,Territories & expansion,391.65195517951065
+1818-monroe,1818,Territories & expansion,226.22135833523896
 1819-monroe,1819,Economy & jobs,291.1298424861643
 1819-monroe,1819,Taxes & budget,199.4040017028523
 1819-monroe,1819,Trade & tariffs,447.6619838229034
@@ -589,7 +589,7 @@ id,year,topic,words
 1819-monroe,1819,Government & administration,0.0
 1819-monroe,1819,Territories & expansion,103.69008088548318
 1820-monroe,1820,Economy & jobs,63.6282311937264
-1820-monroe,1820,Taxes & budget,330.0714493174557
+1820-monroe,1820,Taxes & budget,452.3569561428986
 1820-monroe,1820,Trade & tariffs,274.3967470229451
 1820-monroe,1820,Banking & currency,0.0
 1820-monroe,1820,Foreign affairs,1230.808597153645
@@ -597,7 +597,7 @@ id,year,topic,words
 1820-monroe,1820,Health care,0.0
 1820-monroe,1820,Education,0.0
 1820-monroe,1820,Immigration,0.0
-1820-monroe,1820,Energy & environment,122.28550682544294
+1820-monroe,1820,Energy & environment,0.0
 1820-monroe,1820,Crime & justice,0.0
 1820-monroe,1820,Civil rights,0.0
 1820-monroe,1820,Social welfare,0.0
@@ -683,10 +683,10 @@ id,year,topic,words
 1824-monroe,1824,Science & technology,0.0
 1824-monroe,1824,Government & administration,325.6137354651163
 1824-monroe,1824,Territories & expansion,89.61845930232559
-1825-adams,1825,Economy & jobs,214.07679465776295
+1825-adams,1825,Economy & jobs,104.06510851419031
 1825-adams,1825,Taxes & budget,792.877017250974
 1825-adams,1825,Trade & tariffs,408.3316638842515
-1825-adams,1825,Banking & currency,0.0
+1825-adams,1825,Banking & currency,110.01168614357262
 1825-adams,1825,Foreign affairs,1390.5080690038951
 1825-adams,1825,Defense & war,1801.8130217028377
 1825-adams,1825,Health care,0.0
@@ -700,7 +700,7 @@ id,year,topic,words
 1825-adams,1825,Infrastructure,784.9482470784641
 1825-adams,1825,Native American affairs,266.60489705064
 1825-adams,1825,Science & technology,719.5358931552588
-1825-adams,1825,Government & administration,863.2448525319978
+1825-adams,1825,Government & administration,811.7078464106845
 1825-adams,1825,Territories & expansion,0.0
 1826-adams,1826,Economy & jobs,142.87345879299156
 1826-adams,1826,Taxes & budget,885.8154445165476
@@ -767,17 +767,17 @@ id,year,topic,words
 1829-jackson,1829,Defense & war,1576.5873408097318
 1829-jackson,1829,Health care,0.0
 1829-jackson,1829,Education,0.0
-1829-jackson,1829,Immigration,0.0
+1829-jackson,1829,Immigration,156.46283976430337
 1829-jackson,1829,Energy & environment,0.0
-1829-jackson,1829,Crime & justice,317.908572514731
+1829-jackson,1829,Crime & justice,537.1558639042007
 1829-jackson,1829,Civil rights,30.89393651397073
 1829-jackson,1829,Social welfare,0.0
 1829-jackson,1829,Agriculture,67.76734461129062
 1829-jackson,1829,Infrastructure,208.2849268199962
 1829-jackson,1829,Native American affairs,746.4373693214219
 1829-jackson,1829,Science & technology,0.0
-1829-jackson,1829,Government & administration,2181.5105493252236
-1829-jackson,1829,Territories & expansion,516.2277133624787
+1829-jackson,1829,Government & administration,1962.2632579357537
+1829-jackson,1829,Territories & expansion,359.7648735981753
 1830-jackson,1830,Economy & jobs,734.8544395924309
 1830-jackson,1830,Taxes & budget,606.2299854439592
 1830-jackson,1830,Trade & tariffs,1941.3318777292575
@@ -795,7 +795,7 @@ id,year,topic,words
 1830-jackson,1830,Infrastructure,791.6885007278021
 1830-jackson,1830,Native American affairs,1079.8471615720525
 1830-jackson,1830,Science & technology,0.0
-1830-jackson,1830,Government & administration,4367.248908296944
+1830-jackson,1830,Government & administration,4291.470160116449
 1830-jackson,1830,Territories & expansion,462.6491994177584
 1831-jackson,1831,Economy & jobs,269.3979933110368
 1831-jackson,1831,Taxes & budget,270.3957636566332
@@ -893,8 +893,8 @@ id,year,topic,words
 1835-jackson,1835,Government & administration,1893.2349062039823
 1835-jackson,1835,Territories & expansion,0.0
 1836-jackson,1836,Economy & jobs,69.85284605433377
-1836-jackson,1836,Taxes & budget,2103.5685640362226
-1836-jackson,1836,Trade & tariffs,253.46604139715393
+1836-jackson,1836,Taxes & budget,1902.991106080207
+1836-jackson,1836,Trade & tariffs,454.0434993531695
 1836-jackson,1836,Banking & currency,3676.255498059508
 1836-jackson,1836,Foreign affairs,1058.7695666235445
 1836-jackson,1836,Defense & war,2140.490782664942
@@ -951,9 +951,9 @@ id,year,topic,words
 1838-buren,1838,Territories & expansion,66.88906318082789
 1839-buren,1839,Economy & jobs,0.0
 1839-buren,1839,Taxes & budget,1992.9181574239713
-1839-buren,1839,Trade & tariffs,284.7025939177102
+1839-buren,1839,Trade & tariffs,483.494931425164
 1839-buren,1839,Banking & currency,6386.328711985688
-1839-buren,1839,Foreign affairs,2840.033243887895
+1839-buren,1839,Foreign affairs,2175.727191413238
 1839-buren,1839,Defense & war,481.4970184853905
 1839-buren,1839,Health care,0.0
 1839-buren,1839,Education,0.0
@@ -991,13 +991,13 @@ id,year,topic,words
 1841-tyler,1841,Taxes & budget,809.1422330097087
 1841-tyler,1841,Trade & tariffs,0.0
 1841-tyler,1841,Banking & currency,2398.528762135922
-1841-tyler,1841,Foreign affairs,2724.3779126213585
+1841-tyler,1841,Foreign affairs,3128.9490291262136
 1841-tyler,1841,Defense & war,456.3881067961165
 1841-tyler,1841,Health care,0.0
 1841-tyler,1841,Education,0.0
 1841-tyler,1841,Immigration,0.0
 1841-tyler,1841,Energy & environment,0.0
-1841-tyler,1841,Crime & justice,404.57111650485433
+1841-tyler,1841,Crime & justice,0.0
 1841-tyler,1841,Civil rights,67.76067961165049
 1841-tyler,1841,Social welfare,0.0
 1841-tyler,1841,Agriculture,0.0
@@ -1006,9 +1006,9 @@ id,year,topic,words
 1841-tyler,1841,Science & technology,0.0
 1841-tyler,1841,Government & administration,631.7686893203884
 1841-tyler,1841,Territories & expansion,83.70436893203883
-1842-tyler,1842,Economy & jobs,45.89048922747292
+1842-tyler,1842,Economy & jobs,551.6834900607071
 1842-tyler,1842,Taxes & budget,655.4359004880371
-1842-tyler,1842,Trade & tariffs,1049.4955362456851
+1842-tyler,1842,Trade & tariffs,543.702535412451
 1842-tyler,1842,Banking & currency,2556.8983454350678
 1842-tyler,1842,Foreign affairs,2183.788715629092
 1842-tyler,1842,Defense & war,919.8050232115224
@@ -1025,11 +1025,11 @@ id,year,topic,words
 1842-tyler,1842,Science & technology,0.0
 1842-tyler,1842,Government & administration,264.3691227234853
 1842-tyler,1842,Territories & expansion,0.0
-1843-tyler,1843,Economy & jobs,168.4946424121605
-1843-tyler,1843,Taxes & budget,928.2160478445053
-1843-tyler,1843,Trade & tariffs,763.7094443060055
-1843-tyler,1843,Banking & currency,1280.1604784450535
-1843-tyler,1843,Foreign affairs,2017.9476700722655
+1843-tyler,1843,Economy & jobs,0.0
+1843-tyler,1843,Taxes & budget,1353.9391976077748
+1843-tyler,1843,Trade & tariffs,932.204086718166
+1843-tyler,1843,Banking & currency,854.4373286817842
+1843-tyler,1843,Foreign affairs,1517.4487914278595
 1843-tyler,1843,Defense & war,1689.9314727136807
 1843-tyler,1843,Health care,0.0
 1843-tyler,1843,Education,0.0
@@ -1043,12 +1043,12 @@ id,year,topic,words
 1843-tyler,1843,Native American affairs,90.72788437577873
 1843-tyler,1843,Science & technology,0.0
 1843-tyler,1843,Government & administration,475.5736356840269
-1843-tyler,1843,Territories & expansion,0.0
+1843-tyler,1843,Territories & expansion,500.4988786444057
 1844-tyler,1844,Economy & jobs,0.0
 1844-tyler,1844,Taxes & budget,533.4839471706217
 1844-tyler,1844,Trade & tariffs,98.9043272844411
 1844-tyler,1844,Banking & currency,622.3979383657254
-1844-tyler,1844,Foreign affairs,1729.3271770643184
+1844-tyler,1844,Foreign affairs,2077.989906582197
 1844-tyler,1844,Defense & war,2188.882637173843
 1844-tyler,1844,Health care,0.0
 1844-tyler,1844,Education,0.0
@@ -1062,7 +1062,7 @@ id,year,topic,words
 1844-tyler,1844,Native American affairs,300.7091162890583
 1844-tyler,1844,Science & technology,0.0
 1844-tyler,1844,Government & administration,750.2742403092451
-1844-tyler,1844,Territories & expansion,1224.8152045527756
+1844-tyler,1844,Territories & expansion,876.1524750348974
 1845-polk,1845,Economy & jobs,389.6084932017136
 1845-polk,1845,Taxes & budget,1540.5893089960884
 1845-polk,1845,Trade & tariffs,1182.7046625690693
@@ -1087,7 +1087,7 @@ id,year,topic,words
 1846-polk,1846,Trade & tariffs,711.694148644198
 1846-polk,1846,Banking & currency,304.3037655066418
 1846-polk,1846,Foreign affairs,5789.701284443957
-1846-polk,1846,Defense & war,4303.866286090679
+1846-polk,1846,Defense & war,4810.378416950269
 1846-polk,1846,Health care,0.0
 1846-polk,1846,Education,0.0
 1846-polk,1846,Immigration,0.0
@@ -1100,7 +1100,7 @@ id,year,topic,words
 1846-polk,1846,Native American affairs,465.87221429355577
 1846-polk,1846,Science & technology,0.0
 1846-polk,1846,Government & administration,231.94488966955757
-1846-polk,1846,Territories & expansion,3581.268745197058
+1846-polk,1846,Territories & expansion,3498.0064771105503
 1847-polk,1847,Economy & jobs,320.63759371000185
 1847-polk,1847,Taxes & budget,998.6421649296033
 1847-polk,1847,Trade & tariffs,619.4360943499726
@@ -1112,14 +1112,14 @@ id,year,topic,words
 1847-polk,1847,Immigration,0.0
 1847-polk,1847,Energy & environment,372.2572682391662
 1847-polk,1847,Crime & justice,0.0
-1847-polk,1847,Civil rights,0.0
+1847-polk,1847,Civil rights,61.54653501554214
 1847-polk,1847,Social welfare,0.0
 1847-polk,1847,Agriculture,104.23203510696653
 1847-polk,1847,Infrastructure,179.67617480343756
 1847-polk,1847,Native American affairs,611.4946059608704
 1847-polk,1847,Science & technology,0.0
 1847-polk,1847,Government & administration,716.7193271164748
-1847-polk,1847,Territories & expansion,1233.908758456756
+1847-polk,1847,Territories & expansion,1172.362223441214
 1848-polk,1848,Economy & jobs,435.96307779030434
 1848-polk,1848,Taxes & budget,2008.6152762119505
 1848-polk,1848,Trade & tariffs,341.4048759864712
@@ -1137,7 +1137,7 @@ id,year,topic,words
 1848-polk,1848,Infrastructure,645.9818207440811
 1848-polk,1848,Native American affairs,644.9864712514092
 1848-polk,1848,Science & technology,0.0
-1848-polk,1848,Government & administration,5624.719983089063
+1848-polk,1848,Government & administration,5992.003945885004
 1848-polk,1848,Territories & expansion,1992.6896843291997
 1849-taylor,1849,Economy & jobs,170.34895628200078
 1849-taylor,1849,Taxes & budget,214.18143626099513
@@ -1168,14 +1168,14 @@ id,year,topic,words
 1850-fillmore,1850,Education,0.0
 1850-fillmore,1850,Immigration,0.0
 1850-fillmore,1850,Energy & environment,240.47848040394325
-1850-fillmore,1850,Crime & justice,0.0
+1850-fillmore,1850,Crime & justice,290.3702813176244
 1850-fillmore,1850,Civil rights,0.0
 1850-fillmore,1850,Social welfare,0.0
 1850-fillmore,1850,Agriculture,238.48280836739602
 1850-fillmore,1850,Infrastructure,773.3229141620582
 1850-fillmore,1850,Native American affairs,216.5304159653763
 1850-fillmore,1850,Science & technology,0.0
-1850-fillmore,1850,Government & administration,1927.8191873046408
+1850-fillmore,1850,Government & administration,1637.4489059870164
 1850-fillmore,1850,Territories & expansion,343.2555902861264
 1851-fillmore,1851,Economy & jobs,0.0
 1851-fillmore,1851,Taxes & budget,1038.9408788885532
@@ -1216,9 +1216,9 @@ id,year,topic,words
 1852-fillmore,1852,Government & administration,1269.1513655144615
 1852-fillmore,1852,Territories & expansion,114.65232288622391
 1853-pierce,1853,Economy & jobs,164.01888170248276
-1853-pierce,1853,Taxes & budget,622.2776966409347
+1853-pierce,1853,Taxes & budget,500.0090757354475
 1853-pierce,1853,Trade & tariffs,72.56592948049239
-1853-pierce,1853,Banking & currency,0.0
+1853-pierce,1853,Banking & currency,122.26862090548717
 1853-pierce,1853,Foreign affairs,2800.2496348842064
 1853-pierce,1853,Defense & war,360.8415397454621
 1853-pierce,1853,Health care,0.0
@@ -1327,7 +1327,7 @@ id,year,topic,words
 1858-buchanan,1858,Infrastructure,632.2453961456104
 1858-buchanan,1858,Native American affairs,0.0
 1858-buchanan,1858,Science & technology,0.0
-1858-buchanan,1858,Government & administration,1655.5499541144084
+1858-buchanan,1858,Government & administration,1424.2890792291223
 1858-buchanan,1858,Territories & expansion,3056.0181706944018
 1859-buchanan,1859,Economy & jobs,0.0
 1859-buchanan,1859,Taxes & budget,1617.4587051760502
@@ -1348,7 +1348,7 @@ id,year,topic,words
 1859-buchanan,1859,Science & technology,0.0
 1859-buchanan,1859,Government & administration,890.1450592244039
 1859-buchanan,1859,Territories & expansion,446.0593866623398
-1860-buchanan,1860,Economy & jobs,266.5478397262227
+1860-buchanan,1860,Economy & jobs,185.98673891344646
 1860-buchanan,1860,Taxes & budget,565.9168686724654
 1860-buchanan,1860,Trade & tariffs,954.7982318551261
 1860-buchanan,1860,Banking & currency,0.0
@@ -1391,20 +1391,20 @@ id,year,topic,words
 1862-lincoln,1862,Trade & tariffs,0.0
 1862-lincoln,1862,Banking & currency,465.1295249549008
 1862-lincoln,1862,Foreign affairs,1704.4810583283224
-1862-lincoln,1862,Defense & war,1234.382200841852
+1862-lincoln,1862,Defense & war,655.9518941671677
 1862-lincoln,1862,Health care,0.0
 1862-lincoln,1862,Education,0.0
 1862-lincoln,1862,Immigration,0.0
-1862-lincoln,1862,Energy & environment,116.2823812387252
+1862-lincoln,1862,Energy & environment,444.25832832230907
 1862-lincoln,1862,Crime & justice,0.0
-1862-lincoln,1862,Civil rights,2026.4938063740228
+1862-lincoln,1862,Civil rights,2604.924113048707
 1862-lincoln,1862,Social welfare,70.56452194828623
 1862-lincoln,1862,Agriculture,146.0983764281419
 1862-lincoln,1862,Infrastructure,149.0799759470836
 1862-lincoln,1862,Native American affairs,341.89007817197836
 1862-lincoln,1862,Science & technology,0.0
 1862-lincoln,1862,Government & administration,641.0438965724594
-1862-lincoln,1862,Territories & expansion,327.9759470835839
+1862-lincoln,1862,Territories & expansion,0.0
 1863-lincoln,1863,Economy & jobs,40.7048912154425
 1863-lincoln,1863,Taxes & budget,288.90544740716507
 1863-lincoln,1863,Trade & tariffs,0.0
@@ -1443,31 +1443,31 @@ id,year,topic,words
 1864-lincoln,1864,Science & technology,0.0
 1864-lincoln,1864,Government & administration,77.02882483370288
 1864-lincoln,1864,Territories & expansion,51.352549889135254
-1865-johnson,1865,Economy & jobs,193.83167028199568
+1865-johnson,1865,Economy & jobs,572.502819956616
 1865-johnson,1865,Taxes & budget,896.2216919739697
 1865-johnson,1865,Trade & tariffs,0.0
 1865-johnson,1865,Banking & currency,288.74924078091107
-1865-johnson,1865,Foreign affairs,2268.030368763558
+1865-johnson,1865,Foreign affairs,1577.629934924078
 1865-johnson,1865,Defense & war,778.3240780911063
 1865-johnson,1865,Health care,0.0
 1865-johnson,1865,Education,0.0
 1865-johnson,1865,Immigration,0.0
 1865-johnson,1865,Energy & environment,222.80650759219088
 1865-johnson,1865,Crime & justice,296.7422993492408
-1865-johnson,1865,Civil rights,670.417787418655
+1865-johnson,1865,Civil rights,1092.0516268980477
 1865-johnson,1865,Social welfare,0.0
 1865-johnson,1865,Agriculture,40.96442516268981
 1865-johnson,1865,Infrastructure,199.82646420824295
 1865-johnson,1865,Native American affairs,0.0
 1865-johnson,1865,Science & technology,0.0
-1865-johnson,1865,Government & administration,2075.197830802603
+1865-johnson,1865,Government & administration,1653.5639913232105
 1865-johnson,1865,Territories & expansion,0.0
 1866-johnson,1866,Economy & jobs,0.0
 1866-johnson,1866,Taxes & budget,503.6436088115617
 1866-johnson,1866,Trade & tariffs,0.0
 1866-johnson,1866,Banking & currency,0.0
 1866-johnson,1866,Foreign affairs,2205.543426406623
-1866-johnson,1866,Defense & war,1302.1512557878489
+1866-johnson,1866,Defense & war,924.1711800196435
 1866-johnson,1866,Health care,0.0
 1866-johnson,1866,Education,0.0
 1866-johnson,1866,Immigration,0.0
@@ -1479,7 +1479,7 @@ id,year,topic,words
 1866-johnson,1866,Infrastructure,322.5693840325523
 1866-johnson,1866,Native American affairs,37.60011224919321
 1866-johnson,1866,Science & technology,33.642205696646556
-1866-johnson,1866,Government & administration,1680.1313315560544
+1866-johnson,1866,Government & administration,2058.1114073242597
 1866-johnson,1866,Territories & expansion,224.6111968570226
 1867-johnson,1867,Economy & jobs,17.88133188683969
 1867-johnson,1867,Taxes & budget,785.7851956938997
@@ -1492,13 +1492,13 @@ id,year,topic,words
 1867-johnson,1867,Immigration,0.0
 1867-johnson,1867,Energy & environment,0.0
 1867-johnson,1867,Crime & justice,0.0
-1867-johnson,1867,Civil rights,2992.142869064508
+1867-johnson,1867,Civil rights,2880.881248435284
 1867-johnson,1867,Social welfare,0.0
 1867-johnson,1867,Agriculture,40.72970040891263
 1867-johnson,1867,Infrastructure,102.32095468580489
 1867-johnson,1867,Native American affairs,234.44412918300924
 1867-johnson,1867,Science & technology,0.0
-1867-johnson,1867,Government & administration,2325.566552616207
+1867-johnson,1867,Government & administration,2555.0436451639825
 1867-johnson,1867,Territories & expansion,0.0
 1868-johnson,1868,Economy & jobs,0.0
 1868-johnson,1868,Taxes & budget,2430.0030553009474
@@ -1624,8 +1624,8 @@ id,year,topic,words
 1874-grant,1874,Education,0.0
 1874-grant,1874,Immigration,577.9113077477107
 1874-grant,1874,Energy & environment,298.91964193847105
-1874-grant,1874,Crime & justice,655.6304146517132
-1874-grant,1874,Civil rights,417.49109990739794
+1874-grant,1874,Crime & justice,124.54985080769627
+1874-grant,1874,Civil rights,948.5716637514148
 1874-grant,1874,Social welfare,0.0
 1874-grant,1874,Agriculture,89.67589258154132
 1874-grant,1874,Infrastructure,0.0
@@ -1638,7 +1638,7 @@ id,year,topic,words
 1875-grant,1875,Trade & tariffs,212.84229508196722
 1875-grant,1875,Banking & currency,429.6629508196722
 1875-grant,1875,Foreign affairs,5678.115245901638
-1875-grant,1875,Defense & war,1342.6967213114756
+1875-grant,1875,Defense & war,1375.5181967213116
 1875-grant,1875,Health care,0.0
 1875-grant,1875,Education,504.25721311475405
 1875-grant,1875,Immigration,623.6080327868852
@@ -1650,20 +1650,20 @@ id,year,topic,words
 1875-grant,1875,Infrastructure,240.6908196721311
 1875-grant,1875,Native American affairs,255.60967213114753
 1875-grant,1875,Science & technology,0.0
-1875-grant,1875,Government & administration,662.3970491803278
+1875-grant,1875,Government & administration,629.5755737704918
 1875-grant,1875,Territories & expansion,241.6854098360656
-1876-grant,1876,Economy & jobs,375.91458026509576
+1876-grant,1876,Economy & jobs,508.47393225331365
 1876-grant,1876,Taxes & budget,117.72061855670103
-1876-grant,1876,Trade & tariffs,565.8503681885126
+1876-grant,1876,Trade & tariffs,99.91413843888071
 1876-grant,1876,Banking & currency,0.0
-1876-grant,1876,Foreign affairs,1885.508394698085
+1876-grant,1876,Foreign affairs,2351.444624447717
 1876-grant,1876,Defense & war,952.6466863033875
 1876-grant,1876,Health care,0.0
 1876-grant,1876,Education,0.0
 1876-grant,1876,Immigration,269.0756995581738
 1876-grant,1876,Energy & environment,69.24742268041237
 1876-grant,1876,Crime & justice,0.0
-1876-grant,1876,Civil rights,176.0863033873343
+1876-grant,1876,Civil rights,43.52695139911635
 1876-grant,1876,Social welfare,0.0
 1876-grant,1876,Agriculture,157.29057437407954
 1876-grant,1876,Infrastructure,146.40883652430043
@@ -1710,11 +1710,11 @@ id,year,topic,words
 1878-hayes,1878,Government & administration,1529.9314546839298
 1878-hayes,1878,Territories & expansion,0.0
 1879-hayes,1879,Economy & jobs,0.0
-1879-hayes,1879,Taxes & budget,692.4504427060948
+1879-hayes,1879,Taxes & budget,1002.5176652626151
 1879-hayes,1879,Trade & tariffs,182.27593913865724
 1879-hayes,1879,Banking & currency,607.2562537608527
 1879-hayes,1879,Foreign affairs,1544.3923321585146
-1879-hayes,1879,Defense & war,1056.0116908793946
+1879-hayes,1879,Defense & war,745.9444683228744
 1879-hayes,1879,Health care,0.0
 1879-hayes,1879,Education,263.5076076678415
 1879-hayes,1879,Immigration,0.0
@@ -1747,7 +1747,7 @@ id,year,topic,words
 1880-hayes,1880,Science & technology,0.0
 1880-hayes,1880,Government & administration,2259.7565694264604
 1880-hayes,1880,Territories & expansion,709.4700281818874
-1881-arthur,1881,Economy & jobs,376.82281683661733
+1881-arthur,1881,Economy & jobs,417.3733036878019
 1881-arthur,1881,Taxes & budget,915.8475810779729
 1881-arthur,1881,Trade & tariffs,670.5665874415396
 1881-arthur,1881,Banking & currency,605.2901939737791
@@ -1759,12 +1759,12 @@ id,year,topic,words
 1881-arthur,1881,Energy & environment,151.32254849344477
 1881-arthur,1881,Crime & justice,622.1038104730508
 1881-arthur,1881,Civil rights,0.0
-1881-arthur,1881,Social welfare,116.70627923023845
+1881-arthur,1881,Social welfare,76.1557923790539
 1881-arthur,1881,Agriculture,127.58567814153184
 1881-arthur,1881,Infrastructure,428.25270259909524
 1881-arthur,1881,Native American affairs,1112.6657977459174
 1881-arthur,1881,Science & technology,0.0
-1881-arthur,1881,Government & administration,2021.59012497125
+1881-arthur,1881,Government & administration,2006.7545810013041
 1881-arthur,1881,Territories & expansion,564.7397071225945
 1882-arthur,1882,Economy & jobs,96.9081332928188
 1882-arthur,1882,Taxes & budget,1025.446267598501
@@ -1808,7 +1808,7 @@ id,year,topic,words
 1884-arthur,1884,Taxes & budget,378.0235644017388
 1884-arthur,1884,Trade & tariffs,1102.40379775795
 1884-arthur,1884,Banking & currency,400.7841455044612
-1884-arthur,1884,Foreign affairs,2600.643788606726
+1884-arthur,1884,Foreign affairs,2705.540379775795
 1884-arthur,1884,Defense & war,1561.5737817433082
 1884-arthur,1884,Health care,0.0
 1884-arthur,1884,Education,0.0
@@ -1821,26 +1821,26 @@ id,year,topic,words
 1884-arthur,1884,Infrastructure,325.5752688172043
 1884-arthur,1884,Native American affairs,114.79249599633951
 1884-arthur,1884,Science & technology,0.0
-1884-arthur,1884,Government & administration,1252.821551132464
+1884-arthur,1884,Government & administration,1147.9249599633952
 1884-arthur,1884,Territories & expansion,80.15682910089225
-1885-cleveland,1885,Economy & jobs,428.4684287812041
+1885-cleveland,1885,Economy & jobs,405.6035242290749
 1885-cleveland,1885,Taxes & budget,569.6343612334803
-1885-cleveland,1885,Trade & tariffs,933.4845814977973
+1885-cleveland,1885,Trade & tariffs,974.2437591776796
 1885-cleveland,1885,Banking & currency,1580.6607929515417
-1885-cleveland,1885,Foreign affairs,5237.057268722466
-1885-cleveland,1885,Defense & war,2167.1953010279003
+1885-cleveland,1885,Foreign affairs,5196.298091042584
+1885-cleveland,1885,Defense & war,2240.7606461086643
 1885-cleveland,1885,Health care,29.823788546255503
 1885-cleveland,1885,Education,0.0
 1885-cleveland,1885,Immigration,152.10132158590307
 1885-cleveland,1885,Energy & environment,359.87371512481644
-1885-cleveland,1885,Crime & justice,687.9353891336269
-1885-cleveland,1885,Civil rights,589.5168869309839
+1885-cleveland,1885,Crime & justice,771.4419970631424
+1885-cleveland,1885,Civil rights,506.0102790014684
 1885-cleveland,1885,Social welfare,0.0
-1885-cleveland,1885,Agriculture,471.215859030837
+1885-cleveland,1885,Agriculture,494.08076358296626
 1885-cleveland,1885,Infrastructure,992.1380323054331
 1885-cleveland,1885,Native American affairs,1665.1615271659323
 1885-cleveland,1885,Science & technology,67.60058737151249
-1885-cleveland,1885,Government & administration,2953.5491923641703
+1885-cleveland,1885,Government & administration,2879.9838472834067
 1885-cleveland,1885,Territories & expansion,356.8913362701909
 1886-cleveland,1886,Economy & jobs,734.8307123034226
 1886-cleveland,1886,Taxes & budget,1830.6308973172986
@@ -1851,7 +1851,7 @@ id,year,topic,words
 1886-cleveland,1886,Health care,0.0
 1886-cleveland,1886,Education,0.0
 1886-cleveland,1886,Immigration,123.95929694727104
-1886-cleveland,1886,Energy & environment,404.60314523589267
+1886-cleveland,1886,Energy & environment,795.322849213691
 1886-cleveland,1886,Crime & justice,798.2978723404257
 1886-cleveland,1886,Civil rights,76.35892691951896
 1886-cleveland,1886,Social welfare,475.0120259019427
@@ -1859,8 +1859,8 @@ id,year,topic,words
 1886-cleveland,1886,Infrastructure,293.53561517113786
 1886-cleveland,1886,Native American affairs,865.7317298797411
 1886-cleveland,1886,Science & technology,129.90934320074004
-1886-cleveland,1886,Government & administration,1669.979648473635
-1886-cleveland,1886,Territories & expansion,562.2793709528215
+1886-cleveland,1886,Government & administration,1616.429232192414
+1886-cleveland,1886,Territories & expansion,171.55966697502313
 1887-cleveland,1887,Economy & jobs,1275.5447154471544
 1887-cleveland,1887,Taxes & budget,1606.8292682926829
 1887-cleveland,1887,Trade & tariffs,1468.959349593496
@@ -1881,11 +1881,11 @@ id,year,topic,words
 1887-cleveland,1887,Government & administration,312.4390243902439
 1887-cleveland,1887,Territories & expansion,0.0
 1888-cleveland,1888,Economy & jobs,559.4721189591078
-1888-cleveland,1888,Taxes & budget,1266.9527349973446
+1888-cleveland,1888,Taxes & budget,1323.1959638874137
 1888-cleveland,1888,Trade & tariffs,367.06107275624004
 1888-cleveland,1888,Banking & currency,86.8316516197557
-1888-cleveland,1888,Foreign affairs,2325.7068507700487
-1888-cleveland,1888,Defense & war,1470.2177376526818
+1888-cleveland,1888,Foreign affairs,2333.6006372809356
+1888-cleveland,1888,Defense & war,1431.7355284121084
 1888-cleveland,1888,Health care,0.0
 1888-cleveland,1888,Education,73.01752522570366
 1888-cleveland,1888,Immigration,29.60169941582581
@@ -1897,14 +1897,14 @@ id,year,topic,words
 1888-cleveland,1888,Infrastructure,221.02602230483274
 1888-cleveland,1888,Native American affairs,1093.2894317578334
 1888-cleveland,1888,Science & technology,0.0
-1888-cleveland,1888,Government & administration,2536.8656399362717
+1888-cleveland,1888,Government & administration,2480.622411046203
 1888-cleveland,1888,Territories & expansion,74.00424853956453
 1889-harrison,1889,Economy & jobs,251.10975891550487
-1889-harrison,1889,Taxes & budget,550.8534237079257
-1889-harrison,1889,Trade & tariffs,657.0539936840485
-1889-harrison,1889,Banking & currency,888.3131787722406
-1889-harrison,1889,Foreign affairs,2507.127474389586
-1889-harrison,1889,Defense & war,1463.9798197643074
+1889-harrison,1889,Taxes & budget,375.17584533620885
+1889-harrison,1889,Trade & tariffs,690.7999691904799
+1889-harrison,1889,Banking & currency,1063.9907571439576
+1889-harrison,1889,Foreign affairs,2478.344142339983
+1889-harrison,1889,Defense & war,1430.233844257876
 1889-harrison,1889,Health care,0.0
 1889-harrison,1889,Education,531.9953785719788
 1889-harrison,1889,Immigration,107.19309866748826
@@ -1976,7 +1976,7 @@ id,year,topic,words
 1892-harrison,1892,Government & administration,1148.5722433460076
 1892-harrison,1892,Territories & expansion,253.40435799941505
 1893-cleveland,1893,Economy & jobs,264.96539369758165
-1893-cleveland,1893,Taxes & budget,730.1268626333359
+1893-cleveland,1893,Taxes & budget,758.5861086230761
 1893-cleveland,1893,Trade & tariffs,558.3900333849036
 1893-cleveland,1893,Banking & currency,625.1220584642944
 1893-cleveland,1893,Foreign affairs,3108.927286051624
@@ -1992,7 +1992,7 @@ id,year,topic,words
 1893-cleveland,1893,Infrastructure,0.0
 1893-cleveland,1893,Native American affairs,519.1359009852617
 1893-cleveland,1893,Science & technology,0.0
-1893-cleveland,1893,Government & administration,1957.7998534321312
+1893-cleveland,1893,Government & administration,1929.340607442391
 1893-cleveland,1893,Territories & expansion,356.2312515267486
 1894-cleveland,1894,Economy & jobs,263.21006922592824
 1894-cleveland,1894,Taxes & budget,401.6899937067338
@@ -2017,7 +2017,7 @@ id,year,topic,words
 1895-cleveland,1895,Taxes & budget,746.7649464857864
 1895-cleveland,1895,Trade & tariffs,691.3757584020724
 1895-cleveland,1895,Banking & currency,6316.345626832093
-1895-cleveland,1895,Foreign affairs,5184.823641693366
+1895-cleveland,1895,Foreign affairs,5275.820164973753
 1895-cleveland,1895,Defense & war,152.32026723021337
 1895-cleveland,1895,Health care,0.0
 1895-cleveland,1895,Education,0.0
@@ -2030,7 +2030,7 @@ id,year,topic,words
 1895-cleveland,1895,Infrastructure,121.65839525530028
 1895-cleveland,1895,Native American affairs,0.0
 1895-cleveland,1895,Science & technology,0.0
-1895-cleveland,1895,Government & administration,517.2954529961142
+1895-cleveland,1895,Government & administration,426.29892971572707
 1895-cleveland,1895,Territories & expansion,185.94941713818258
 1896-cleveland,1896,Economy & jobs,562.319853900339
 1896-cleveland,1896,Taxes & budget,980.3537698930342
@@ -2146,9 +2146,9 @@ id,year,topic,words
 1901-roosevelt,1901,Science & technology,129.6783234633449
 1901-roosevelt,1901,Government & administration,1388.2617418827856
 1901-roosevelt,1901,Territories & expansion,1211.3362773126405
-1902-roosevelt,1902,Economy & jobs,2522.5546218487393
+1902-roosevelt,1902,Economy & jobs,2131.9201680672268
 1902-roosevelt,1902,Taxes & budget,0.0
-1902-roosevelt,1902,Trade & tariffs,740.0966386554622
+1902-roosevelt,1902,Trade & tariffs,1130.7310924369747
 1902-roosevelt,1902,Banking & currency,246.02941176470588
 1902-roosevelt,1902,Foreign affairs,842.5252100840336
 1902-roosevelt,1902,Defense & war,1356.6764705882354
@@ -2203,7 +2203,7 @@ id,year,topic,words
 1904-roosevelt,1904,Science & technology,0.0
 1904-roosevelt,1904,Government & administration,1263.7096403539008
 1904-roosevelt,1904,Territories & expansion,1424.435826726416
-1905-roosevelt,1905,Economy & jobs,3877.119402388846
+1905-roosevelt,1905,Economy & jobs,4622.256421523589
 1905-roosevelt,1905,Taxes & budget,507.45535892621746
 1905-roosevelt,1905,Trade & tariffs,501.4381017057484
 1905-roosevelt,1905,Banking & currency,278.7995845483961
@@ -2217,14 +2217,14 @@ id,year,topic,words
 1905-roosevelt,1905,Civil rights,0.0
 1905-roosevelt,1905,Social welfare,0.0
 1905-roosevelt,1905,Agriculture,207.59537410617986
-1905-roosevelt,1905,Infrastructure,3458.9200255662518
+1905-roosevelt,1905,Infrastructure,2713.7830064315103
 1905-roosevelt,1905,Native American affairs,461.32305356928856
 1905-roosevelt,1905,Science & technology,283.8139655654536
 1905-roosevelt,1905,Government & administration,2433.9805456797026
 1905-roosevelt,1905,Territories & expansion,1569.5012583389926
 1906-roosevelt,1906,Economy & jobs,3670.2664687168613
 1906-roosevelt,1906,Taxes & budget,1384.2319406150584
-1906-roosevelt,1906,Trade & tariffs,612.5451537645811
+1906-roosevelt,1906,Trade & tariffs,236.2102226935313
 1906-roosevelt,1906,Banking & currency,781.6956945917285
 1906-roosevelt,1906,Foreign affairs,6134.459554612938
 1906-roosevelt,1906,Defense & war,2237.9917709437964
@@ -2232,16 +2232,16 @@ id,year,topic,words
 1906-roosevelt,1906,Education,674.6003817603394
 1906-roosevelt,1906,Immigration,161.14341463414635
 1906-roosevelt,1906,Energy & environment,317.282375397667
-1906-roosevelt,1906,Crime & justice,2660.367677624602
+1906-roosevelt,1906,Crime & justice,2028.8055991516437
 1906-roosevelt,1906,Civil rights,2184.944559915164
 1906-roosevelt,1906,Social welfare,0.0
 1906-roosevelt,1906,Agriculture,852.7589395546129
-1906-roosevelt,1906,Infrastructure,629.5602969247084
+1906-roosevelt,1906,Infrastructure,1261.122375397667
 1906-roosevelt,1906,Native American affairs,0.0
 1906-roosevelt,1906,Science & technology,0.0
 1906-roosevelt,1906,Government & administration,59.05255567338283
-1906-roosevelt,1906,Territories & expansion,748.6662990455992
-1907-roosevelt,1907,Economy & jobs,5537.976477463656
+1906-roosevelt,1906,Territories & expansion,1125.001230116649
+1907-roosevelt,1907,Economy & jobs,5980.814668712103
 1907-roosevelt,1907,Taxes & budget,1061.612097304405
 1907-roosevelt,1907,Trade & tariffs,1614.4101103075463
 1907-roosevelt,1907,Banking & currency,1053.615019358609
@@ -2250,38 +2250,38 @@ id,year,topic,words
 1907-roosevelt,1907,Health care,104.96164803857111
 1907-roosevelt,1907,Education,0.0
 1907-roosevelt,1907,Immigration,0.0
-1907-roosevelt,1907,Energy & environment,2815.9710716633795
+1907-roosevelt,1907,Energy & environment,3370.7683541529696
 1907-roosevelt,1907,Crime & justice,503.81591058514135
 1907-roosevelt,1907,Civil rights,52.9806413908978
 1907-roosevelt,1907,Social welfare,0.0
-1907-roosevelt,1907,Agriculture,2498.0872233179925
-1907-roosevelt,1907,Infrastructure,2232.184381620279
+1907-roosevelt,1907,Agriculture,1500.4517495799548
+1907-roosevelt,1907,Infrastructure,2847.959383446563
 1907-roosevelt,1907,Native American affairs,0.0
 1907-roosevelt,1907,Science & technology,0.0
-1907-roosevelt,1907,Government & administration,1879.3133172620353
+1907-roosevelt,1907,Government & administration,1263.5383154357512
 1907-roosevelt,1907,Territories & expansion,209.9232960771422
-1908-roosevelt,1908,Economy & jobs,6067.926750932446
+1908-roosevelt,1908,Economy & jobs,5498.337857438873
 1908-roosevelt,1908,Taxes & budget,292.8168255283879
 1908-roosevelt,1908,Trade & tariffs,0.0
 1908-roosevelt,1908,Banking & currency,501.39867384997933
-1908-roosevelt,1908,Foreign affairs,1396.8967053460424
+1908-roosevelt,1908,Foreign affairs,626.748342312474
 1908-roosevelt,1908,Defense & war,2050.7205760464153
 1908-roosevelt,1908,Health care,193.539888106092
 1908-roosevelt,1908,Education,418.1664939908827
 1908-roosevelt,1908,Immigration,0.0
-1908-roosevelt,1908,Energy & environment,2314.4562784915042
-1908-roosevelt,1908,Crime & justice,1939.41007045172
+1908-roosevelt,1908,Energy & environment,3084.604641525072
+1908-roosevelt,1908,Crime & justice,2409.7220265230003
 1908-roosevelt,1908,Civil rights,0.0
 1908-roosevelt,1908,Social welfare,0.0
 1908-roosevelt,1908,Agriculture,12.033568172399503
-1908-roosevelt,1908,Infrastructure,1580.4086199751343
+1908-roosevelt,1908,Infrastructure,2149.997513468711
 1908-roosevelt,1908,Native American affairs,0.0
 1908-roosevelt,1908,Science & technology,0.0
-1908-roosevelt,1908,Government & administration,1632.5540820555327
+1908-roosevelt,1908,Government & administration,1162.242125984252
 1908-roosevelt,1908,Territories & expansion,870.4280978035641
 1909-taft,1909,Economy & jobs,627.6702197085056
 1909-taft,1909,Taxes & budget,505.1250815749402
-1909-taft,1909,Trade & tariffs,1266.299760713509
+1909-taft,1909,Trade & tariffs,1571.1681531433544
 1909-taft,1909,Banking & currency,506.1213835109854
 1909-taft,1909,Foreign affairs,5047.265608005221
 1909-taft,1909,Defense & war,1516.3715466608658
@@ -2293,16 +2293,16 @@ id,year,topic,words
 1909-taft,1909,Civil rights,338.74265825538396
 1909-taft,1909,Social welfare,81.69675875571025
 1909-taft,1909,Agriculture,48.8187948662171
-1909-taft,1909,Infrastructure,448.3358712203611
+1909-taft,1909,Infrastructure,287.93125951707634
 1909-taft,1909,Native American affairs,0.0
 1909-taft,1909,Science & technology,129.5192516858821
-1909-taft,1909,Government & administration,1528.3271698934086
+1909-taft,1909,Government & administration,1383.863389166848
 1909-taft,1909,Territories & expansion,373.6132260169676
 1910-taft,1910,Economy & jobs,1996.3757045387126
-1910-taft,1910,Taxes & budget,903.0986354197566
-1910-taft,1910,Trade & tariffs,2223.3949866508447
+1910-taft,1910,Taxes & budget,1070.3760011865916
+1910-taft,1910,Trade & tariffs,2346.861613764461
 1910-taft,1910,Banking & currency,686.0363393651736
-1910-taft,1910,Foreign affairs,3905.129931770987
+1910-taft,1910,Foreign affairs,3781.663304657371
 1910-taft,1910,Defense & war,2578.859388905369
 1910-taft,1910,Health care,228.01498071788788
 1910-taft,1910,Education,321.610649658855
@@ -2315,13 +2315,13 @@ id,year,topic,words
 1910-taft,1910,Infrastructure,3334.59463067339
 1910-taft,1910,Native American affairs,0.0
 1910-taft,1910,Science & technology,187.19133788193415
-1910-taft,1910,Government & administration,5190.576831800651
+1910-taft,1910,Government & administration,5023.299466033817
 1910-taft,1910,Territories & expansion,250.91604865025215
-1911-taft,1911,Economy & jobs,2936.6874547390844
-1911-taft,1911,Taxes & budget,555.4557188498402
-1911-taft,1911,Trade & tariffs,3870.3679233226844
+1911-taft,1911,Economy & jobs,2754.5058998935037
+1911-taft,1911,Taxes & budget,737.6372736954206
+1911-taft,1911,Trade & tariffs,3955.5179978700753
 1911-taft,1911,Banking & currency,1521.810053248136
-1911-taft,1911,Foreign affairs,4911.971160809371
+1911-taft,1911,Foreign affairs,4826.82108626198
 1911-taft,1911,Defense & war,3418.874504792332
 1911-taft,1911,Health care,0.0
 1911-taft,1911,Education,0.0
@@ -2426,10 +2426,10 @@ id,year,topic,words
 1916-wilson,1916,Civil rights,66.24929178470255
 1916-wilson,1916,Social welfare,0.0
 1916-wilson,1916,Agriculture,0.0
-1916-wilson,1916,Infrastructure,315.1860245514637
+1916-wilson,1916,Infrastructure,375.4126534466478
 1916-wilson,1916,Native American affairs,0.0
 1916-wilson,1916,Science & technology,0.0
-1916-wilson,1916,Government & administration,572.1529745042492
+1916-wilson,1916,Government & administration,511.92634560906515
 1916-wilson,1916,Territories & expansion,98.37016052880077
 1917-wilson,1917,Economy & jobs,101.54217791411044
 1917-wilson,1917,Taxes & budget,0.0
@@ -2507,10 +2507,10 @@ id,year,topic,words
 1920-wilson,1920,Science & technology,0.0
 1920-wilson,1920,Government & administration,0.0
 1920-wilson,1920,Territories & expansion,91.65951147298298
-1921-harding,1921,Economy & jobs,897.0390583199572
+1921-harding,1921,Economy & jobs,789.1546281433923
 1921-harding,1921,Taxes & budget,362.6115569823435
 1921-harding,1921,Trade & tariffs,1188.7265917602995
-1921-harding,1921,Banking & currency,0.0
+1921-harding,1921,Banking & currency,107.884430176565
 1921-harding,1921,Foreign affairs,1233.6784376672017
 1921-harding,1921,Defense & war,96.89620117710007
 1921-harding,1921,Health care,0.0
@@ -2549,13 +2549,13 @@ id,year,topic,words
 1923-coolidge,1923,Taxes & budget,613.2614644414373
 1923-coolidge,1923,Trade & tariffs,129.8436325364607
 1923-coolidge,1923,Banking & currency,0.0
-1923-coolidge,1923,Foreign affairs,1493.2017741692978
+1923-coolidge,1923,Foreign affairs,1337.389415125545
 1923-coolidge,1923,Defense & war,310.62592091414825
 1923-coolidge,1923,Health care,56.93143888137123
 1923-coolidge,1923,Education,149.8195760036085
 1923-coolidge,1923,Immigration,153.81476469703804
 1923-coolidge,1923,Energy & environment,881.9379040745753
-1923-coolidge,1923,Crime & justice,297.6415576605022
+1923-coolidge,1923,Crime & justice,453.45391670425505
 1923-coolidge,1923,Civil rights,238.7125244324162
 1923-coolidge,1923,Social welfare,0.0
 1923-coolidge,1923,Agriculture,523.3697188392723
@@ -2650,14 +2650,14 @@ id,year,topic,words
 1928-coolidge,1928,Education,175.1807470543996
 1928-coolidge,1928,Immigration,44.53747806467786
 1928-coolidge,1928,Energy & environment,1072.8583604913513
-1928-coolidge,1928,Crime & justice,131.63299072449234
+1928-coolidge,1928,Crime & justice,202.89295562797693
 1928-coolidge,1928,Civil rights,205.8621208322888
 1928-coolidge,1928,Social welfare,0.0
 1928-coolidge,1928,Agriculture,803.654048633743
 1928-coolidge,1928,Infrastructure,1091.663073451993
 1928-coolidge,1928,Native American affairs,135.59187766357482
 1928-coolidge,1928,Science & technology,41.56831286036601
-1928-coolidge,1928,Government & administration,495.85058912008014
+1928-coolidge,1928,Government & administration,424.5906242165956
 1928-coolidge,1928,Territories & expansion,63.34219102531962
 1929-hoover,1929,Economy & jobs,498.16655989750166
 1929-hoover,1929,Taxes & budget,618.9942344650865
@@ -2697,10 +2697,10 @@ id,year,topic,words
 1930-hoover,1930,Science & technology,0.0
 1930-hoover,1930,Government & administration,321.44813829787233
 1930-hoover,1930,Territories & expansion,0.0
-1931-hoover,1931,Economy & jobs,1680.071212390956
+1931-hoover,1931,Economy & jobs,1495.1639665301761
 1931-hoover,1931,Taxes & budget,485.1329891401104
 1931-hoover,1931,Trade & tariffs,165.0247463058572
-1931-hoover,1931,Banking & currency,1250.6092220046287
+1931-hoover,1931,Banking & currency,1435.5164678654085
 1931-hoover,1931,Foreign affairs,313.14936799003027
 1931-hoover,1931,Defense & war,360.8673669218444
 1931-hoover,1931,Health care,0.0
@@ -2754,8 +2754,8 @@ id,year,topic,words
 1934-roosevelt,1934,Science & technology,0.0
 1934-roosevelt,1934,Government & administration,95.34188034188034
 1934-roosevelt,1934,Territories & expansion,0.0
-1935-roosevelt,1935,Economy & jobs,1094.7944270685246
-1935-roosevelt,1935,Taxes & budget,33.08444697185101
+1935-roosevelt,1935,Economy & jobs,1213.0963889678706
+1935-roosevelt,1935,Taxes & budget,0.0
 1935-roosevelt,1935,Trade & tariffs,0.0
 1935-roosevelt,1935,Banking & currency,0.0
 1935-roosevelt,1935,Foreign affairs,398.01592266135907
@@ -2766,7 +2766,7 @@ id,year,topic,words
 1935-roosevelt,1935,Energy & environment,221.56553881148707
 1935-roosevelt,1935,Crime & justice,0.0
 1935-roosevelt,1935,Civil rights,0.0
-1935-roosevelt,1935,Social welfare,743.8987773670742
+1935-roosevelt,1935,Social welfare,658.6812624395793
 1935-roosevelt,1935,Agriculture,102.26101791299403
 1935-roosevelt,1935,Infrastructure,102.26101791299403
 1935-roosevelt,1935,Native American affairs,0.0
@@ -2820,7 +2820,7 @@ id,year,topic,words
 1938-roosevelt,1938,Health care,0.0
 1938-roosevelt,1938,Education,0.0
 1938-roosevelt,1938,Immigration,0.0
-1938-roosevelt,1938,Energy & environment,141.93457344451573
+1938-roosevelt,1938,Energy & environment,43.28501175967501
 1938-roosevelt,1938,Crime & justice,0.0
 1938-roosevelt,1938,Civil rights,0.0
 1938-roosevelt,1938,Social welfare,107.70921530895872
@@ -2872,7 +2872,7 @@ id,year,topic,words
 1941-roosevelt,1941,Taxes & budget,75.75182260024302
 1941-roosevelt,1941,Trade & tariffs,0.0
 1941-roosevelt,1941,Banking & currency,0.0
-1941-roosevelt,1941,Foreign affairs,1533.2168894289182
+1941-roosevelt,1941,Foreign affairs,1510.9963547995135
 1941-roosevelt,1941,Defense & war,949.422843256379
 1941-roosevelt,1941,Health care,9.090218712029163
 1941-roosevelt,1941,Education,0.0
@@ -2948,8 +2948,8 @@ id,year,topic,words
 1946-truman,1946,Taxes & budget,2719.365432634893
 1946-truman,1946,Trade & tariffs,974.0717982122825
 1946-truman,1946,Banking & currency,197.95020446567509
-1946-truman,1946,Foreign affairs,3025.1103028987086
-1946-truman,1946,Defense & war,6114.8974052763015
+1946-truman,1946,Foreign affairs,3261.2786161473605
+1946-truman,1946,Defense & war,5878.729092027649
 1946-truman,1946,Health care,676.166540006514
 1946-truman,1946,Education,584.0510983244671
 1946-truman,1946,Immigration,28.4185937104187
@@ -3172,7 +3172,7 @@ id,year,topic,words
 1956-eisenhower,1956,Science & technology,0.0
 1956-eisenhower,1956,Government & administration,438.06660184735046
 1956-eisenhower,1956,Territories & expansion,74.35075352455031
-1957-eisenhower,1957,Economy & jobs,646.8200532816663
+1957-eisenhower,1957,Economy & jobs,619.6173407604748
 1957-eisenhower,1957,Taxes & budget,71.53305885202228
 1957-eisenhower,1957,Trade & tariffs,95.71324775974813
 1957-eisenhower,1957,Banking & currency,118.88592879631872
@@ -3189,7 +3189,7 @@ id,year,topic,words
 1957-eisenhower,1957,Infrastructure,0.0
 1957-eisenhower,1957,Native American affairs,0.0
 1957-eisenhower,1957,Science & technology,0.0
-1957-eisenhower,1957,Government & administration,196.46403487527246
+1957-eisenhower,1957,Government & administration,223.66674739646402
 1957-eisenhower,1957,Territories & expansion,0.0
 1958-eisenhower,1958,Economy & jobs,363.2927678754354
 1958-eisenhower,1958,Taxes & budget,18.114320835894283
@@ -3252,7 +3252,7 @@ id,year,topic,words
 1961-eisenhower,1961,Taxes & budget,141.16577366455593
 1961-eisenhower,1961,Trade & tariffs,101.67884396817666
 1961-eisenhower,1961,Banking & currency,0.0
-1961-eisenhower,1961,Foreign affairs,933.8658873193701
+1961-eisenhower,1961,Foreign affairs,854.8920279266114
 1961-eisenhower,1961,Defense & war,1175.7233317096932
 1961-eisenhower,1961,Health care,189.53726254262054
 1961-eisenhower,1961,Education,204.34486117876278
@@ -3261,11 +3261,11 @@ id,year,topic,words
 1961-eisenhower,1961,Crime & justice,0.0
 1961-eisenhower,1961,Civil rights,170.78097093684036
 1961-eisenhower,1961,Social welfare,318.85695729826267
-1961-eisenhower,1961,Agriculture,353.4080207825946
+1961-eisenhower,1961,Agriculture,432.38188017535316
 1961-eisenhower,1961,Infrastructure,76.01233966553012
 1961-eisenhower,1961,Native American affairs,55.28170157493099
 1961-eisenhower,1961,Science & technology,190.52443578503002
-1961-eisenhower,1961,Government & administration,326.75434323753854
+1961-eisenhower,1961,Government & administration,360.318233479461
 1961-eisenhower,1961,Territories & expansion,22.704984575418088
 1961-kennedy,1961,Economy & jobs,638.7838884585592
 1961-kennedy,1961,Taxes & budget,143.97986057319906
@@ -3305,8 +3305,8 @@ id,year,topic,words
 1962-kennedy,1962,Science & technology,187.77568922305764
 1962-kennedy,1962,Government & administration,39.80028195488722
 1962-kennedy,1962,Territories & expansion,0.0
-1963-kennedy,1963,Economy & jobs,362.69706656637834
-1963-kennedy,1963,Taxes & budget,824.8595336592706
+1963-kennedy,1963,Economy & jobs,386.80989093644234
+1963-kennedy,1963,Taxes & budget,800.7467092892066
 1963-kennedy,1963,Trade & tariffs,146.68634825122226
 1963-kennedy,1963,Banking & currency,0.0
 1963-kennedy,1963,Foreign affairs,2164.125987213238
@@ -3350,9 +3350,9 @@ id,year,topic,words
 1965-johnson,1965,Foreign affairs,1072.697685079074
 1965-johnson,1965,Defense & war,83.20925968370386
 1965-johnson,1965,Health care,92.2319504927802
-1965-johnson,1965,Education,217.5471006188403
+1965-johnson,1965,Education,177.44625257850106
 1965-johnson,1965,Immigration,36.0907632363053
-1965-johnson,1965,Energy & environment,252.63534265413705
+1965-johnson,1965,Energy & environment,292.73619069447625
 1965-johnson,1965,Crime & justice,80.20169608067843
 1965-johnson,1965,Civil rights,62.156314462525785
 1965-johnson,1965,Social welfare,252.63534265413708
@@ -3385,8 +3385,8 @@ id,year,topic,words
 1967-johnson,1967,Taxes & budget,413.41747572815535
 1967-johnson,1967,Trade & tariffs,34.95075277895033
 1967-johnson,1967,Banking & currency,0.0
-1967-johnson,1967,Foreign affairs,1413.009005206135
-1967-johnson,1967,Defense & war,1575.7796538623893
+1967-johnson,1967,Foreign affairs,1439.971014492754
+1967-johnson,1967,Defense & war,1548.8176445757704
 1967-johnson,1967,Health care,68.90291262135922
 1967-johnson,1967,Education,295.5835092162657
 1967-johnson,1967,Immigration,0.0
@@ -3450,7 +3450,7 @@ id,year,topic,words
 1970-nixon,1970,Energy & environment,588.4177498879426
 1970-nixon,1970,Crime & justice,358.8155535634245
 1970-nixon,1970,Civil rights,63.61272971761542
-1970-nixon,1970,Social welfare,316.0757507844016
+1970-nixon,1970,Social welfare,299.17861945315997
 1970-nixon,1970,Agriculture,34.78821156432093
 1970-nixon,1970,Infrastructure,55.661138502913495
 1970-nixon,1970,Native American affairs,0.0
@@ -3476,7 +3476,7 @@ id,year,topic,words
 1971-nixon,1971,Science & technology,0.0
 1971-nixon,1971,Government & administration,1558.5113890129523
 1971-nixon,1971,Territories & expansion,0.0
-1972-nixon,1972,Economy & jobs,491.7575604838709
+1972-nixon,1972,Economy & jobs,458.8407258064516
 1972-nixon,1972,Taxes & budget,107.72782258064518
 1972-nixon,1972,Trade & tariffs,158.59929435483872
 1972-nixon,1972,Banking & currency,0.0
@@ -3533,7 +3533,7 @@ id,year,topic,words
 1974-nixon,1974,Science & technology,0.0
 1974-nixon,1974,Government & administration,434.9123181377304
 1974-nixon,1974,Territories & expansion,0.0
-1974-nixon-2,1974,Economy & jobs,2133.174998866881
+1974-nixon-2,1974,Economy & jobs,2187.491954856547
 1974-nixon-2,1974,Taxes & budget,730.8099533155055
 1974-nixon-2,1974,Trade & tariffs,810.8040157730136
 1974-nixon-2,1974,Banking & currency,285.41091420024475
@@ -3633,19 +3633,19 @@ id,year,topic,words
 1978-carter-2,1978,Trade & tariffs,399.38416618002833
 1978-carter-2,1978,Banking & currency,125.18011178777007
 1978-carter-2,1978,Foreign affairs,1586.608242262451
-1978-carter-2,1978,Defense & war,1256.7685826311838
+1978-carter-2,1978,Defense & war,1302.4692583632266
 1978-carter-2,1978,Health care,488.7985317427213
 1978-carter-2,1978,Education,337.7876032368399
 1978-carter-2,1978,Immigration,100.34278802035539
 1978-carter-2,1978,Energy & environment,1655.1592558605155
-1978-carter-2,1978,Crime & justice,423.2279969967465
+1978-carter-2,1978,Crime & justice,464.9547009260032
 1978-carter-2,1978,Civil rights,334.8071243847502
 1978-carter-2,1978,Social welfare,1203.1199632935677
 1978-carter-2,1978,Agriculture,504.6944189538667
 1978-carter-2,1978,Infrastructure,469.92216567948606
 1978-carter-2,1978,Native American affairs,56.629098189705516
 1978-carter-2,1978,Science & technology,179.82222407608242
-1978-carter-2,1978,Government & administration,1085.8877951113707
+1978-carter-2,1978,Government & administration,998.4604154500709
 1978-carter-2,1978,Territories & expansion,0.0
 1979-carter,1979,Economy & jobs,694.3371200491249
 1979-carter,1979,Taxes & budget,88.29720601780781
@@ -3690,7 +3690,7 @@ id,year,topic,words
 1980-carter-2,1980,Trade & tariffs,1013.2676627147353
 1980-carter-2,1980,Banking & currency,455.4235422211469
 1980-carter-2,1980,Foreign affairs,5657.991168642631
-1980-carter-2,1980,Defense & war,3579.748366803774
+1980-carter-2,1980,Defense & war,3551.905879506411
 1980-carter-2,1980,Health care,1186.2888337769177
 1980-carter-2,1980,Education,699.0453060730704
 1980-carter-2,1980,Immigration,206.8299056375514
@@ -3733,14 +3733,14 @@ id,year,topic,words
 1981-carter,1981,Education,882.6614967041489
 1981-carter,1981,Immigration,398.7809228383095
 1981-carter,1981,Energy & environment,3970.9872043427695
-1981-carter,1981,Crime & justice,474.97479643272584
+1981-carter,1981,Crime & justice,511.5874369910818
 1981-carter,1981,Civil rights,1332.898022489337
 1981-carter,1981,Social welfare,2351.125242341992
 1981-carter,1981,Agriculture,987.5517642497092
 1981-carter,1981,Infrastructure,1499.1392012407914
 1981-carter,1981,Native American affairs,0.0
 1981-carter,1981,Science & technology,951.9286545172547
-1981-carter,1981,Government & administration,2157.177200465296
+1981-carter,1981,Government & administration,2120.5645599069403
 1981-carter,1981,Territories & expansion,193.9480418766964
 1981-reagan,1981,Economy & jobs,1201.0539625197562
 1981-reagan,1981,Taxes & budget,1180.243621585008
@@ -4037,7 +4037,7 @@ id,year,topic,words
 1996-clinton,1996,Education,477.42057847321
 1996-clinton,1996,Immigration,133.27991149043783
 1996-clinton,1996,Energy & environment,370.9955745218903
-1996-clinton,1996,Crime & justice,1045.3521416152996
+1996-clinton,1996,Crime & justice,1091.1049470523155
 1996-clinton,1996,Civil rights,0.0
 1996-clinton,1996,Social welfare,452.5549233443971
 1996-clinton,1996,Agriculture,0.0
@@ -4164,9 +4164,9 @@ id,year,topic,words
 2003-bush,2003,Taxes & budget,343.9623766064444
 2003-bush,2003,Trade & tariffs,0.0
 2003-bush,2003,Banking & currency,0.0
-2003-bush,2003,Foreign affairs,1612.757310486124
+2003-bush,2003,Foreign affairs,1737.6543117899053
 2003-bush,2003,Defense & war,1297.541069100391
-2003-bush,2003,Health care,833.6379214006333
+2003-bush,2003,Health care,708.7409200968523
 2003-bush,2003,Education,0.0
 2003-bush,2003,Immigration,0.0
 2003-bush,2003,Energy & environment,256.73272490221643
@@ -4317,7 +4317,7 @@ id,year,topic,words
 2011-obama,2011,Trade & tariffs,159.51020408163265
 2011-obama,2011,Banking & currency,0.0
 2011-obama,2011,Foreign affairs,485.5091836734694
-2011-obama,2011,Defense & war,467.56428571428575
+2011-obama,2011,Defense & war,421.7051020408163
 2011-obama,2011,Health care,265.1857142857143
 2011-obama,2011,Education,1036.816326530612
 2011-obama,2011,Immigration,96.7030612244898
@@ -4331,10 +4331,10 @@ id,year,topic,words
 2011-obama,2011,Science & technology,504.45102040816323
 2011-obama,2011,Government & administration,355.90714285714284
 2011-obama,2011,Territories & expansion,0.0
-2012-obama,2012,Economy & jobs,1510.4660111158612
+2012-obama,2012,Economy & jobs,1617.1457887986317
 2012-obama,2012,Taxes & budget,838.4831124412142
 2012-obama,2012,Trade & tariffs,310.0692603676785
-2012-obama,2012,Banking & currency,334.99444206926034
+2012-obama,2012,Banking & currency,228.31466438648997
 2012-obama,2012,Foreign affairs,505.4826849080804
 2012-obama,2012,Defense & war,663.0098332620778
 2012-obama,2012,Health care,0.0
@@ -4350,8 +4350,8 @@ id,year,topic,words
 2012-obama,2012,Science & technology,84.74561778537837
 2012-obama,2012,Government & administration,441.67421975203075
 2012-obama,2012,Territories & expansion,0.0
-2013-obama,2013,Economy & jobs,959.2590734730009
-2013-obama,2013,Taxes & budget,1068.5163765122456
+2013-obama,2013,Economy & jobs,1057.4904101504867
+2013-obama,2013,Taxes & budget,970.2850398347597
 2013-obama,2013,Trade & tariffs,87.20537031572735
 2013-obama,2013,Banking & currency,0.0
 2013-obama,2013,Foreign affairs,590.3903806432577
@@ -4493,25 +4493,25 @@ id,year,topic,words
 2020-trump,2020,Education,355.40286957923587
 2020-trump,2020,Immigration,346.4681605674673
 2020-trump,2020,Energy & environment,114.16572626148638
-2020-trump,2020,Crime & justice,463.6121231662098
+2020-trump,2020,Crime & justice,393.1271965178139
 2020-trump,2020,Civil rights,236.27341608898922
 2020-trump,2020,Social welfare,330.5842334354345
 2020-trump,2020,Agriculture,0.0
 2020-trump,2020,Infrastructure,47.65178139609866
 2020-trump,2020,Native American affairs,0.0
 2020-trump,2020,Science & technology,206.49105271642753
-2020-trump,2020,Government & administration,0.0
+2020-trump,2020,Government & administration,70.48492664839594
 2020-trump,2020,Territories & expansion,0.0
 2021-biden,2021,Economy & jobs,813.7094517236992
 2021-biden,2021,Taxes & budget,543.4775473858289
-2021-biden,2021,Trade & tariffs,315.4379849891871
+2021-biden,2021,Trade & tariffs,190.87011830555906
 2021-biden,2021,Banking & currency,0.0
-2021-biden,2021,Foreign affairs,418.9096807022007
+2021-biden,2021,Foreign affairs,474.16155705380993
 2021-biden,2021,Defense & war,483.2027731840733
 2021-biden,2021,Health care,1081.9321969215111
 2021-biden,2021,Education,385.75855489123524
 2021-biden,2021,Immigration,370.68986134079637
-2021-biden,2021,Energy & environment,322.4700419793919
+2021-biden,2021,Energy & environment,391.7860323114108
 2021-biden,2021,Crime & justice,797.6361786032312
 2021-biden,2021,Civil rights,469.1386592036636
 2021-biden,2021,Social welfare,468.13407963363437
@@ -4541,7 +4541,7 @@ id,year,topic,words
 2022-biden,2022,Government & administration,0.0
 2022-biden,2022,Territories & expansion,0.0
 2023-biden,2023,Economy & jobs,1434.465272427078
-2023-biden,2023,Taxes & budget,738.7847000550358
+2023-biden,2023,Taxes & budget,743.7968079251513
 2023-biden,2023,Trade & tariffs,236.57149146945514
 2023-biden,2023,Banking & currency,0.0
 2023-biden,2023,Foreign affairs,558.348816730875
@@ -4605,14 +4605,14 @@ id,year,topic,words
 2026-trump,2026,Defense & war,1254.0363566781473
 2026-trump,2026,Health care,577.9384806735554
 2026-trump,2026,Education,29.04716800612323
-2026-trump,2026,Immigration,477.7758323765787
+2026-trump,2026,Immigration,491.79860313815544
 2026-trump,2026,Energy & environment,321.5221010332951
-2026-trump,2026,Crime & justice,923.4996172981249
-2026-trump,2026,Civil rights,213.34644087256027
+2026-trump,2026,Crime & justice,988.6053386911597
+2026-trump,2026,Civil rights,159.25861079219288
 2026-trump,2026,Social welfare,250.40662074244165
 2026-trump,2026,Agriculture,0.0
 2026-trump,2026,Infrastructure,0.0
 2026-trump,2026,Native American affairs,0.0
 2026-trump,2026,Science & technology,81.13174512055109
-2026-trump,2026,Government & administration,62.10084194412553
+2026-trump,2026,Government & administration,116.18867202449292
 2026-trump,2026,Territories & expansion,0.0

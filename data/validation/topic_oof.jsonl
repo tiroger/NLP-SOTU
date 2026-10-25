@@ -1,0 +1,750 @@
+{"key":"p-1846-polk-55","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1853-pierce-57","speech_id":"1853-pierce","president":"Franklin Pierce","year":1853,"era":"1790-1860","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1826-adams-36","speech_id":"1826-adams","president":"John Quincy Adams","year":1826,"era":"1790-1860","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1807-jefferson-18","speech_id":"1807-jefferson","president":"Thomas Jefferson","year":1807,"era":"1790-1860","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1832-jackson-41","speech_id":"1832-jackson","president":"Andrew Jackson","year":1832,"era":"1790-1860","topic":"Energy & environment","prediction":"Other"}
+{"key":"p-1817-monroe-3","speech_id":"1817-monroe","president":"James Monroe","year":1817,"era":"1790-1860","topic":"Foreign affairs","prediction":"Territories & expansion"}
+{"key":"p-1858-buchanan-83","speech_id":"1858-buchanan","president":"James Buchanan","year":1858,"era":"1790-1860","topic":"Other","prediction":"Government & administration"}
+{"key":"p-1851-fillmore-4","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1827-adams-34","speech_id":"1827-adams","president":"John Quincy Adams","year":1827,"era":"1790-1860","topic":"Taxes & budget","prediction":"Trade & tariffs"}
+{"key":"p-1839-buren-61","speech_id":"1839-buren","president":"Martin Van Buren","year":1839,"era":"1790-1860","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1845-polk-7","speech_id":"1845-polk","president":"James K. Polk","year":1845,"era":"1790-1860","topic":"Territories & expansion","prediction":"Other"}
+{"key":"p-1797-adams-2","speech_id":"1797-adams","president":"John Adams","year":1797,"era":"1790-1860","topic":"Other","prediction":"Foreign affairs"}
+{"key":"p-1829-jackson-22","speech_id":"1829-jackson","president":"Andrew Jackson","year":1829,"era":"1790-1860","topic":"Government & administration","prediction":"Other"}
+{"key":"p-1839-buren-6","speech_id":"1839-buren","president":"Martin Van Buren","year":1839,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1834-jackson-60","speech_id":"1834-jackson","president":"Andrew Jackson","year":1834,"era":"1790-1860","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1848-polk-121","speech_id":"1848-polk","president":"James K. Polk","year":1848,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1838-buren-21","speech_id":"1838-buren","president":"Martin Van Buren","year":1838,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1824-monroe-17","speech_id":"1824-monroe","president":"James Monroe","year":1824,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1850-fillmore-61","speech_id":"1850-fillmore","president":"Millard Fillmore","year":1850,"era":"1790-1860","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1812-madison-9","speech_id":"1812-madison","president":"James Madison","year":1812,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1858-buchanan-29","speech_id":"1858-buchanan","president":"James Buchanan","year":1858,"era":"1790-1860","topic":"Territories & expansion","prediction":"Defense & war"}
+{"key":"p-1824-monroe-64","speech_id":"1824-monroe","president":"James Monroe","year":1824,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1818-monroe-11","speech_id":"1818-monroe","president":"James Monroe","year":1818,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1847-polk-107","speech_id":"1847-polk","president":"James K. Polk","year":1847,"era":"1790-1860","topic":"Territories & expansion","prediction":"Native American affairs"}
+{"key":"p-1833-jackson-20","speech_id":"1833-jackson","president":"Andrew Jackson","year":1833,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1816-madison-17","speech_id":"1816-madison","president":"James Madison","year":1816,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1822-monroe-13","speech_id":"1822-monroe","president":"James Monroe","year":1822,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1832-jackson-57","speech_id":"1832-jackson","president":"Andrew Jackson","year":1832,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1851-fillmore-28","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1827-adams-49","speech_id":"1827-adams","president":"John Quincy Adams","year":1827,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1857-buchanan-3","speech_id":"1857-buchanan","president":"James Buchanan","year":1857,"era":"1790-1860","topic":"Taxes & budget","prediction":"Foreign affairs"}
+{"key":"p-1844-tyler-44","speech_id":"1844-tyler","president":"John Tyler","year":1844,"era":"1790-1860","topic":"Economy & jobs","prediction":"Other"}
+{"key":"p-1816-madison-11","speech_id":"1816-madison","president":"James Madison","year":1816,"era":"1790-1860","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1832-jackson-20","speech_id":"1832-jackson","president":"Andrew Jackson","year":1832,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1852-fillmore-20","speech_id":"1852-fillmore","president":"Millard Fillmore","year":1852,"era":"1790-1860","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1819-monroe-6","speech_id":"1819-monroe","president":"James Monroe","year":1819,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1818-monroe-23","speech_id":"1818-monroe","president":"James Monroe","year":1818,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1855-pierce-26","speech_id":"1855-pierce","president":"Franklin Pierce","year":1855,"era":"1790-1860","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-1824-monroe-42","speech_id":"1824-monroe","president":"James Monroe","year":1824,"era":"1790-1860","topic":"Infrastructure","prediction":"Defense & war"}
+{"key":"p-1830-jackson-32","speech_id":"1830-jackson","president":"Andrew Jackson","year":1830,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1792-washington-1","speech_id":"1792-washington","president":"George Washington","year":1792,"era":"1790-1860","topic":"Native American affairs","prediction":"Defense & war"}
+{"key":"p-1854-pierce-22","speech_id":"1854-pierce","president":"Franklin Pierce","year":1854,"era":"1790-1860","topic":"Foreign affairs","prediction":"Other"}
+{"key":"p-1859-buchanan-43","speech_id":"1859-buchanan","president":"James Buchanan","year":1859,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1818-monroe-15","speech_id":"1818-monroe","president":"James Monroe","year":1818,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1847-polk-51","speech_id":"1847-polk","president":"James K. Polk","year":1847,"era":"1790-1860","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1819-monroe-5","speech_id":"1819-monroe","president":"James Monroe","year":1819,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1859-buchanan-22","speech_id":"1859-buchanan","president":"James Buchanan","year":1859,"era":"1790-1860","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1809-madison-8","speech_id":"1809-madison","president":"James Madison","year":1809,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1817-monroe-36","speech_id":"1817-monroe","president":"James Monroe","year":1817,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1857-buchanan-29","speech_id":"1857-buchanan","president":"James Buchanan","year":1857,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1851-fillmore-62","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Energy & environment","prediction":"Agriculture"}
+{"key":"p-1846-polk-39","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Defense & war","prediction":"Territories & expansion"}
+{"key":"p-1851-fillmore-80","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Native American affairs","prediction":"Defense & war"}
+{"key":"p-1845-polk-16","speech_id":"1845-polk","president":"James K. Polk","year":1845,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1834-jackson-111","speech_id":"1834-jackson","president":"Andrew Jackson","year":1834,"era":"1790-1860","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1793-washington-20","speech_id":"1793-washington","president":"George Washington","year":1793,"era":"1790-1860","topic":"Government & administration","prediction":"Taxes & budget"}
+{"key":"p-1803-jefferson-16","speech_id":"1803-jefferson","president":"Thomas Jefferson","year":1803,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1832-jackson-14","speech_id":"1832-jackson","president":"Andrew Jackson","year":1832,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1846-polk-99","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1849-taylor-39","speech_id":"1849-taylor","president":"Zachary Taylor","year":1849,"era":"1790-1860","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1853-pierce-13","speech_id":"1853-pierce","president":"Franklin Pierce","year":1853,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1809-madison-9","speech_id":"1809-madison","president":"James Madison","year":1809,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1858-buchanan-49","speech_id":"1858-buchanan","president":"James Buchanan","year":1858,"era":"1790-1860","topic":"Territories & expansion","prediction":"Foreign affairs"}
+{"key":"p-1837-buren-65","speech_id":"1837-buren","president":"Martin Van Buren","year":1837,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1852-fillmore-51","speech_id":"1852-fillmore","president":"Millard Fillmore","year":1852,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1818-monroe-37","speech_id":"1818-monroe","president":"James Monroe","year":1818,"era":"1790-1860","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1849-taylor-29","speech_id":"1849-taylor","president":"Zachary Taylor","year":1849,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1828-adams-52","speech_id":"1828-adams","president":"John Quincy Adams","year":1828,"era":"1790-1860","topic":"Crime & justice","prediction":"Government & administration"}
+{"key":"p-1834-jackson-61","speech_id":"1834-jackson","president":"Andrew Jackson","year":1834,"era":"1790-1860","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1820-monroe-19","speech_id":"1820-monroe","president":"James Monroe","year":1820,"era":"1790-1860","topic":"Taxes & budget","prediction":"Defense & war"}
+{"key":"p-1817-monroe-22","speech_id":"1817-monroe","president":"James Monroe","year":1817,"era":"1790-1860","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1833-jackson-11","speech_id":"1833-jackson","president":"Andrew Jackson","year":1833,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1813-madison-32","speech_id":"1813-madison","president":"James Madison","year":1813,"era":"1790-1860","topic":"Economy & jobs","prediction":"Trade & tariffs"}
+{"key":"p-1815-madison-19","speech_id":"1815-madison","president":"James Madison","year":1815,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1817-monroe-19","speech_id":"1817-monroe","president":"James Monroe","year":1817,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1838-buren-28","speech_id":"1838-buren","president":"Martin Van Buren","year":1838,"era":"1790-1860","topic":"Banking & currency","prediction":"Government & administration"}
+{"key":"p-1836-jackson-85","speech_id":"1836-jackson","president":"Andrew Jackson","year":1836,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1843-tyler-38","speech_id":"1843-tyler","president":"John Tyler","year":1843,"era":"1790-1860","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1851-fillmore-17","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-1843-tyler-4","speech_id":"1843-tyler","president":"John Tyler","year":1843,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1860-buchanan-88","speech_id":"1860-buchanan","president":"James Buchanan","year":1860,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1834-jackson-46","speech_id":"1834-jackson","president":"Andrew Jackson","year":1834,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1842-tyler-22","speech_id":"1842-tyler","president":"John Tyler","year":1842,"era":"1790-1860","topic":"Defense & war","prediction":"Territories & expansion"}
+{"key":"p-1826-adams-47","speech_id":"1826-adams","president":"John Quincy Adams","year":1826,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1847-polk-118","speech_id":"1847-polk","president":"James K. Polk","year":1847,"era":"1790-1860","topic":"Defense & war","prediction":"Infrastructure"}
+{"key":"p-1847-polk-4","speech_id":"1847-polk","president":"James K. Polk","year":1847,"era":"1790-1860","topic":"Other","prediction":"Other"}
+{"key":"p-1839-buren-46","speech_id":"1839-buren","president":"Martin Van Buren","year":1839,"era":"1790-1860","topic":"Banking & currency","prediction":"Defense & war"}
+{"key":"p-1848-polk-125","speech_id":"1848-polk","president":"James K. Polk","year":1848,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1819-monroe-1","speech_id":"1819-monroe","president":"James Monroe","year":1819,"era":"1790-1860","topic":"Other","prediction":"Government & administration"}
+{"key":"p-1848-polk-140","speech_id":"1848-polk","president":"James K. Polk","year":1848,"era":"1790-1860","topic":"Banking & currency","prediction":"Economy & jobs"}
+{"key":"p-1809-madison-1","speech_id":"1809-madison","president":"James Madison","year":1809,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1791-washington-24","speech_id":"1791-washington","president":"George Washington","year":1791,"era":"1790-1860","topic":"Other","prediction":"Government & administration"}
+{"key":"p-1825-adams-54","speech_id":"1825-adams","president":"John Quincy Adams","year":1825,"era":"1790-1860","topic":"Government & administration","prediction":"Defense & war"}
+{"key":"p-1849-taylor-57","speech_id":"1849-taylor","president":"Zachary Taylor","year":1849,"era":"1790-1860","topic":"Government & administration","prediction":"Civil rights"}
+{"key":"p-1831-jackson-27","speech_id":"1831-jackson","president":"Andrew Jackson","year":1831,"era":"1790-1860","topic":"Foreign affairs","prediction":"Native American affairs"}
+{"key":"p-1833-jackson-16","speech_id":"1833-jackson","president":"Andrew Jackson","year":1833,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1851-fillmore-83","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Native American affairs","prediction":"Defense & war"}
+{"key":"p-1834-jackson-76","speech_id":"1834-jackson","president":"Andrew Jackson","year":1834,"era":"1790-1860","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1855-pierce-1","speech_id":"1855-pierce","president":"Franklin Pierce","year":1855,"era":"1790-1860","topic":"Government & administration","prediction":"Other"}
+{"key":"p-1835-jackson-86","speech_id":"1835-jackson","president":"Andrew Jackson","year":1835,"era":"1790-1860","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1822-monroe-32","speech_id":"1822-monroe","president":"James Monroe","year":1822,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1809-madison-7","speech_id":"1809-madison","president":"James Madison","year":1809,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1832-jackson-8","speech_id":"1832-jackson","president":"Andrew Jackson","year":1832,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1812-madison-23","speech_id":"1812-madison","president":"James Madison","year":1812,"era":"1790-1860","topic":"Defense & war","prediction":"Crime & justice"}
+{"key":"p-1857-buchanan-5","speech_id":"1857-buchanan","president":"James Buchanan","year":1857,"era":"1790-1860","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1800-adams-13","speech_id":"1800-adams","president":"John Adams","year":1800,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1822-monroe-26","speech_id":"1822-monroe","president":"James Monroe","year":1822,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1838-buren-65","speech_id":"1838-buren","president":"Martin Van Buren","year":1838,"era":"1790-1860","topic":"Government & administration","prediction":"Crime & justice"}
+{"key":"p-1831-jackson-45","speech_id":"1831-jackson","president":"Andrew Jackson","year":1831,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Taxes & budget"}
+{"key":"p-1839-buren-30","speech_id":"1839-buren","president":"Martin Van Buren","year":1839,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1837-buren-11","speech_id":"1837-buren","president":"Martin Van Buren","year":1837,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1826-adams-13","speech_id":"1826-adams","president":"John Quincy Adams","year":1826,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1843-tyler-23","speech_id":"1843-tyler","president":"John Tyler","year":1843,"era":"1790-1860","topic":"Taxes & budget","prediction":"Energy & environment"}
+{"key":"p-1812-madison-7","speech_id":"1812-madison","president":"James Madison","year":1812,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1846-polk-36","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1836-jackson-87","speech_id":"1836-jackson","president":"Andrew Jackson","year":1836,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1860-buchanan-31","speech_id":"1860-buchanan","president":"James Buchanan","year":1860,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1847-polk-63","speech_id":"1847-polk","president":"James K. Polk","year":1847,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1817-monroe-16","speech_id":"1817-monroe","president":"James Monroe","year":1817,"era":"1790-1860","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1841-tyler-17","speech_id":"1841-tyler","president":"John Tyler","year":1841,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1813-madison-25","speech_id":"1813-madison","president":"James Madison","year":1813,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1848-polk-47","speech_id":"1848-polk","president":"James K. Polk","year":1848,"era":"1790-1860","topic":"Civil rights","prediction":"Defense & war"}
+{"key":"p-1836-jackson-65","speech_id":"1836-jackson","president":"Andrew Jackson","year":1836,"era":"1790-1860","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1798-adams-9","speech_id":"1798-adams","president":"John Adams","year":1798,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1851-fillmore-7","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1845-polk-41","speech_id":"1845-polk","president":"James K. Polk","year":1845,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1846-polk-15","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1848-polk-17","speech_id":"1848-polk","president":"James K. Polk","year":1848,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1792-washington-28","speech_id":"1792-washington","president":"George Washington","year":1792,"era":"1790-1860","topic":"Other","prediction":"Other"}
+{"key":"p-1858-buchanan-105","speech_id":"1858-buchanan","president":"James Buchanan","year":1858,"era":"1790-1860","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1856-pierce-40","speech_id":"1856-pierce","president":"Franklin Pierce","year":1856,"era":"1790-1860","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1814-madison-22","speech_id":"1814-madison","president":"James Madison","year":1814,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1852-fillmore-7","speech_id":"1852-fillmore","president":"Millard Fillmore","year":1852,"era":"1790-1860","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-1837-buren-1","speech_id":"1837-buren","president":"Martin Van Buren","year":1837,"era":"1790-1860","topic":"Other","prediction":"Other"}
+{"key":"p-1826-adams-26","speech_id":"1826-adams","president":"John Quincy Adams","year":1826,"era":"1790-1860","topic":"Taxes & budget","prediction":"Economy & jobs"}
+{"key":"p-1836-jackson-53","speech_id":"1836-jackson","president":"Andrew Jackson","year":1836,"era":"1790-1860","topic":"Banking & currency","prediction":"Government & administration"}
+{"key":"p-1842-tyler-32","speech_id":"1842-tyler","president":"John Tyler","year":1842,"era":"1790-1860","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1832-jackson-50","speech_id":"1832-jackson","president":"Andrew Jackson","year":1832,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1849-taylor-46","speech_id":"1849-taylor","president":"Zachary Taylor","year":1849,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1846-polk-6","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1812-madison-27","speech_id":"1812-madison","president":"James Madison","year":1812,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1819-monroe-42","speech_id":"1819-monroe","president":"James Monroe","year":1819,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1819-monroe-15","speech_id":"1819-monroe","president":"James Monroe","year":1819,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1834-jackson-62","speech_id":"1834-jackson","president":"Andrew Jackson","year":1834,"era":"1790-1860","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1831-jackson-20","speech_id":"1831-jackson","president":"Andrew Jackson","year":1831,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1851-fillmore-19","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Foreign affairs","prediction":"Government & administration"}
+{"key":"p-1841-tyler-34","speech_id":"1841-tyler","president":"John Tyler","year":1841,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1836-jackson-25","speech_id":"1836-jackson","president":"Andrew Jackson","year":1836,"era":"1790-1860","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1851-fillmore-3","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1846-polk-66","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Defense & war","prediction":"Trade & tariffs"}
+{"key":"p-1834-jackson-11","speech_id":"1834-jackson","president":"Andrew Jackson","year":1834,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1824-monroe-16","speech_id":"1824-monroe","president":"James Monroe","year":1824,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1807-jefferson-15","speech_id":"1807-jefferson","president":"Thomas Jefferson","year":1807,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1851-fillmore-47","speech_id":"1851-fillmore","president":"Millard Fillmore","year":1851,"era":"1790-1860","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1793-washington-5","speech_id":"1793-washington","president":"George Washington","year":1793,"era":"1790-1860","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-1838-buren-47","speech_id":"1838-buren","president":"Martin Van Buren","year":1838,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1846-polk-67","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Foreign affairs","prediction":"Immigration"}
+{"key":"p-1815-madison-7","speech_id":"1815-madison","president":"James Madison","year":1815,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1860-buchanan-30","speech_id":"1860-buchanan","president":"James Buchanan","year":1860,"era":"1790-1860","topic":"Government & administration","prediction":"Civil rights"}
+{"key":"p-1819-monroe-9","speech_id":"1819-monroe","president":"James Monroe","year":1819,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1858-buchanan-95","speech_id":"1858-buchanan","president":"James Buchanan","year":1858,"era":"1790-1860","topic":"Government & administration","prediction":"Defense & war"}
+{"key":"p-1793-washington-8","speech_id":"1793-washington","president":"George Washington","year":1793,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1828-adams-25","speech_id":"1828-adams","president":"John Quincy Adams","year":1828,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1804-jefferson-9","speech_id":"1804-jefferson","president":"Thomas Jefferson","year":1804,"era":"1790-1860","topic":"Territories & expansion","prediction":"Government & administration"}
+{"key":"p-1832-jackson-60","speech_id":"1832-jackson","president":"Andrew Jackson","year":1832,"era":"1790-1860","topic":"Government & administration","prediction":"Other"}
+{"key":"p-1837-buren-22","speech_id":"1837-buren","president":"Martin Van Buren","year":1837,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1858-buchanan-37","speech_id":"1858-buchanan","president":"James Buchanan","year":1858,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1830-jackson-18","speech_id":"1830-jackson","president":"Andrew Jackson","year":1830,"era":"1790-1860","topic":"Foreign affairs","prediction":"Other"}
+{"key":"p-1827-adams-7","speech_id":"1827-adams","president":"John Quincy Adams","year":1827,"era":"1790-1860","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-1827-adams-50","speech_id":"1827-adams","president":"John Quincy Adams","year":1827,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1858-buchanan-39","speech_id":"1858-buchanan","president":"James Buchanan","year":1858,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1830-jackson-33","speech_id":"1830-jackson","president":"Andrew Jackson","year":1830,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1829-jackson-23","speech_id":"1829-jackson","president":"Andrew Jackson","year":1829,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1824-monroe-23","speech_id":"1824-monroe","president":"James Monroe","year":1824,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1818-monroe-9","speech_id":"1818-monroe","president":"James Monroe","year":1818,"era":"1790-1860","topic":"Defense & war","prediction":"Native American affairs"}
+{"key":"p-1836-jackson-90","speech_id":"1836-jackson","president":"Andrew Jackson","year":1836,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1802-jefferson-11","speech_id":"1802-jefferson","president":"Thomas Jefferson","year":1802,"era":"1790-1860","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1841-tyler-16","speech_id":"1841-tyler","president":"John Tyler","year":1841,"era":"1790-1860","topic":"Foreign affairs","prediction":"Other"}
+{"key":"p-1800-adams-18","speech_id":"1800-adams","president":"John Adams","year":1800,"era":"1790-1860","topic":"Other","prediction":"Other"}
+{"key":"p-1832-jackson-58","speech_id":"1832-jackson","president":"Andrew Jackson","year":1832,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1857-buchanan-70","speech_id":"1857-buchanan","president":"James Buchanan","year":1857,"era":"1790-1860","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1792-washington-14","speech_id":"1792-washington","president":"George Washington","year":1792,"era":"1790-1860","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1846-polk-40","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1846-polk-52","speech_id":"1846-polk","president":"James K. Polk","year":1846,"era":"1790-1860","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1813-madison-27","speech_id":"1813-madison","president":"James Madison","year":1813,"era":"1790-1860","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1836-jackson-57","speech_id":"1836-jackson","president":"Andrew Jackson","year":1836,"era":"1790-1860","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1856-pierce-16","speech_id":"1856-pierce","president":"Franklin Pierce","year":1856,"era":"1790-1860","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1819-monroe-17","speech_id":"1819-monroe","president":"James Monroe","year":1819,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1860-buchanan-41","speech_id":"1860-buchanan","president":"James Buchanan","year":1860,"era":"1790-1860","topic":"Government & administration","prediction":"Defense & war"}
+{"key":"p-1836-jackson-93","speech_id":"1836-jackson","president":"Andrew Jackson","year":1836,"era":"1790-1860","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1832-jackson-59","speech_id":"1832-jackson","president":"Andrew Jackson","year":1832,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1812-madison-28","speech_id":"1812-madison","president":"James Madison","year":1812,"era":"1790-1860","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1852-fillmore-65","speech_id":"1852-fillmore","president":"Millard Fillmore","year":1852,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1853-pierce-27","speech_id":"1853-pierce","president":"Franklin Pierce","year":1853,"era":"1790-1860","topic":"Taxes & budget","prediction":"Government & administration"}
+{"key":"p-1826-adams-11","speech_id":"1826-adams","president":"John Quincy Adams","year":1826,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1853-pierce-32","speech_id":"1853-pierce","president":"Franklin Pierce","year":1853,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Taxes & budget"}
+{"key":"p-1853-pierce-18","speech_id":"1853-pierce","president":"Franklin Pierce","year":1853,"era":"1790-1860","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1860-buchanan-32","speech_id":"1860-buchanan","president":"James Buchanan","year":1860,"era":"1790-1860","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1811-madison-22","speech_id":"1811-madison","president":"James Madison","year":1811,"era":"1790-1860","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1823-monroe-16","speech_id":"1823-monroe","president":"James Monroe","year":1823,"era":"1790-1860","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1884-arthur-125","speech_id":"1884-arthur","president":"Chester A. Arthur","year":1884,"era":"1861-1912","topic":"Health care","prediction":"Foreign affairs"}
+{"key":"p-1899-mckinley-156","speech_id":"1899-mckinley","president":"William McKinley","year":1899,"era":"1861-1912","topic":"Science & technology","prediction":"Science & technology"}
+{"key":"p-1912-taft-141","speech_id":"1912-taft","president":"William Howard Taft","year":1912,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1886-cleveland-44","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1896-cleveland-11","speech_id":"1896-cleveland","president":"Grover Cleveland","year":1896,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1908-roosevelt-87","speech_id":"1908-roosevelt","president":"Theodore Roosevelt","year":1908,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1873-grant-8","speech_id":"1873-grant","president":"Ulysses S. Grant","year":1873,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1875-grant-6","speech_id":"1875-grant","president":"Ulysses S. Grant","year":1875,"era":"1861-1912","topic":"Economy & jobs","prediction":"Trade & tariffs"}
+{"key":"p-1898-mckinley-45","speech_id":"1898-mckinley","president":"William McKinley","year":1898,"era":"1861-1912","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1871-grant-36","speech_id":"1871-grant","president":"Ulysses S. Grant","year":1871,"era":"1861-1912","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1903-roosevelt-71","speech_id":"1903-roosevelt","president":"Theodore Roosevelt","year":1903,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1901-roosevelt-3","speech_id":"1901-roosevelt","president":"Theodore Roosevelt","year":1901,"era":"1861-1912","topic":"Other","prediction":"Other"}
+{"key":"p-1888-cleveland-134","speech_id":"1888-cleveland","president":"Grover Cleveland","year":1888,"era":"1861-1912","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1884-arthur-94","speech_id":"1884-arthur","president":"Chester A. Arthur","year":1884,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1907-roosevelt-27","speech_id":"1907-roosevelt","president":"Theodore Roosevelt","year":1907,"era":"1861-1912","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1882-arthur-136","speech_id":"1882-arthur","president":"Chester A. Arthur","year":1882,"era":"1861-1912","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1898-mckinley-193","speech_id":"1898-mckinley","president":"William McKinley","year":1898,"era":"1861-1912","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1901-roosevelt-140","speech_id":"1901-roosevelt","president":"Theodore Roosevelt","year":1901,"era":"1861-1912","topic":"Science & technology","prediction":"Foreign affairs"}
+{"key":"p-1903-roosevelt-17","speech_id":"1903-roosevelt","president":"Theodore Roosevelt","year":1903,"era":"1861-1912","topic":"Crime & justice","prediction":"Government & administration"}
+{"key":"p-1898-mckinley-126","speech_id":"1898-mckinley","president":"William McKinley","year":1898,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1886-cleveland-103","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1879-hayes-61","speech_id":"1879-hayes","president":"Rutherford B. Hayes","year":1879,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1894-cleveland-95","speech_id":"1894-cleveland","president":"Grover Cleveland","year":1894,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1905-roosevelt-35","speech_id":"1905-roosevelt","president":"Theodore Roosevelt","year":1905,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1862-lincoln-46","speech_id":"1862-lincoln","president":"Abraham Lincoln","year":1862,"era":"1861-1912","topic":"Civil rights","prediction":"Civil rights"}
+{"key":"p-1912-taft-148","speech_id":"1912-taft","president":"William Howard Taft","year":1912,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1894-cleveland-149","speech_id":"1894-cleveland","president":"Grover Cleveland","year":1894,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1864-lincoln-49","speech_id":"1864-lincoln","president":"Abraham Lincoln","year":1864,"era":"1861-1912","topic":"Energy & environment","prediction":"Taxes & budget"}
+{"key":"p-1892-harrison-77","speech_id":"1892-harrison","president":"Benjamin Harrison","year":1892,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1910-taft-112","speech_id":"1910-taft","president":"William Howard Taft","year":1910,"era":"1861-1912","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1877-hayes-65","speech_id":"1877-hayes","president":"Rutherford B. Hayes","year":1877,"era":"1861-1912","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1879-hayes-63","speech_id":"1879-hayes","president":"Rutherford B. Hayes","year":1879,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1876-grant-63","speech_id":"1876-grant","president":"Ulysses S. Grant","year":1876,"era":"1861-1912","topic":"Government & administration","prediction":"Infrastructure"}
+{"key":"p-1865-johnson-17","speech_id":"1865-johnson","president":"Andrew Johnson","year":1865,"era":"1861-1912","topic":"Crime & justice","prediction":"Civil rights"}
+{"key":"p-1909-taft-67","speech_id":"1909-taft","president":"William Howard Taft","year":1909,"era":"1861-1912","topic":"Crime & justice","prediction":"Government & administration"}
+{"key":"p-1910-taft-234","speech_id":"1910-taft","president":"William Howard Taft","year":1910,"era":"1861-1912","topic":"Banking & currency","prediction":"Foreign affairs"}
+{"key":"p-1863-lincoln-36","speech_id":"1863-lincoln","president":"Abraham Lincoln","year":1863,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1881-arthur-177","speech_id":"1881-arthur","president":"Chester A. Arthur","year":1881,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1897-mckinley-90","speech_id":"1897-mckinley","president":"William McKinley","year":1897,"era":"1861-1912","topic":"Infrastructure","prediction":"Taxes & budget"}
+{"key":"p-1888-cleveland-172","speech_id":"1888-cleveland","president":"Grover Cleveland","year":1888,"era":"1861-1912","topic":"Defense & war","prediction":"Government & administration"}
+{"key":"p-1874-grant-41","speech_id":"1874-grant","president":"Ulysses S. Grant","year":1874,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1897-mckinley-77","speech_id":"1897-mckinley","president":"William McKinley","year":1897,"era":"1861-1912","topic":"Social welfare","prediction":"Foreign affairs"}
+{"key":"p-1901-roosevelt-47","speech_id":"1901-roosevelt","president":"Theodore Roosevelt","year":1901,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1881-arthur-200","speech_id":"1881-arthur","president":"Chester A. Arthur","year":1881,"era":"1861-1912","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1883-arthur-2","speech_id":"1883-arthur","president":"Chester A. Arthur","year":1883,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1882-arthur-81","speech_id":"1882-arthur","president":"Chester A. Arthur","year":1882,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1907-roosevelt-119","speech_id":"1907-roosevelt","president":"Theodore Roosevelt","year":1907,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1899-mckinley-191","speech_id":"1899-mckinley","president":"William McKinley","year":1899,"era":"1861-1912","topic":"Territories & expansion","prediction":"Defense & war"}
+{"key":"p-1891-harrison-89","speech_id":"1891-harrison","president":"Benjamin Harrison","year":1891,"era":"1861-1912","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1875-grant-9","speech_id":"1875-grant","president":"Ulysses S. Grant","year":1875,"era":"1861-1912","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1911-taft-7","speech_id":"1911-taft","president":"William Howard Taft","year":1911,"era":"1861-1912","topic":"Crime & justice","prediction":"Economy & jobs"}
+{"key":"p-1899-mckinley-168","speech_id":"1899-mckinley","president":"William McKinley","year":1899,"era":"1861-1912","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1887-cleveland-6","speech_id":"1887-cleveland","president":"Grover Cleveland","year":1887,"era":"1861-1912","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1902-roosevelt-17","speech_id":"1902-roosevelt","president":"Theodore Roosevelt","year":1902,"era":"1861-1912","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1898-mckinley-42","speech_id":"1898-mckinley","president":"William McKinley","year":1898,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1910-taft-76","speech_id":"1910-taft","president":"William Howard Taft","year":1910,"era":"1861-1912","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1904-roosevelt-20","speech_id":"1904-roosevelt","president":"Theodore Roosevelt","year":1904,"era":"1861-1912","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1906-roosevelt-107","speech_id":"1906-roosevelt","president":"Theodore Roosevelt","year":1906,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1865-johnson-18","speech_id":"1865-johnson","president":"Andrew Johnson","year":1865,"era":"1861-1912","topic":"Civil rights","prediction":"Government & administration"}
+{"key":"p-1911-taft-103","speech_id":"1911-taft","president":"William Howard Taft","year":1911,"era":"1861-1912","topic":"Foreign affairs","prediction":"Other"}
+{"key":"p-1881-arthur-77","speech_id":"1881-arthur","president":"Chester A. Arthur","year":1881,"era":"1861-1912","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1900-mckinley-41","speech_id":"1900-mckinley","president":"William McKinley","year":1900,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1895-cleveland-34","speech_id":"1895-cleveland","president":"Grover Cleveland","year":1895,"era":"1861-1912","topic":"Foreign affairs","prediction":"Crime & justice"}
+{"key":"p-1906-roosevelt-36","speech_id":"1906-roosevelt","president":"Theodore Roosevelt","year":1906,"era":"1861-1912","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1886-cleveland-185","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1862-lincoln-60","speech_id":"1862-lincoln","president":"Abraham Lincoln","year":1862,"era":"1861-1912","topic":"Civil rights","prediction":"Economy & jobs"}
+{"key":"p-1898-mckinley-16","speech_id":"1898-mckinley","president":"William McKinley","year":1898,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1877-hayes-47","speech_id":"1877-hayes","president":"Rutherford B. Hayes","year":1877,"era":"1861-1912","topic":"Government & administration","prediction":"Trade & tariffs"}
+{"key":"p-1882-arthur-45","speech_id":"1882-arthur","president":"Chester A. Arthur","year":1882,"era":"1861-1912","topic":"Science & technology","prediction":"Science & technology"}
+{"key":"p-1887-cleveland-8","speech_id":"1887-cleveland","president":"Grover Cleveland","year":1887,"era":"1861-1912","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1872-grant-42","speech_id":"1872-grant","president":"Ulysses S. Grant","year":1872,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1897-mckinley-79","speech_id":"1897-mckinley","president":"William McKinley","year":1897,"era":"1861-1912","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1904-roosevelt-88","speech_id":"1904-roosevelt","president":"Theodore Roosevelt","year":1904,"era":"1861-1912","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1876-grant-60","speech_id":"1876-grant","president":"Ulysses S. Grant","year":1876,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1882-arthur-40","speech_id":"1882-arthur","president":"Chester A. Arthur","year":1882,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1911-taft-66","speech_id":"1911-taft","president":"William Howard Taft","year":1911,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1894-cleveland-103","speech_id":"1894-cleveland","president":"Grover Cleveland","year":1894,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1885-cleveland-158","speech_id":"1885-cleveland","president":"Grover Cleveland","year":1885,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1876-grant-56","speech_id":"1876-grant","president":"Ulysses S. Grant","year":1876,"era":"1861-1912","topic":"Government & administration","prediction":"Taxes & budget"}
+{"key":"p-1900-mckinley-248","speech_id":"1900-mckinley","president":"William McKinley","year":1900,"era":"1861-1912","topic":"Other","prediction":"Foreign affairs"}
+{"key":"p-1880-hayes-64","speech_id":"1880-hayes","president":"Rutherford B. Hayes","year":1880,"era":"1861-1912","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1898-mckinley-181","speech_id":"1898-mckinley","president":"William McKinley","year":1898,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1890-harrison-49","speech_id":"1890-harrison","president":"Benjamin Harrison","year":1890,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1900-mckinley-134","speech_id":"1900-mckinley","president":"William McKinley","year":1900,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1888-cleveland-6","speech_id":"1888-cleveland","president":"Grover Cleveland","year":1888,"era":"1861-1912","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1880-hayes-99","speech_id":"1880-hayes","president":"Rutherford B. Hayes","year":1880,"era":"1861-1912","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1886-cleveland-134","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1899-mckinley-177","speech_id":"1899-mckinley","president":"William McKinley","year":1899,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1897-mckinley-72","speech_id":"1897-mckinley","president":"William McKinley","year":1897,"era":"1861-1912","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1890-harrison-60","speech_id":"1890-harrison","president":"Benjamin Harrison","year":1890,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1868-johnson-27","speech_id":"1868-johnson","president":"Andrew Johnson","year":1868,"era":"1861-1912","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1881-arthur-192","speech_id":"1881-arthur","president":"Chester A. Arthur","year":1881,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1910-taft-124","speech_id":"1910-taft","president":"William Howard Taft","year":1910,"era":"1861-1912","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1899-mckinley-83","speech_id":"1899-mckinley","president":"William McKinley","year":1899,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1886-cleveland-69","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1883-arthur-108","speech_id":"1883-arthur","president":"Chester A. Arthur","year":1883,"era":"1861-1912","topic":"Infrastructure","prediction":"Government & administration"}
+{"key":"p-1890-harrison-75","speech_id":"1890-harrison","president":"Benjamin Harrison","year":1890,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1912-taft-147","speech_id":"1912-taft","president":"William Howard Taft","year":1912,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1893-cleveland-14","speech_id":"1893-cleveland","president":"Grover Cleveland","year":1893,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1911-taft-45","speech_id":"1911-taft","president":"William Howard Taft","year":1911,"era":"1861-1912","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1896-cleveland-113","speech_id":"1896-cleveland","president":"Grover Cleveland","year":1896,"era":"1861-1912","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1891-harrison-5","speech_id":"1891-harrison","president":"Benjamin Harrison","year":1891,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1908-roosevelt-24","speech_id":"1908-roosevelt","president":"Theodore Roosevelt","year":1908,"era":"1861-1912","topic":"Crime & justice","prediction":"Economy & jobs"}
+{"key":"p-1880-hayes-108","speech_id":"1880-hayes","president":"Rutherford B. Hayes","year":1880,"era":"1861-1912","topic":"Education","prediction":"Education"}
+{"key":"p-1883-arthur-120","speech_id":"1883-arthur","president":"Chester A. Arthur","year":1883,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1909-taft-51","speech_id":"1909-taft","president":"William Howard Taft","year":1909,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1899-mckinley-129","speech_id":"1899-mckinley","president":"William McKinley","year":1899,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1885-cleveland-188","speech_id":"1885-cleveland","president":"Grover Cleveland","year":1885,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1900-mckinley-131","speech_id":"1900-mckinley","president":"William McKinley","year":1900,"era":"1861-1912","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1906-roosevelt-14","speech_id":"1906-roosevelt","president":"Theodore Roosevelt","year":1906,"era":"1861-1912","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1905-roosevelt-98","speech_id":"1905-roosevelt","president":"Theodore Roosevelt","year":1905,"era":"1861-1912","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1888-cleveland-137","speech_id":"1888-cleveland","president":"Grover Cleveland","year":1888,"era":"1861-1912","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1889-harrison-1","speech_id":"1889-harrison","president":"Benjamin Harrison","year":1889,"era":"1861-1912","topic":"Other","prediction":"Government & administration"}
+{"key":"p-1874-grant-40","speech_id":"1874-grant","president":"Ulysses S. Grant","year":1874,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1908-roosevelt-18","speech_id":"1908-roosevelt","president":"Theodore Roosevelt","year":1908,"era":"1861-1912","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1861-lincoln-9","speech_id":"1861-lincoln","president":"Abraham Lincoln","year":1861,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1889-harrison-106","speech_id":"1889-harrison","president":"Benjamin Harrison","year":1889,"era":"1861-1912","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1912-taft-169","speech_id":"1912-taft","president":"William Howard Taft","year":1912,"era":"1861-1912","topic":"Government & administration","prediction":"Crime & justice"}
+{"key":"p-1880-hayes-43","speech_id":"1880-hayes","president":"Rutherford B. Hayes","year":1880,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1899-mckinley-31","speech_id":"1899-mckinley","president":"William McKinley","year":1899,"era":"1861-1912","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1873-grant-79","speech_id":"1873-grant","president":"Ulysses S. Grant","year":1873,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1871-grant-68","speech_id":"1871-grant","president":"Ulysses S. Grant","year":1871,"era":"1861-1912","topic":"Civil rights","prediction":"Civil rights"}
+{"key":"p-1877-hayes-45","speech_id":"1877-hayes","president":"Rutherford B. Hayes","year":1877,"era":"1861-1912","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1890-harrison-64","speech_id":"1890-harrison","president":"Benjamin Harrison","year":1890,"era":"1861-1912","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1898-mckinley-71","speech_id":"1898-mckinley","president":"William McKinley","year":1898,"era":"1861-1912","topic":"Territories & expansion","prediction":"Foreign affairs"}
+{"key":"p-1890-harrison-57","speech_id":"1890-harrison","president":"Benjamin Harrison","year":1890,"era":"1861-1912","topic":"Territories & expansion","prediction":"Civil rights"}
+{"key":"p-1896-cleveland-10","speech_id":"1896-cleveland","president":"Grover Cleveland","year":1896,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1911-taft-52","speech_id":"1911-taft","president":"William Howard Taft","year":1911,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1885-cleveland-69","speech_id":"1885-cleveland","president":"Grover Cleveland","year":1885,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Foreign affairs"}
+{"key":"p-1876-grant-17","speech_id":"1876-grant","president":"Ulysses S. Grant","year":1876,"era":"1861-1912","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-1897-mckinley-89","speech_id":"1897-mckinley","president":"William McKinley","year":1897,"era":"1861-1912","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1903-roosevelt-8","speech_id":"1903-roosevelt","president":"Theodore Roosevelt","year":1903,"era":"1861-1912","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1904-roosevelt-14","speech_id":"1904-roosevelt","president":"Theodore Roosevelt","year":1904,"era":"1861-1912","topic":"Economy & jobs","prediction":"Other"}
+{"key":"p-1908-roosevelt-34","speech_id":"1908-roosevelt","president":"Theodore Roosevelt","year":1908,"era":"1861-1912","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1910-taft-130","speech_id":"1910-taft","president":"William Howard Taft","year":1910,"era":"1861-1912","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1886-cleveland-208","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1888-cleveland-36","speech_id":"1888-cleveland","president":"Grover Cleveland","year":1888,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1911-taft-96","speech_id":"1911-taft","president":"William Howard Taft","year":1911,"era":"1861-1912","topic":"Foreign affairs","prediction":"Trade & tariffs"}
+{"key":"p-1909-taft-114","speech_id":"1909-taft","president":"William Howard Taft","year":1909,"era":"1861-1912","topic":"Civil rights","prediction":"Banking & currency"}
+{"key":"p-1896-cleveland-16","speech_id":"1896-cleveland","president":"Grover Cleveland","year":1896,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1903-roosevelt-78","speech_id":"1903-roosevelt","president":"Theodore Roosevelt","year":1903,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1900-mckinley-177","speech_id":"1900-mckinley","president":"William McKinley","year":1900,"era":"1861-1912","topic":"Territories & expansion","prediction":"Defense & war"}
+{"key":"p-1902-roosevelt-26","speech_id":"1902-roosevelt","president":"Theodore Roosevelt","year":1902,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1879-hayes-55","speech_id":"1879-hayes","president":"Rutherford B. Hayes","year":1879,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1892-harrison-73","speech_id":"1892-harrison","president":"Benjamin Harrison","year":1892,"era":"1861-1912","topic":"Energy & environment","prediction":"Territories & expansion"}
+{"key":"p-1912-taft-109","speech_id":"1912-taft","president":"William Howard Taft","year":1912,"era":"1861-1912","topic":"Territories & expansion","prediction":"Foreign affairs"}
+{"key":"p-1882-arthur-91","speech_id":"1882-arthur","president":"Chester A. Arthur","year":1882,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1904-roosevelt-64","speech_id":"1904-roosevelt","president":"Theodore Roosevelt","year":1904,"era":"1861-1912","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1885-cleveland-203","speech_id":"1885-cleveland","president":"Grover Cleveland","year":1885,"era":"1861-1912","topic":"Government & administration","prediction":"Energy & environment"}
+{"key":"p-1907-roosevelt-70","speech_id":"1907-roosevelt","president":"Theodore Roosevelt","year":1907,"era":"1861-1912","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1876-grant-65","speech_id":"1876-grant","president":"Ulysses S. Grant","year":1876,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1875-grant-44","speech_id":"1875-grant","president":"Ulysses S. Grant","year":1875,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1881-arthur-44","speech_id":"1881-arthur","president":"Chester A. Arthur","year":1881,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1869-grant-18","speech_id":"1869-grant","president":"Ulysses S. Grant","year":1869,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1894-cleveland-138","speech_id":"1894-cleveland","president":"Grover Cleveland","year":1894,"era":"1861-1912","topic":"Defense & war","prediction":"Social welfare"}
+{"key":"p-1886-cleveland-16","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1899-mckinley-166","speech_id":"1899-mckinley","president":"William McKinley","year":1899,"era":"1861-1912","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1868-johnson-58","speech_id":"1868-johnson","president":"Andrew Johnson","year":1868,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1910-taft-45","speech_id":"1910-taft","president":"William Howard Taft","year":1910,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1863-lincoln-44","speech_id":"1863-lincoln","president":"Abraham Lincoln","year":1863,"era":"1861-1912","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1902-roosevelt-39","speech_id":"1902-roosevelt","president":"Theodore Roosevelt","year":1902,"era":"1861-1912","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1861-lincoln-55","speech_id":"1861-lincoln","president":"Abraham Lincoln","year":1861,"era":"1861-1912","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1868-johnson-47","speech_id":"1868-johnson","president":"Andrew Johnson","year":1868,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1875-grant-73","speech_id":"1875-grant","president":"Ulysses S. Grant","year":1875,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1896-cleveland-142","speech_id":"1896-cleveland","president":"Grover Cleveland","year":1896,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1878-hayes-75","speech_id":"1878-hayes","president":"Rutherford B. Hayes","year":1878,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1882-arthur-24","speech_id":"1882-arthur","president":"Chester A. Arthur","year":1882,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1883-arthur-81","speech_id":"1883-arthur","president":"Chester A. Arthur","year":1883,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1896-cleveland-43","speech_id":"1896-cleveland","president":"Grover Cleveland","year":1896,"era":"1861-1912","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1875-grant-21","speech_id":"1875-grant","president":"Ulysses S. Grant","year":1875,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1900-mckinley-70","speech_id":"1900-mckinley","president":"William McKinley","year":1900,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1861-lincoln-60","speech_id":"1861-lincoln","president":"Abraham Lincoln","year":1861,"era":"1861-1912","topic":"Civil rights","prediction":"Taxes & budget"}
+{"key":"p-1872-grant-33","speech_id":"1872-grant","president":"Ulysses S. Grant","year":1872,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1910-taft-96","speech_id":"1910-taft","president":"William Howard Taft","year":1910,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1898-mckinley-195","speech_id":"1898-mckinley","president":"William McKinley","year":1898,"era":"1861-1912","topic":"Science & technology","prediction":"Defense & war"}
+{"key":"p-1904-roosevelt-57","speech_id":"1904-roosevelt","president":"Theodore Roosevelt","year":1904,"era":"1861-1912","topic":"Energy & environment","prediction":"Defense & war"}
+{"key":"p-1876-grant-12","speech_id":"1876-grant","president":"Ulysses S. Grant","year":1876,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1900-mckinley-184","speech_id":"1900-mckinley","president":"William McKinley","year":1900,"era":"1861-1912","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1886-cleveland-100","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Crime & justice","prediction":"Taxes & budget"}
+{"key":"p-1893-cleveland-155","speech_id":"1893-cleveland","president":"Grover Cleveland","year":1893,"era":"1861-1912","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1881-arthur-10","speech_id":"1881-arthur","president":"Chester A. Arthur","year":1881,"era":"1861-1912","topic":"Foreign affairs","prediction":"Other"}
+{"key":"p-1889-harrison-39","speech_id":"1889-harrison","president":"Benjamin Harrison","year":1889,"era":"1861-1912","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1876-grant-39","speech_id":"1876-grant","president":"Ulysses S. Grant","year":1876,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1875-grant-16","speech_id":"1875-grant","president":"Ulysses S. Grant","year":1875,"era":"1861-1912","topic":"Trade & tariffs","prediction":"Territories & expansion"}
+{"key":"p-1888-cleveland-103","speech_id":"1888-cleveland","president":"Grover Cleveland","year":1888,"era":"1861-1912","topic":"Other","prediction":"Other"}
+{"key":"p-1907-roosevelt-99","speech_id":"1907-roosevelt","president":"Theodore Roosevelt","year":1907,"era":"1861-1912","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1886-cleveland-14","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1874-grant-54","speech_id":"1874-grant","president":"Ulysses S. Grant","year":1874,"era":"1861-1912","topic":"Other","prediction":"Agriculture"}
+{"key":"p-1863-lincoln-51","speech_id":"1863-lincoln","president":"Abraham Lincoln","year":1863,"era":"1861-1912","topic":"Civil rights","prediction":"Civil rights"}
+{"key":"p-1899-mckinley-54","speech_id":"1899-mckinley","president":"William McKinley","year":1899,"era":"1861-1912","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1902-roosevelt-29","speech_id":"1902-roosevelt","president":"Theodore Roosevelt","year":1902,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1871-grant-4","speech_id":"1871-grant","president":"Ulysses S. Grant","year":1871,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1884-arthur-20","speech_id":"1884-arthur","president":"Chester A. Arthur","year":1884,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1905-roosevelt-99","speech_id":"1905-roosevelt","president":"Theodore Roosevelt","year":1905,"era":"1861-1912","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1881-arthur-17","speech_id":"1881-arthur","president":"Chester A. Arthur","year":1881,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1892-harrison-46","speech_id":"1892-harrison","president":"Benjamin Harrison","year":1892,"era":"1861-1912","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1880-hayes-100","speech_id":"1880-hayes","president":"Rutherford B. Hayes","year":1880,"era":"1861-1912","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1895-cleveland-23","speech_id":"1895-cleveland","president":"Grover Cleveland","year":1895,"era":"1861-1912","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1875-grant-13","speech_id":"1875-grant","president":"Ulysses S. Grant","year":1875,"era":"1861-1912","topic":"Civil rights","prediction":"Foreign affairs"}
+{"key":"p-1886-cleveland-145","speech_id":"1886-cleveland","president":"Grover Cleveland","year":1886,"era":"1861-1912","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1927-coolidge-70","speech_id":"1927-coolidge","president":"Calvin Coolidge","year":1927,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1922-harding-33","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1944-roosevelt-24","speech_id":"1944-roosevelt","president":"Franklin D. Roosevelt","year":1944,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1924-coolidge-34","speech_id":"1924-coolidge","president":"Calvin Coolidge","year":1924,"era":"1913-1945","topic":"Immigration","prediction":"Immigration"}
+{"key":"p-1926-coolidge-25","speech_id":"1926-coolidge","president":"Calvin Coolidge","year":1926,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1924-coolidge-41","speech_id":"1924-coolidge","president":"Calvin Coolidge","year":1924,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1940-roosevelt-5","speech_id":"1940-roosevelt","president":"Franklin D. Roosevelt","year":1940,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1929-hoover-69","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1922-harding-53","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1925-coolidge-32","speech_id":"1925-coolidge","president":"Calvin Coolidge","year":1925,"era":"1913-1945","topic":"Foreign affairs","prediction":"Government & administration"}
+{"key":"p-1936-roosevelt-21","speech_id":"1936-roosevelt","president":"Franklin D. Roosevelt","year":1936,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1923-coolidge-0","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1944-roosevelt-48","speech_id":"1944-roosevelt","president":"Franklin D. Roosevelt","year":1944,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1941-roosevelt-37","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1937-roosevelt-35","speech_id":"1937-roosevelt","president":"Franklin D. Roosevelt","year":1937,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1944-roosevelt-16","speech_id":"1944-roosevelt","president":"Franklin D. Roosevelt","year":1944,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1922-harding-49","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Education","prediction":"Immigration"}
+{"key":"p-1936-roosevelt-1","speech_id":"1936-roosevelt","president":"Franklin D. Roosevelt","year":1936,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1916-wilson-26","speech_id":"1916-wilson","president":"Woodrow Wilson","year":1916,"era":"1913-1945","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1915-wilson-20","speech_id":"1915-wilson","president":"Woodrow Wilson","year":1915,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1920-wilson-14","speech_id":"1920-wilson","president":"Woodrow Wilson","year":1920,"era":"1913-1945","topic":"Economy & jobs","prediction":"Agriculture"}
+{"key":"p-1927-coolidge-60","speech_id":"1927-coolidge","president":"Calvin Coolidge","year":1927,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1923-coolidge-1","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1938-roosevelt-24","speech_id":"1938-roosevelt","president":"Franklin D. Roosevelt","year":1938,"era":"1913-1945","topic":"Economy & jobs","prediction":"Agriculture"}
+{"key":"p-1922-harding-55","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1941-roosevelt-40","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Defense & war","prediction":"Infrastructure"}
+{"key":"p-1944-roosevelt-38","speech_id":"1944-roosevelt","president":"Franklin D. Roosevelt","year":1944,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1925-coolidge-21","speech_id":"1925-coolidge","president":"Calvin Coolidge","year":1925,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1940-roosevelt-30","speech_id":"1940-roosevelt","president":"Franklin D. Roosevelt","year":1940,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1925-coolidge-71","speech_id":"1925-coolidge","president":"Calvin Coolidge","year":1925,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1936-roosevelt-31","speech_id":"1936-roosevelt","president":"Franklin D. Roosevelt","year":1936,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1929-hoover-92","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Social welfare","prediction":"Social welfare"}
+{"key":"p-1918-wilson-25","speech_id":"1918-wilson","president":"Woodrow Wilson","year":1918,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1930-hoover-20","speech_id":"1930-hoover","president":"Herbert Hoover","year":1930,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1923-coolidge-58","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1924-coolidge-44","speech_id":"1924-coolidge","president":"Calvin Coolidge","year":1924,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1938-roosevelt-55","speech_id":"1938-roosevelt","president":"Franklin D. Roosevelt","year":1938,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1942-roosevelt-34","speech_id":"1942-roosevelt","president":"Franklin D. Roosevelt","year":1942,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1939-roosevelt-41","speech_id":"1939-roosevelt","president":"Franklin D. Roosevelt","year":1939,"era":"1913-1945","topic":"Social welfare","prediction":"Social welfare"}
+{"key":"p-1923-coolidge-32","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1942-roosevelt-65","speech_id":"1942-roosevelt","president":"Franklin D. Roosevelt","year":1942,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1932-hoover-50","speech_id":"1932-hoover","president":"Herbert Hoover","year":1932,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1928-coolidge-76","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Crime & justice","prediction":"Energy & environment"}
+{"key":"p-1939-roosevelt-83","speech_id":"1939-roosevelt","president":"Franklin D. Roosevelt","year":1939,"era":"1913-1945","topic":"Economy & jobs","prediction":"Taxes & budget"}
+{"key":"p-1941-roosevelt-17","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1924-coolidge-12","speech_id":"1924-coolidge","president":"Calvin Coolidge","year":1924,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1921-harding-48","speech_id":"1921-harding","president":"Warren G. Harding","year":1921,"era":"1913-1945","topic":"Social welfare","prediction":"Social welfare"}
+{"key":"p-1930-hoover-53","speech_id":"1930-hoover","president":"Herbert Hoover","year":1930,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1936-roosevelt-23","speech_id":"1936-roosevelt","president":"Franklin D. Roosevelt","year":1936,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1928-coolidge-36","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1922-harding-68","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Foreign affairs","prediction":"Other"}
+{"key":"p-1916-wilson-21","speech_id":"1916-wilson","president":"Woodrow Wilson","year":1916,"era":"1913-1945","topic":"Economy & jobs","prediction":"Infrastructure"}
+{"key":"p-1926-coolidge-80","speech_id":"1926-coolidge","president":"Calvin Coolidge","year":1926,"era":"1913-1945","topic":"Other","prediction":"Social welfare"}
+{"key":"p-1939-roosevelt-16","speech_id":"1939-roosevelt","president":"Franklin D. Roosevelt","year":1939,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1944-roosevelt-79","speech_id":"1944-roosevelt","president":"Franklin D. Roosevelt","year":1944,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1943-roosevelt-40","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Other","prediction":"Foreign affairs"}
+{"key":"p-1928-coolidge-23","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1929-hoover-2","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1941-roosevelt-18","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1924-coolidge-22","speech_id":"1924-coolidge","president":"Calvin Coolidge","year":1924,"era":"1913-1945","topic":"Economy & jobs","prediction":"Infrastructure"}
+{"key":"p-1931-hoover-7","speech_id":"1931-hoover","president":"Herbert Hoover","year":1931,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1921-harding-8","speech_id":"1921-harding","president":"Warren G. Harding","year":1921,"era":"1913-1945","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1928-coolidge-78","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Other","prediction":"Foreign affairs"}
+{"key":"p-1925-coolidge-19","speech_id":"1925-coolidge","president":"Calvin Coolidge","year":1925,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1934-roosevelt-7","speech_id":"1934-roosevelt","president":"Franklin D. Roosevelt","year":1934,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1925-coolidge-77","speech_id":"1925-coolidge","president":"Calvin Coolidge","year":1925,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1938-roosevelt-52","speech_id":"1938-roosevelt","president":"Franklin D. Roosevelt","year":1938,"era":"1913-1945","topic":"Economy & jobs","prediction":"Foreign affairs"}
+{"key":"p-1937-roosevelt-28","speech_id":"1937-roosevelt","president":"Franklin D. Roosevelt","year":1937,"era":"1913-1945","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1940-roosevelt-44","speech_id":"1940-roosevelt","president":"Franklin D. Roosevelt","year":1940,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1931-hoover-12","speech_id":"1931-hoover","president":"Herbert Hoover","year":1931,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1921-harding-37","speech_id":"1921-harding","president":"Warren G. Harding","year":1921,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1944-roosevelt-28","speech_id":"1944-roosevelt","president":"Franklin D. Roosevelt","year":1944,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1944-roosevelt-80","speech_id":"1944-roosevelt","president":"Franklin D. Roosevelt","year":1944,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1917-wilson-17","speech_id":"1917-wilson","president":"Woodrow Wilson","year":1917,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1943-roosevelt-86","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1919-wilson-22","speech_id":"1919-wilson","president":"Woodrow Wilson","year":1919,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1917-wilson-4","speech_id":"1917-wilson","president":"Woodrow Wilson","year":1917,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1919-wilson-4","speech_id":"1919-wilson","president":"Woodrow Wilson","year":1919,"era":"1913-1945","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1934-roosevelt-12","speech_id":"1934-roosevelt","president":"Franklin D. Roosevelt","year":1934,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1938-roosevelt-32","speech_id":"1938-roosevelt","president":"Franklin D. Roosevelt","year":1938,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1915-wilson-7","speech_id":"1915-wilson","president":"Woodrow Wilson","year":1915,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1937-roosevelt-3","speech_id":"1937-roosevelt","president":"Franklin D. Roosevelt","year":1937,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1935-roosevelt-30","speech_id":"1935-roosevelt","president":"Franklin D. Roosevelt","year":1935,"era":"1913-1945","topic":"Social welfare","prediction":"Economy & jobs"}
+{"key":"p-1943-roosevelt-9","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1929-hoover-97","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Health care","prediction":"Health care"}
+{"key":"p-1939-roosevelt-87","speech_id":"1939-roosevelt","president":"Franklin D. Roosevelt","year":1939,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1932-hoover-28","speech_id":"1932-hoover","president":"Herbert Hoover","year":1932,"era":"1913-1945","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1936-roosevelt-30","speech_id":"1936-roosevelt","president":"Franklin D. Roosevelt","year":1936,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1928-coolidge-62","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1943-roosevelt-41","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1925-coolidge-83","speech_id":"1925-coolidge","president":"Calvin Coolidge","year":1925,"era":"1913-1945","topic":"Social welfare","prediction":"Crime & justice"}
+{"key":"p-1942-roosevelt-56","speech_id":"1942-roosevelt","president":"Franklin D. Roosevelt","year":1942,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1939-roosevelt-2","speech_id":"1939-roosevelt","president":"Franklin D. Roosevelt","year":1939,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1923-coolidge-36","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1932-hoover-27","speech_id":"1932-hoover","president":"Herbert Hoover","year":1932,"era":"1913-1945","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1926-coolidge-42","speech_id":"1926-coolidge","president":"Calvin Coolidge","year":1926,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1923-coolidge-11","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1924-coolidge-35","speech_id":"1924-coolidge","president":"Calvin Coolidge","year":1924,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1943-roosevelt-1","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1927-coolidge-33","speech_id":"1927-coolidge","president":"Calvin Coolidge","year":1927,"era":"1913-1945","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1927-coolidge-66","speech_id":"1927-coolidge","president":"Calvin Coolidge","year":1927,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1921-harding-30","speech_id":"1921-harding","president":"Warren G. Harding","year":1921,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1927-coolidge-71","speech_id":"1927-coolidge","president":"Calvin Coolidge","year":1927,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1921-harding-54","speech_id":"1921-harding","president":"Warren G. Harding","year":1921,"era":"1913-1945","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1930-hoover-38","speech_id":"1930-hoover","president":"Herbert Hoover","year":1930,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1929-hoover-105","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1917-wilson-18","speech_id":"1917-wilson","president":"Woodrow Wilson","year":1917,"era":"1913-1945","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1928-coolidge-21","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1916-wilson-5","speech_id":"1916-wilson","president":"Woodrow Wilson","year":1916,"era":"1913-1945","topic":"Infrastructure","prediction":"Government & administration"}
+{"key":"p-1921-harding-53","speech_id":"1921-harding","president":"Warren G. Harding","year":1921,"era":"1913-1945","topic":"Government & administration","prediction":"Agriculture"}
+{"key":"p-1943-roosevelt-42","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Defense & war","prediction":"Other"}
+{"key":"p-1944-roosevelt-3","speech_id":"1944-roosevelt","president":"Franklin D. Roosevelt","year":1944,"era":"1913-1945","topic":"Other","prediction":"Defense & war"}
+{"key":"p-1944-roosevelt-14","speech_id":"1944-roosevelt","president":"Franklin D. Roosevelt","year":1944,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1943-roosevelt-18","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1928-coolidge-10","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-1919-wilson-1","speech_id":"1919-wilson","president":"Woodrow Wilson","year":1919,"era":"1913-1945","topic":"Other","prediction":"Government & administration"}
+{"key":"p-1930-hoover-47","speech_id":"1930-hoover","president":"Herbert Hoover","year":1930,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1930-hoover-45","speech_id":"1930-hoover","president":"Herbert Hoover","year":1930,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1930-hoover-15","speech_id":"1930-hoover","president":"Herbert Hoover","year":1930,"era":"1913-1945","topic":"Economy & jobs","prediction":"Infrastructure"}
+{"key":"p-1926-coolidge-67","speech_id":"1926-coolidge","president":"Calvin Coolidge","year":1926,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1941-roosevelt-43","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1923-coolidge-14","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1927-coolidge-23","speech_id":"1927-coolidge","president":"Calvin Coolidge","year":1927,"era":"1913-1945","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1943-roosevelt-96","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1938-roosevelt-41","speech_id":"1938-roosevelt","president":"Franklin D. Roosevelt","year":1938,"era":"1913-1945","topic":"Taxes & budget","prediction":"Government & administration"}
+{"key":"p-1938-roosevelt-60","speech_id":"1938-roosevelt","president":"Franklin D. Roosevelt","year":1938,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1916-wilson-18","speech_id":"1916-wilson","president":"Woodrow Wilson","year":1916,"era":"1913-1945","topic":"Infrastructure","prediction":"Government & administration"}
+{"key":"p-1927-coolidge-21","speech_id":"1927-coolidge","president":"Calvin Coolidge","year":1927,"era":"1913-1945","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1922-harding-48","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Immigration","prediction":"Immigration"}
+{"key":"p-1943-roosevelt-28","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1923-coolidge-18","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1941-roosevelt-65","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1917-wilson-23","speech_id":"1917-wilson","president":"Woodrow Wilson","year":1917,"era":"1913-1945","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1943-roosevelt-64","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Economy & jobs","prediction":"Defense & war"}
+{"key":"p-1915-wilson-9","speech_id":"1915-wilson","president":"Woodrow Wilson","year":1915,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1941-roosevelt-73","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Foreign affairs","prediction":"Other"}
+{"key":"p-1929-hoover-73","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1925-coolidge-22","speech_id":"1925-coolidge","president":"Calvin Coolidge","year":1925,"era":"1913-1945","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-1923-coolidge-6","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1928-coolidge-63","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1926-coolidge-43","speech_id":"1926-coolidge","president":"Calvin Coolidge","year":1926,"era":"1913-1945","topic":"Trade & tariffs","prediction":"Infrastructure"}
+{"key":"p-1941-roosevelt-39","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1926-coolidge-3","speech_id":"1926-coolidge","president":"Calvin Coolidge","year":1926,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1929-hoover-35","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1932-hoover-51","speech_id":"1932-hoover","president":"Herbert Hoover","year":1932,"era":"1913-1945","topic":"Government & administration","prediction":"Economy & jobs"}
+{"key":"p-1931-hoover-60","speech_id":"1931-hoover","president":"Herbert Hoover","year":1931,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1942-roosevelt-53","speech_id":"1942-roosevelt","president":"Franklin D. Roosevelt","year":1942,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1939-roosevelt-78","speech_id":"1939-roosevelt","president":"Franklin D. Roosevelt","year":1939,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1927-coolidge-50","speech_id":"1927-coolidge","president":"Calvin Coolidge","year":1927,"era":"1913-1945","topic":"Native American affairs","prediction":"Native American affairs"}
+{"key":"p-1943-roosevelt-70","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Social welfare","prediction":"Economy & jobs"}
+{"key":"p-1924-coolidge-1","speech_id":"1924-coolidge","president":"Calvin Coolidge","year":1924,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1941-roosevelt-23","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1930-hoover-26","speech_id":"1930-hoover","president":"Herbert Hoover","year":1930,"era":"1913-1945","topic":"Agriculture","prediction":"Energy & environment"}
+{"key":"p-1920-wilson-9","speech_id":"1920-wilson","president":"Woodrow Wilson","year":1920,"era":"1913-1945","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1935-roosevelt-4","speech_id":"1935-roosevelt","president":"Franklin D. Roosevelt","year":1935,"era":"1913-1945","topic":"Other","prediction":"Other"}
+{"key":"p-1928-coolidge-12","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1943-roosevelt-68","speech_id":"1943-roosevelt","president":"Franklin D. Roosevelt","year":1943,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1935-roosevelt-26","speech_id":"1935-roosevelt","president":"Franklin D. Roosevelt","year":1935,"era":"1913-1945","topic":"Social welfare","prediction":"Economy & jobs"}
+{"key":"p-1936-roosevelt-34","speech_id":"1936-roosevelt","president":"Franklin D. Roosevelt","year":1936,"era":"1913-1945","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1919-wilson-16","speech_id":"1919-wilson","president":"Woodrow Wilson","year":1919,"era":"1913-1945","topic":"Economy & jobs","prediction":"Trade & tariffs"}
+{"key":"p-1919-wilson-10","speech_id":"1919-wilson","president":"Woodrow Wilson","year":1919,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1942-roosevelt-37","speech_id":"1942-roosevelt","president":"Franklin D. Roosevelt","year":1942,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1923-coolidge-2","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1942-roosevelt-48","speech_id":"1942-roosevelt","president":"Franklin D. Roosevelt","year":1942,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1929-hoover-54","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1938-roosevelt-45","speech_id":"1938-roosevelt","president":"Franklin D. Roosevelt","year":1938,"era":"1913-1945","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1929-hoover-75","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1939-roosevelt-21","speech_id":"1939-roosevelt","president":"Franklin D. Roosevelt","year":1939,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1927-coolidge-52","speech_id":"1927-coolidge","president":"Calvin Coolidge","year":1927,"era":"1913-1945","topic":"Native American affairs","prediction":"Economy & jobs"}
+{"key":"p-1922-harding-17","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1916-wilson-8","speech_id":"1916-wilson","president":"Woodrow Wilson","year":1916,"era":"1913-1945","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1940-roosevelt-67","speech_id":"1940-roosevelt","president":"Franklin D. Roosevelt","year":1940,"era":"1913-1945","topic":"Other","prediction":"Foreign affairs"}
+{"key":"p-1940-roosevelt-9","speech_id":"1940-roosevelt","president":"Franklin D. Roosevelt","year":1940,"era":"1913-1945","topic":"Foreign affairs","prediction":"Other"}
+{"key":"p-1922-harding-3","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Other","prediction":"Foreign affairs"}
+{"key":"p-1935-roosevelt-45","speech_id":"1935-roosevelt","president":"Franklin D. Roosevelt","year":1935,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1938-roosevelt-38","speech_id":"1938-roosevelt","president":"Franklin D. Roosevelt","year":1938,"era":"1913-1945","topic":"Social welfare","prediction":"Economy & jobs"}
+{"key":"p-1913-wilson-13","speech_id":"1913-wilson","president":"Woodrow Wilson","year":1913,"era":"1913-1945","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1918-wilson-13","speech_id":"1918-wilson","president":"Woodrow Wilson","year":1918,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1938-roosevelt-53","speech_id":"1938-roosevelt","president":"Franklin D. Roosevelt","year":1938,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1931-hoover-24","speech_id":"1931-hoover","president":"Herbert Hoover","year":1931,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1929-hoover-33","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1914-wilson-22","speech_id":"1914-wilson","president":"Woodrow Wilson","year":1914,"era":"1913-1945","topic":"Defense & war","prediction":"Other"}
+{"key":"p-1936-roosevelt-20","speech_id":"1936-roosevelt","president":"Franklin D. Roosevelt","year":1936,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1924-coolidge-11","speech_id":"1924-coolidge","president":"Calvin Coolidge","year":1924,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1923-coolidge-69","speech_id":"1923-coolidge","president":"Calvin Coolidge","year":1923,"era":"1913-1945","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1931-hoover-41","speech_id":"1931-hoover","president":"Herbert Hoover","year":1931,"era":"1913-1945","topic":"Banking & currency","prediction":"Banking & currency"}
+{"key":"p-1913-wilson-14","speech_id":"1913-wilson","president":"Woodrow Wilson","year":1913,"era":"1913-1945","topic":"Territories & expansion","prediction":"Territories & expansion"}
+{"key":"p-1922-harding-37","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1931-hoover-17","speech_id":"1931-hoover","president":"Herbert Hoover","year":1931,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1934-roosevelt-15","speech_id":"1934-roosevelt","president":"Franklin D. Roosevelt","year":1934,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1941-roosevelt-32","speech_id":"1941-roosevelt","president":"Franklin D. Roosevelt","year":1941,"era":"1913-1945","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1921-harding-51","speech_id":"1921-harding","president":"Warren G. Harding","year":1921,"era":"1913-1945","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1928-coolidge-5","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1922-harding-59","speech_id":"1922-harding","president":"Warren G. Harding","year":1922,"era":"1913-1945","topic":"Agriculture","prediction":"Economy & jobs"}
+{"key":"p-1925-coolidge-45","speech_id":"1925-coolidge","president":"Calvin Coolidge","year":1925,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1929-hoover-60","speech_id":"1929-hoover","president":"Herbert Hoover","year":1929,"era":"1913-1945","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1919-wilson-20","speech_id":"1919-wilson","president":"Woodrow Wilson","year":1919,"era":"1913-1945","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1917-wilson-24","speech_id":"1917-wilson","president":"Woodrow Wilson","year":1917,"era":"1913-1945","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1913-wilson-10","speech_id":"1913-wilson","president":"Woodrow Wilson","year":1913,"era":"1913-1945","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-1928-coolidge-18","speech_id":"1928-coolidge","president":"Calvin Coolidge","year":1928,"era":"1913-1945","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1982-reagan-8","speech_id":"1982-reagan","president":"Ronald Reagan","year":1982,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1981-carter-461","speech_id":"1981-carter","president":"Jimmy Carter","year":1981,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1958-eisenhower-3","speech_id":"1958-eisenhower","president":"Dwight D. Eisenhower","year":1958,"era":"1946-2026","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1960-eisenhower-110","speech_id":"1960-eisenhower","president":"Dwight D. Eisenhower","year":1960,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1981-carter-191","speech_id":"1981-carter","president":"Jimmy Carter","year":1981,"era":"1946-2026","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-2014-obama-55","speech_id":"2014-obama","president":"Barack Obama","year":2014,"era":"1946-2026","topic":"Health care","prediction":"Health care"}
+{"key":"p-1962-kennedy-33","speech_id":"1962-kennedy","president":"John F. Kennedy","year":1962,"era":"1946-2026","topic":"Civil rights","prediction":"Civil rights"}
+{"key":"p-1964-johnson-73","speech_id":"1964-johnson","president":"Lyndon B. Johnson","year":1964,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-2025-trump-40","speech_id":"2025-trump","president":"Donald J. Trump","year":2025,"era":"1946-2026","topic":"Civil rights","prediction":"Civil rights"}
+{"key":"p-2023-biden-154","speech_id":"2023-biden","president":"Joseph R. Biden","year":2023,"era":"1946-2026","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1972-nixon-2-50","speech_id":"1972-nixon-2","president":"Richard M. Nixon","year":1972,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1995-clinton-0","speech_id":"1995-clinton","president":"William J. Clinton","year":1995,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1974-nixon-2-260","speech_id":"1974-nixon-2","president":"Richard M. Nixon","year":1974,"era":"1946-2026","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-2011-obama-51","speech_id":"2011-obama","president":"Barack Obama","year":2011,"era":"1946-2026","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-2009-obama-46","speech_id":"2009-obama","president":"Barack Obama","year":2009,"era":"1946-2026","topic":"Education","prediction":"Education"}
+{"key":"p-2025-trump-75","speech_id":"2025-trump","president":"Donald J. Trump","year":2025,"era":"1946-2026","topic":"Social welfare","prediction":"Defense & war"}
+{"key":"p-2006-bush-32","speech_id":"2006-bush","president":"George W. Bush","year":2006,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1969-johnson-10","speech_id":"1969-johnson","president":"Lyndon B. Johnson","year":1969,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1981-carter-323","speech_id":"1981-carter","president":"Jimmy Carter","year":1981,"era":"1946-2026","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-2021-biden-41","speech_id":"2021-biden","president":"Joseph R. Biden","year":2021,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1965-johnson-151","speech_id":"1965-johnson","president":"Lyndon B. Johnson","year":1965,"era":"1946-2026","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1974-nixon-29","speech_id":"1974-nixon","president":"Richard M. Nixon","year":1974,"era":"1946-2026","topic":"Health care","prediction":"Health care"}
+{"key":"p-1984-reagan-39","speech_id":"1984-reagan","president":"Ronald Reagan","year":1984,"era":"1946-2026","topic":"Science & technology","prediction":"Science & technology"}
+{"key":"p-1954-eisenhower-80","speech_id":"1954-eisenhower","president":"Dwight D. Eisenhower","year":1954,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1974-nixon-2-297","speech_id":"1974-nixon-2","president":"Richard M. Nixon","year":1974,"era":"1946-2026","topic":"Social welfare","prediction":"Economy & jobs"}
+{"key":"p-1965-johnson-92","speech_id":"1965-johnson","president":"Lyndon B. Johnson","year":1965,"era":"1946-2026","topic":"Economy & jobs","prediction":"Taxes & budget"}
+{"key":"p-2012-obama-27","speech_id":"2012-obama","president":"Barack Obama","year":2012,"era":"1946-2026","topic":"Education","prediction":"Other"}
+{"key":"p-1953-truman-120","speech_id":"1953-truman","president":"Harry S. Truman","year":1953,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-2006-bush-29","speech_id":"2006-bush","president":"George W. Bush","year":2006,"era":"1946-2026","topic":"Defense & war","prediction":"Other"}
+{"key":"p-1952-truman-6","speech_id":"1952-truman","president":"Harry S. Truman","year":1952,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1974-nixon-2-404","speech_id":"1974-nixon-2","president":"Richard M. Nixon","year":1974,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-2016-obama-17","speech_id":"2016-obama","president":"Barack Obama","year":2016,"era":"1946-2026","topic":"Social welfare","prediction":"Education"}
+{"key":"p-1985-reagan-56","speech_id":"1985-reagan","president":"Ronald Reagan","year":1985,"era":"1946-2026","topic":"Education","prediction":"Education"}
+{"key":"p-1996-clinton-55","speech_id":"1996-clinton","president":"William J. Clinton","year":1996,"era":"1946-2026","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1977-ford-37","speech_id":"1977-ford","president":"Gerald R. Ford","year":1977,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-2007-bush-59","speech_id":"2007-bush","president":"George W. Bush","year":2007,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1965-johnson-45","speech_id":"1965-johnson","president":"Lyndon B. Johnson","year":1965,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1967-johnson-4","speech_id":"1967-johnson","president":"Lyndon B. Johnson","year":1967,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1980-carter-2-402","speech_id":"1980-carter-2","president":"Jimmy Carter","year":1980,"era":"1946-2026","topic":"Agriculture","prediction":"Agriculture"}
+{"key":"p-2022-biden-30","speech_id":"2022-biden","president":"Joseph R. Biden","year":2022,"era":"1946-2026","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-1946-truman-71","speech_id":"1946-truman","president":"Harry S. Truman","year":1946,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1946-truman-42","speech_id":"1946-truman","president":"Harry S. Truman","year":1946,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-2011-obama-103","speech_id":"2011-obama","president":"Barack Obama","year":2011,"era":"1946-2026","topic":"Other","prediction":"Economy & jobs"}
+{"key":"p-1965-johnson-168","speech_id":"1965-johnson","president":"Lyndon B. Johnson","year":1965,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-2026-trump-2","speech_id":"2026-trump","president":"Donald J. Trump","year":2026,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1986-reagan-7","speech_id":"1986-reagan","president":"Ronald Reagan","year":1986,"era":"1946-2026","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1978-carter-40","speech_id":"1978-carter","president":"Jimmy Carter","year":1978,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1999-clinton-106","speech_id":"1999-clinton","president":"William J. Clinton","year":1999,"era":"1946-2026","topic":"Civil rights","prediction":"Other"}
+{"key":"p-1967-johnson-47","speech_id":"1967-johnson","president":"Lyndon B. Johnson","year":1967,"era":"1946-2026","topic":"Social welfare","prediction":"Health care"}
+{"key":"p-1961-kennedy-6","speech_id":"1961-kennedy","president":"John F. Kennedy","year":1961,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1971-nixon-77","speech_id":"1971-nixon","president":"Richard M. Nixon","year":1971,"era":"1946-2026","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-2003-bush-64","speech_id":"2003-bush","president":"George W. Bush","year":2003,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-2019-trump-76","speech_id":"2019-trump","president":"Donald J. Trump","year":2019,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-2011-obama-73","speech_id":"2011-obama","president":"Barack Obama","year":2011,"era":"1946-2026","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1989-bush-24","speech_id":"1989-bush","president":"George H. W. Bush","year":1989,"era":"1946-2026","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-2026-trump-132","speech_id":"2026-trump","president":"Donald J. Trump","year":2026,"era":"1946-2026","topic":"Immigration","prediction":"Immigration"}
+{"key":"p-1976-ford-73","speech_id":"1976-ford","president":"Gerald R. Ford","year":1976,"era":"1946-2026","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1957-eisenhower-18","speech_id":"1957-eisenhower","president":"Dwight D. Eisenhower","year":1957,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1967-johnson-64","speech_id":"1967-johnson","president":"Lyndon B. Johnson","year":1967,"era":"1946-2026","topic":"Health care","prediction":"Health care"}
+{"key":"p-1981-carter-555","speech_id":"1981-carter","president":"Jimmy Carter","year":1981,"era":"1946-2026","topic":"Energy & environment","prediction":"Foreign affairs"}
+{"key":"p-1946-truman-58","speech_id":"1946-truman","president":"Harry S. Truman","year":1946,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-2010-obama-36","speech_id":"2010-obama","president":"Barack Obama","year":2010,"era":"1946-2026","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1959-eisenhower-32","speech_id":"1959-eisenhower","president":"Dwight D. Eisenhower","year":1959,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1991-bush-40","speech_id":"1991-bush","president":"George H. W. Bush","year":1991,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-2009-obama-28","speech_id":"2009-obama","president":"Barack Obama","year":2009,"era":"1946-2026","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1980-carter-2-169","speech_id":"1980-carter-2","president":"Jimmy Carter","year":1980,"era":"1946-2026","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1976-ford-74","speech_id":"1976-ford","president":"Gerald R. Ford","year":1976,"era":"1946-2026","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-2005-bush-37","speech_id":"2005-bush","president":"George W. Bush","year":2005,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1961-eisenhower-9","speech_id":"1961-eisenhower","president":"Dwight D. Eisenhower","year":1961,"era":"1946-2026","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-2013-obama-42","speech_id":"2013-obama","president":"Barack Obama","year":2013,"era":"1946-2026","topic":"Education","prediction":"Education"}
+{"key":"p-2023-biden-49","speech_id":"2023-biden","president":"Joseph R. Biden","year":2023,"era":"1946-2026","topic":"Economy & jobs","prediction":"Trade & tariffs"}
+{"key":"p-1981-carter-339","speech_id":"1981-carter","president":"Jimmy Carter","year":1981,"era":"1946-2026","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-1946-truman-16","speech_id":"1946-truman","president":"Harry S. Truman","year":1946,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1981-carter-268","speech_id":"1981-carter","president":"Jimmy Carter","year":1981,"era":"1946-2026","topic":"Social welfare","prediction":"Social welfare"}
+{"key":"p-1968-johnson-8","speech_id":"1968-johnson","president":"Lyndon B. Johnson","year":1968,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1985-reagan-23","speech_id":"1985-reagan","president":"Ronald Reagan","year":1985,"era":"1946-2026","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1954-eisenhower-11","speech_id":"1954-eisenhower","president":"Dwight D. Eisenhower","year":1954,"era":"1946-2026","topic":"Other","prediction":"Government & administration"}
+{"key":"p-1997-clinton-66","speech_id":"1997-clinton","president":"William J. Clinton","year":1997,"era":"1946-2026","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1974-nixon-2-163","speech_id":"1974-nixon-2","president":"Richard M. Nixon","year":1974,"era":"1946-2026","topic":"Education","prediction":"Education"}
+{"key":"p-1965-johnson-140","speech_id":"1965-johnson","president":"Lyndon B. Johnson","year":1965,"era":"1946-2026","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1978-carter-2-93","speech_id":"1978-carter-2","president":"Jimmy Carter","year":1978,"era":"1946-2026","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-2023-biden-220","speech_id":"2023-biden","president":"Joseph R. Biden","year":2023,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1978-carter-2-258","speech_id":"1978-carter-2","president":"Jimmy Carter","year":1978,"era":"1946-2026","topic":"Economy & jobs","prediction":"Trade & tariffs"}
+{"key":"p-1978-carter-2-91","speech_id":"1978-carter-2","president":"Jimmy Carter","year":1978,"era":"1946-2026","topic":"Infrastructure","prediction":"Infrastructure"}
+{"key":"p-2002-bush-51","speech_id":"2002-bush","president":"George W. Bush","year":2002,"era":"1946-2026","topic":"Defense & war","prediction":"Other"}
+{"key":"p-1980-carter-2-72","speech_id":"1980-carter-2","president":"Jimmy Carter","year":1980,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1947-truman-28","speech_id":"1947-truman","president":"Harry S. Truman","year":1947,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1948-truman-14","speech_id":"1948-truman","president":"Harry S. Truman","year":1948,"era":"1946-2026","topic":"Other","prediction":"Defense & war"}
+{"key":"p-2000-clinton-123","speech_id":"2000-clinton","president":"William J. Clinton","year":2000,"era":"1946-2026","topic":"Civil rights","prediction":"Civil rights"}
+{"key":"p-2009-obama-15","speech_id":"2009-obama","president":"Barack Obama","year":2009,"era":"1946-2026","topic":"Banking & currency","prediction":"Economy & jobs"}
+{"key":"p-2025-trump-175","speech_id":"2025-trump","president":"Donald J. Trump","year":2025,"era":"1946-2026","topic":"Other","prediction":"Crime & justice"}
+{"key":"p-1991-bush-10","speech_id":"1991-bush","president":"George H. W. Bush","year":1991,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1993-clinton-62","speech_id":"1993-clinton","president":"William J. Clinton","year":1993,"era":"1946-2026","topic":"Social welfare","prediction":"Social welfare"}
+{"key":"p-1955-eisenhower-116","speech_id":"1955-eisenhower","president":"Dwight D. Eisenhower","year":1955,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1955-eisenhower-15","speech_id":"1955-eisenhower","president":"Dwight D. Eisenhower","year":1955,"era":"1946-2026","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-2005-bush-10","speech_id":"2005-bush","president":"George W. Bush","year":2005,"era":"1946-2026","topic":"Health care","prediction":"Health care"}
+{"key":"p-1983-reagan-2","speech_id":"1983-reagan","president":"Ronald Reagan","year":1983,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1954-eisenhower-103","speech_id":"1954-eisenhower","president":"Dwight D. Eisenhower","year":1954,"era":"1946-2026","topic":"Civil rights","prediction":"Civil rights"}
+{"key":"p-2025-trump-106","speech_id":"2025-trump","president":"Donald J. Trump","year":2025,"era":"1946-2026","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1981-carter-221","speech_id":"1981-carter","president":"Jimmy Carter","year":1981,"era":"1946-2026","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1977-ford-53","speech_id":"1977-ford","president":"Gerald R. Ford","year":1977,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1974-nixon-2-351","speech_id":"1974-nixon-2","president":"Richard M. Nixon","year":1974,"era":"1946-2026","topic":"Science & technology","prediction":"Science & technology"}
+{"key":"p-1972-nixon-2-60","speech_id":"1972-nixon-2","president":"Richard M. Nixon","year":1972,"era":"1946-2026","topic":"Banking & currency","prediction":"Trade & tariffs"}
+{"key":"p-1991-bush-27","speech_id":"1991-bush","president":"George H. W. Bush","year":1991,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-2013-obama-11","speech_id":"2013-obama","president":"Barack Obama","year":2013,"era":"1946-2026","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-2010-obama-31","speech_id":"2010-obama","president":"Barack Obama","year":2010,"era":"1946-2026","topic":"Banking & currency","prediction":"Economy & jobs"}
+{"key":"p-1946-truman-62","speech_id":"1946-truman","president":"Harry S. Truman","year":1946,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-2021-biden-61","speech_id":"2021-biden","president":"Joseph R. Biden","year":2021,"era":"1946-2026","topic":"Education","prediction":"Education"}
+{"key":"p-1980-carter-24","speech_id":"1980-carter","president":"Jimmy Carter","year":1980,"era":"1946-2026","topic":"Defense & war","prediction":"Foreign affairs"}
+{"key":"p-1953-truman-7","speech_id":"1953-truman","president":"Harry S. Truman","year":1953,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1960-eisenhower-104","speech_id":"1960-eisenhower","president":"Dwight D. Eisenhower","year":1960,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-2013-obama-87","speech_id":"2013-obama","president":"Barack Obama","year":2013,"era":"1946-2026","topic":"Other","prediction":"Immigration"}
+{"key":"p-2016-obama-23","speech_id":"2016-obama","president":"Barack Obama","year":2016,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1947-truman-52","speech_id":"1947-truman","president":"Harry S. Truman","year":1947,"era":"1946-2026","topic":"Economy & jobs","prediction":"Government & administration"}
+{"key":"p-1960-eisenhower-77","speech_id":"1960-eisenhower","president":"Dwight D. Eisenhower","year":1960,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-2003-bush-57","speech_id":"2003-bush","president":"George W. Bush","year":2003,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1981-carter-294","speech_id":"1981-carter","president":"Jimmy Carter","year":1981,"era":"1946-2026","topic":"Science & technology","prediction":"Science & technology"}
+{"key":"p-2010-obama-32","speech_id":"2010-obama","president":"Barack Obama","year":2010,"era":"1946-2026","topic":"Banking & currency","prediction":"Government & administration"}
+{"key":"p-2005-bush-12","speech_id":"2005-bush","president":"George W. Bush","year":2005,"era":"1946-2026","topic":"Taxes & budget","prediction":"Taxes & budget"}
+{"key":"p-1980-carter-2-291","speech_id":"1980-carter-2","president":"Jimmy Carter","year":1980,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1982-reagan-63","speech_id":"1982-reagan","president":"Ronald Reagan","year":1982,"era":"1946-2026","topic":"Defense & war","prediction":"Defense & war"}
+{"key":"p-1948-truman-132","speech_id":"1948-truman","president":"Harry S. Truman","year":1948,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-2012-obama-31","speech_id":"2012-obama","president":"Barack Obama","year":2012,"era":"1946-2026","topic":"Education","prediction":"Education"}
+{"key":"p-1979-carter-2-128","speech_id":"1979-carter-2","president":"Jimmy Carter","year":1979,"era":"1946-2026","topic":"Crime & justice","prediction":"Crime & justice"}
+{"key":"p-1948-truman-91","speech_id":"1948-truman","president":"Harry S. Truman","year":1948,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1966-johnson-46","speech_id":"1966-johnson","president":"Lyndon B. Johnson","year":1966,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1957-eisenhower-77","speech_id":"1957-eisenhower","president":"Dwight D. Eisenhower","year":1957,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1960-eisenhower-79","speech_id":"1960-eisenhower","president":"Dwight D. Eisenhower","year":1960,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-2020-trump-47","speech_id":"2020-trump","president":"Donald J. Trump","year":2020,"era":"1946-2026","topic":"Health care","prediction":"Health care"}
+{"key":"p-2020-trump-20","speech_id":"2020-trump","president":"Donald J. Trump","year":2020,"era":"1946-2026","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1979-carter-2-359","speech_id":"1979-carter-2","president":"Jimmy Carter","year":1979,"era":"1946-2026","topic":"Foreign affairs","prediction":"Agriculture"}
+{"key":"p-1978-carter-2-21","speech_id":"1978-carter-2","president":"Jimmy Carter","year":1978,"era":"1946-2026","topic":"Economy & jobs","prediction":"Economy & jobs"}
+{"key":"p-1952-truman-34","speech_id":"1952-truman","president":"Harry S. Truman","year":1952,"era":"1946-2026","topic":"Foreign affairs","prediction":"Defense & war"}
+{"key":"p-1958-eisenhower-79","speech_id":"1958-eisenhower","president":"Dwight D. Eisenhower","year":1958,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-2026-trump-220","speech_id":"2026-trump","president":"Donald J. Trump","year":2026,"era":"1946-2026","topic":"Defense & war","prediction":"Taxes & budget"}
+{"key":"p-1964-johnson-6","speech_id":"1964-johnson","president":"Lyndon B. Johnson","year":1964,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1976-ford-90","speech_id":"1976-ford","president":"Gerald R. Ford","year":1976,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1980-carter-2-286","speech_id":"1980-carter-2","president":"Jimmy Carter","year":1980,"era":"1946-2026","topic":"Government & administration","prediction":"Economy & jobs"}
+{"key":"p-2011-obama-59","speech_id":"2011-obama","president":"Barack Obama","year":2011,"era":"1946-2026","topic":"Health care","prediction":"Other"}
+{"key":"p-1974-nixon-2-272","speech_id":"1974-nixon-2","president":"Richard M. Nixon","year":1974,"era":"1946-2026","topic":"Government & administration","prediction":"Government & administration"}
+{"key":"p-2014-obama-53","speech_id":"2014-obama","president":"Barack Obama","year":2014,"era":"1946-2026","topic":"Health care","prediction":"Health care"}
+{"key":"p-1948-truman-45","speech_id":"1948-truman","president":"Harry S. Truman","year":1948,"era":"1946-2026","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1997-clinton-79","speech_id":"1997-clinton","president":"William J. Clinton","year":1997,"era":"1946-2026","topic":"Civil rights","prediction":"Other"}
+{"key":"p-1971-nixon-17","speech_id":"1971-nixon","president":"Richard M. Nixon","year":1971,"era":"1946-2026","topic":"Social welfare","prediction":"Social welfare"}
+{"key":"p-1997-clinton-2","speech_id":"1997-clinton","president":"William J. Clinton","year":1997,"era":"1946-2026","topic":"Other","prediction":"Other"}
+{"key":"p-1980-carter-2-420","speech_id":"1980-carter-2","president":"Jimmy Carter","year":1980,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1963-kennedy-73","speech_id":"1963-kennedy","president":"John F. Kennedy","year":1963,"era":"1946-2026","topic":"Foreign affairs","prediction":"Foreign affairs"}
+{"key":"p-1956-eisenhower-30","speech_id":"1956-eisenhower","president":"Dwight D. Eisenhower","year":1956,"era":"1946-2026","topic":"Trade & tariffs","prediction":"Trade & tariffs"}
+{"key":"p-1998-clinton-69","speech_id":"1998-clinton","president":"William J. Clinton","year":1998,"era":"1946-2026","topic":"Energy & environment","prediction":"Energy & environment"}
+{"key":"p-1968-johnson-38","speech_id":"1968-johnson","president":"Lyndon B. Johnson","year":1968,"era":"1946-2026","topic":"Other","prediction":"Other"}

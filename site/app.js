@@ -147,7 +147,14 @@ async function fillSummary() {
   set("words", `${(s.words / 1e6).toFixed(1)}M`);
   set("last", fmtDate(s.last));
   set("last-year", s.last.slice(0, 4));
+  const comparisons = await loadJSON("data/comparisons.json");
+  const all = comparisons.party.find((r) => r.measure === "tone" && !r.spoken_only);
+  const spoken = comparisons.party.find((r) => r.measure === "tone" && r.spoken_only);
+  const nn = comparisons.neighbor_party.find((r) => r.era_sigma_years === 10);
+  $("#party-comparison").textContent = `Since 1965, the president-level Republican minus Democratic net-score difference is ${signed(all.difference_R_minus_D)} (95% bootstrap interval ${signed(all.ci_95[0])} to ${signed(all.ci_95[1])}; exact permutation p = ${all.exact_p.toFixed(3)}). Restricting to spoken messages gives p = ${spoken.exact_p.toFixed(3)}. On the era-adjusted similarity graph, ${pct(nn.same_party_share)} of cross-president neighbors share a party, versus ${pct(nn.null_mean)} under president-label permutations (p = ${nn.exact_two_sided_p.toFixed(3)}). Query presidents are weighted equally. These observational comparisons do not establish party equivalence or a causal effect.`;
+  $("#party-comparison").append(" ", el("a", { href: "data/comparisons.json", textContent: "Results and sensitivity checks" }));
   set("topic-count", s.topics.length);
+  set("build-id", s.build_id.slice(0, 12));
   set("sentences", fmtInt.format(speeches.reduce((n, d) => n + d.sentences, 0)));
   const latest = $('[data-summary="latest"]');
   latest.replaceChildren(
@@ -255,7 +262,7 @@ async function openSpeech(id, scroll = true) {
   $("#sp-tiles").replaceChildren(
     tile("Words", fmtInt.format(s.words)),
     tile("Grade level", s.grade_level.toFixed(1), `${s.words_per_sentence.toFixed(0)} words / sentence`),
-    tile("Net tone", signed(s.tone), `${pct(s.positive_share)} upbeat · ${pct(s.negative_share)} downbeat`),
+    tile("Net tone", signed(s.tone), `${pct(s.positive_share)} positive class · ${pct(s.negative_share)} negative class`),
     tile("Lexical diversity", s.lexical_diversity.toFixed(0), "MTLD"),
   );
 
