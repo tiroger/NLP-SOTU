@@ -23,12 +23,15 @@
       <section id="complete" class="panel complete" hidden><p class="eyebrow">Review complete</p><h2>Thank you for your reading.</h2><p>Every answer in this assignment is saved to the shared collection. You can close this page or review your answers.</p><button id="review-answers" type="button">Review answers</button></section>
       <section id="workspace" aria-label="Sentence annotation">
         <div class="sentence-panel panel"><div class="sentence-head"><span id="position" class="eyebrow">Sentence 1</span><span id="answer-state" class="answer-state">Not submitted</span></div><p id="sentence" class="sentence" tabindex="-1"></p></div>
-        <form id="annotation-form"><fieldset><legend>What sentiment does this sentence express?</legend><div class="choices">
-          <label class="choice"><input type="radio" name="sentiment" value="negative"><span class="choice-top"><strong>Negative</strong><kbd>1</kbd></span><span>Predominantly unfavorable</span></label>
-          <label class="choice"><input type="radio" name="sentiment" value="neutral"><span class="choice-top"><strong>Neutral</strong><kbd>2</kbd></span><span>No clear sentiment</span></label>
-          <label class="choice"><input type="radio" name="sentiment" value="positive"><span class="choice-top"><strong>Positive</strong><kbd>3</kbd></span><span>Predominantly favorable</span></label>
-          <label class="choice"><input type="radio" name="sentiment" value="ambiguous"><span class="choice-top"><strong>Ambiguous</strong><kbd>4</kbd></span><span>Mixed or missing context</span></label>
-        </div></fieldset>
+        <form id="annotation-form">
+        <label class="sentiment-label" for="sentiment">What sentiment does this sentence express?</label>
+        <select class="sentiment-select" id="sentiment" name="sentiment" required>
+          <option value="" disabled>Choose a sentiment…</option>
+          <option value="negative">Negative — predominantly unfavorable</option>
+          <option value="neutral">Neutral — no clear sentiment</option>
+          <option value="positive">Positive — predominantly favorable</option>
+          <option value="ambiguous">Ambiguous — mixed or missing context</option>
+        </select>
         <label class="notes-label" for="notes">Notes <span class="muted">optional</span></label><textarea id="notes" rows="3" maxlength="2000" placeholder="What made this sentence difficult to judge?"></textarea>
         <div id="conflict" class="notice conflict" role="alert" hidden><p id="conflict-text"></p><div class="button-row"><button id="use-saved" type="button">Use saved answer</button><button id="keep-draft" type="button">Keep my draft</button></div></div>
         <div class="submit-row"><p id="save-state" class="small muted" aria-live="polite">Choose a label, then save it.</p><button class="primary" id="save" type="submit" disabled>Save &amp; next <span aria-hidden="true">→</span></button></div>

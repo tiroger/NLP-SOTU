@@ -1,14 +1,14 @@
 import {LABELS,validateSession,countSaved,nextPendingIndex,makeAnswer,safeDrafts} from "./state.mjs";
 const $=id=>document.getElementById(id);
 let config,credential,session,index=0,drafts={},storageKey="",saving=false,reviewing=false,conflict=null,storageAvailable=true;
-const labelInputs=[...document.querySelectorAll('input[name="sentiment"]')];
+const labelSelect=$("sentiment");
 function message(text,error=false){$("message").textContent=text;$("message").classList.toggle("error",error);$("message").hidden=!text;}
 function store(){try{localStorage.setItem(storageKey,JSON.stringify(drafts));return storageAvailable=true;}catch{return storageAvailable=false;}}
 function currentDraft(){return drafts[session.items[index].key];}
 function updateDraft(){
   if(!session||saving)return;
   const item=session.items[index],prior=currentDraft();
-  drafts[item.key]={sentiment:labelInputs.find(input=>input.checked)?.value || null,notes:$("notes").value,revision:prior?.revision ?? item.revision};
+  drafts[item.key]={sentiment:labelSelect.value || null,notes:$("notes").value,revision:prior?.revision ?? item.revision};
   const persisted=store();$("save-state").textContent=persisted?"Draft kept on this device. Save & next submits your answer.":"Draft storage is unavailable. Keep this page open until your answer is submitted.";
   $("answer-state").textContent="Unsubmitted edits";$("answer-state").classList.remove("saved");
   $("save").disabled=!drafts[item.key].sentiment || saving || Boolean(conflict);
@@ -30,7 +30,7 @@ function render(){
   const done=countSaved(session.items)===session.items.length&&!reviewing&&!Object.keys(drafts).length;
   $("complete").hidden=!done;$("workspace").hidden=done;
   $("position").textContent=`Sentence ${index+1} of ${session.items.length}`;$("sentence").textContent=item.text;
-  labelInputs.forEach(input=>{input.checked=input.value===value.sentiment;input.disabled=saving;});
+  labelSelect.value=value.sentiment || "";labelSelect.disabled=saving;
   $("notes").value=value.notes;$("notes").disabled=saving;
   $("answer-state").textContent=draft?"Unsubmitted edits":item.sentiment?"Saved to collection":"Not submitted";
   $("answer-state").classList.toggle("saved",!draft&&Boolean(item.sentiment));
@@ -70,7 +70,7 @@ $("annotation-form").addEventListener("submit",async event=>{
     else message(error.name==="AbortError"?"The collection took too long to respond. Your draft is kept on this device; retry to confirm it was saved.":error.message,true);
   }finally{saving=false;render();$("sentence").focus({preventScroll:true});}
 });
-labelInputs.forEach(input=>input.addEventListener("change",updateDraft));$("notes").addEventListener("input",updateDraft);
+labelSelect.addEventListener("change",updateDraft);$("notes").addEventListener("input",updateDraft);
 $("previous").addEventListener("click",()=>navigate(Math.max(0,index-1)));
 $("skip").addEventListener("click",()=>{const next=nextPendingIndex(session.items,index);navigate(next>=0?next:(index+1)%session.items.length);});
 $("jump").addEventListener("change",event=>navigate(Number(event.target.value)));
@@ -81,9 +81,9 @@ $("open-link").addEventListener("submit",event=>{event.preventDefault();try{cons
 document.addEventListener("keydown",event=>{
   if(!session||saving||$("workspace").hidden||event.metaKey||event.ctrlKey||event.altKey)return;
   const target=event.target,tag=target.tagName;
-  if(tag==="TEXTAREA"||tag==="SELECT"||(tag==="INPUT"&&target.type!=="radio")||tag==="BUTTON")return;
+  if(tag==="TEXTAREA"||tag==="SELECT"||tag==="INPUT"||tag==="BUTTON")return;
   const n=Number(event.key);
-  if(Number.isInteger(n)&&n>=1&&n<=4){event.preventDefault();labelInputs[n-1].checked=true;updateDraft();}
+  if(Number.isInteger(n)&&n>=1&&n<=4){event.preventDefault();labelSelect.value=LABELS[n-1];updateDraft();}
   else if(event.key==="Enter"&&!$("save").disabled){event.preventDefault();$("annotation-form").requestSubmit();}
 });
 try{const theme=localStorage.getItem("theme");if(theme)document.documentElement.dataset.theme=theme;}catch{}
