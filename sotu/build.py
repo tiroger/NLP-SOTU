@@ -310,7 +310,7 @@ def main() -> None:
     shutil.copyfile(validation_dir / "reliability.html", SITE_DATA / "sentiment_reliability.html")
     manifest = {"pipeline": pipeline_manifest(), "corpus_sha256": file_hash(ROOT / "data" / "speeches.jsonl"),
                 "analysis_sources": {p.name: file_hash(p) for p in sorted((ROOT / "sotu").glob("*.py"))},
-                "publication_sources": {str(p.relative_to(ROOT)): file_hash(p) for p in [ROOT / "site" / "index.html", ROOT / "site" / "app.js", ROOT / "site" / "style.css"]},
+                "publication_sources": {str(p.relative_to(ROOT)): file_hash(p) for p in [ROOT / "site" / "index.html", ROOT / "site" / "app.js", ROOT / "site" / "style.css", *sorted((ROOT / "site" / "annotate").glob("*"))]},
                 "topic_inputs": {p.name: file_hash(p) for p in [CAP_PATH, LABELS_PATH, SAMPLE_PATH] if p.exists()},
                 "topic_method": "hybrid" if LABELS_PATH.exists() else "centroid fallback",
                 "human_validation": {"historical_topics": "pending", "sentiment": "pending", "emotion": "pending"},

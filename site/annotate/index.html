@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+  <title>Label a sentence · State of the Union</title>
+  <meta name="description" content="Contribute an independent human reading of State of the Union sentences.">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="annotation.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="review-header"><div class="review-wrap header-row"><a class="brand" href="../">The State of the Union, in data</a><button class="theme-toggle" id="theme" type="button" aria-label="Toggle dark mode">◐</button></div></header>
+  <main class="review-wrap">
+    <div class="intro"><p class="eyebrow">An independent human reading</p><h1>How does this<br class="desktop-break"> sentence read?</h1><p class="intro-copy">Help us check how a machine reads presidential language. Read each sentence on its own, then choose the sentiment it expresses.</p></div>
+    <noscript><p class="notice">This annotation page needs JavaScript to load your assignment and save your labels.</p></noscript>
+    <div id="message" class="notice" role="status" hidden></div>
+    <section id="welcome" class="welcome panel" hidden><h2>Your personal review link</h2><p>Open the link sent to you by the study owner. It contains your assigned sentences and lets you return to your saved progress.</p><form id="open-link"><label for="review-link">Paste your review link</label><div class="link-row"><input id="review-link" type="url" required placeholder="https://…/annotate/#invite=…" autocomplete="off"><button class="primary" type="submit">Open review</button></div></form><p class="small muted">Study owner? <a id="manage" href="#">Manage reviewer assignments</a>.</p></section>
+    <section id="loading" class="loading-panel panel" aria-live="polite"><p>Loading your assignment…</p></section>
+    <div id="study" hidden>
+      <div class="progress-row"><span id="assignment-title">Your review</span><span id="progress-text">0 of 0 saved</span></div>
+      <progress id="progress" max="1" value="0" aria-label="Submitted answers"></progress>
+      <details class="instructions"><summary>A short guide to the labels</summary><div class="guide-grid"><p><strong>Negative</strong> expresses harmful conditions, criticism, loss, worry, or disapproval.</p><p><strong>Neutral</strong> contains no clear positive or negative sentiment.</p><p><strong>Positive</strong> expresses favorable conditions, praise, hope, gratitude, or approval.</p><p><strong>Ambiguous</strong> mixes sentiments without a clear direction, or needs more context.</p></div><p class="small">Judge the words, not whether you agree with the policy or speaker. A positive response to a harmful event may still describe negative conditions. Use “Ambiguous” when the sentence alone does not support a confident choice.</p></details>
+      <section id="complete" class="panel complete" hidden><p class="eyebrow">Review complete</p><h2>Thank you for your reading.</h2><p>Every answer in this assignment is saved to the shared collection. You can close this page or review your answers.</p><button id="review-answers" type="button">Review answers</button></section>
+      <section id="workspace" aria-label="Sentence annotation">
+        <div class="sentence-panel panel"><div class="sentence-head"><span id="position" class="eyebrow">Sentence 1</span><span id="answer-state" class="answer-state">Not submitted</span></div><p id="sentence" class="sentence" tabindex="-1"></p></div>
+        <form id="annotation-form"><fieldset><legend>What sentiment does this sentence express?</legend><div class="choices">
+          <label class="choice"><input type="radio" name="sentiment" value="negative"><span class="choice-top"><strong>Negative</strong><kbd>1</kbd></span><span>Predominantly unfavorable</span></label>
+          <label class="choice"><input type="radio" name="sentiment" value="neutral"><span class="choice-top"><strong>Neutral</strong><kbd>2</kbd></span><span>No clear sentiment</span></label>
+          <label class="choice"><input type="radio" name="sentiment" value="positive"><span class="choice-top"><strong>Positive</strong><kbd>3</kbd></span><span>Predominantly favorable</span></label>
+          <label class="choice"><input type="radio" name="sentiment" value="ambiguous"><span class="choice-top"><strong>Ambiguous</strong><kbd>4</kbd></span><span>Mixed or missing context</span></label>
+        </div></fieldset>
+        <label class="notes-label" for="notes">Notes <span class="muted">optional</span></label><textarea id="notes" rows="3" maxlength="2000" placeholder="What made this sentence difficult to judge?"></textarea>
+        <div id="conflict" class="notice conflict" role="alert" hidden><p id="conflict-text"></p><div class="button-row"><button id="use-saved" type="button">Use saved answer</button><button id="keep-draft" type="button">Keep my draft</button></div></div>
+        <div class="submit-row"><p id="save-state" class="small muted" aria-live="polite">Choose a label, then save it.</p><button class="primary" id="save" type="submit" disabled>Save &amp; next <span aria-hidden="true">→</span></button></div>
+      </form>
+      <div class="navigation"><button id="previous" type="button">← Previous</button><label for="jump" class="visually-hidden">Go to sentence</label><select id="jump" aria-label="Go to sentence"></select><button id="skip" type="button">Skip for now →</button></div>
+      <p class="shortcuts small muted">Keys <kbd>1</kbd>–<kbd>4</kbd> choose a label · <kbd>Enter</kbd> saves</p>
+      </section>
+      <p class="storage-note small muted">“Save &amp; next” submits your answer to the study owner. Unsubmitted edits stay on this device. Keep your personal link to resume on another device.</p>
+    </div>
+  </main>
+  <footer class="review-wrap review-footer"><span>Thank you for contributing to an independent check.</span><a href="../#methods">About the analysis</a></footer>
+</body>
+</html>

@@ -6,6 +6,23 @@ External sentiment evaluation is complete on the frozen ParlaSent English test s
 
 The new audit has **1,000 SOTU sentences**, with 50 development and 200 final-test sentences from each of four eras. Presidents are disjoint between development and final test: 9 development presidents and 34 test presidents. Allocation and sentence selection are fixed before annotation, seed 73. The master and its sampling manifest are `data/validation/sentiment_audit.jsonl` and `sentiment_audit_manifest.json`.
 
+Reviewers can also label sentences on [the website’s annotation page](https://tiroger.github.io/NLP-SOTU/annotate/). The [owner dashboard](https://sotu-annotation-collection.tirogerl.chatgpt.site/admin) creates personal links, tracks submitted progress, and downloads each reader round. Sign in there with the ChatGPT account that owns the collection. External reviewer access requires the collection service to be publicly reachable; each assignment still requires its private link, and the dashboard and exports remain owner-only.
+
+Create a distinct reviewer code for each person and assign them to **one round only**, A or B. Allocate manageable batches (50 sentences by default). Continue assigning the remaining sentences in both rounds until all 1,000 sentences have two independent readings. A reviewer code cannot be assigned across both rounds. Do not give the same person differently named codes in both rounds. The interface hides the other round, speaker metadata, and all model outputs. Use anonymous reviewer codes rather than personal details.
+
+Share the generated personal URL privately. It is shown once; anyone with it can read and revise that assignment. Reviewers explicitly submit each label with **Save & next**. Saved answers resume through the same URL on another device; unsubmitted drafts remain in that browser. Concurrent edits require resolving a conflict. Keep a record of links you distribute. Notes are optional and should describe the sentence, without personal information.
+
+Download both reader exports from the owner dashboard, preserve their filenames in a separate downloads folder, and merge them safely:
+
+```bash
+uv run python -m sotu.import_reviews a /path/to/downloads/sentiment_reader_a.jsonl
+uv run python -m sotu.import_reviews b /path/to/downloads/sentiment_reader_b.jsonl
+uv run python -m sotu.sentiment_audit ingest
+uv run python -m sotu.sentiment_audit evaluate
+```
+
+The importer validates every sentence and label, keeps local judgments when a remote slot is blank, and refuses conflicting existing labels or notes. Resolve conflicts manually before importing again. Revisions made after ingestion also require manual reconciliation with the master; ingestion deliberately never overwrites an existing reader judgment. Export periodically as a local backup. The shared service is implemented in [`services/annotations`](../services/annotations/OPERATIONS.md); production QA assignments are excluded from study exports.
+
 Each reader independently completes their own blind file:
 
 - `data/validation/sentiment_reader_a.jsonl`

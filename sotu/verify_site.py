@@ -46,6 +46,13 @@ def verify(root=ROOT):
     assert metrics["n"] == sum(sum(row) for row in metrics["confusion_matrix"]) == 2600
     assert 0 <= metrics["accuracy"] <= 1 and 0 <= metrics["macro_f1"] <= 1
     assert hashlib.sha256((root / "data" / "validation" / "sentiment_audit_manifest.json").read_bytes()).hexdigest() == manifest["sentiment_audit"]["sample_manifest_sha256"]
+    review_config = json.loads((site / "annotate" / "config.json").read_text())
+    study = json.loads((root / "services" / "annotations" / "data" / "study.json").read_text())
+    audit_manifest = json.loads((root / "data" / "validation" / "sentiment_audit_manifest.json").read_text())
+    audit = [json.loads(line) for line in (root / "data" / "validation" / "sentiment_audit.jsonl").read_text().splitlines()]
+    assert study["hash"] == review_config["dataset_hash"] == audit_manifest["sample_sha256"], "Annotation study version mismatch"
+    assert study["items"] == [{"key": r["key"], "text": r["text"]} for r in audit], "Annotation sentences changed or leaked metadata"
+    assert len(study["items"]) == len({r["key"] for r in study["items"]}) == 1000
     speeches, summary = read("speeches.json"), read("summary.json")
     assert summary["build_id"] == expected_id
     ids = {s["id"] for s in speeches}

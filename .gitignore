@@ -147,3 +147,7 @@ cython_debug/
 # Project caches (HTTP responses, per-speech NLP results, model downloads)
 .cache/
 __marimo__/
+
+# Authored annotation backend modules
+!services/annotations/lib/
+!services/annotations/lib/**

@@ -3,7 +3,7 @@ name: Deploy site to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ["site/**", "sotu/**", "data/**", ".github/workflows/pages.yml"]
+    paths: ["site/**", "sotu/**", "data/**", "services/annotations/**", "tests/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -25,6 +25,8 @@ jobs:
       - uses: actions/checkout@v7
       - name: Verify publication artifacts
         run: python -m sotu.verify_site
+      - name: Verify annotation state and access isolation
+        run: node --test tests/test_annotation_state.mjs services/annotations/tests/collection.test.mjs
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

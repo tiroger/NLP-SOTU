@@ -135,3 +135,5 @@ The index is fetched fresh on every scrape; `--refresh` also bypasses transcript
 Use `uv sync --locked` for a reproducible dependency environment. Models use immutable Hugging Face commit revisions.
 
 Texts come from [The American Presidency Project](https://www.presidency.ucsb.edu/documents/presidential-documents-archive-guidebook/annual-messages-congress-the-state-the-union), UC Santa Barbara. The models were trained on modern English, so read scores for 18th- and 19th-century prose as rough trends. Most messages from 1801–1912 were written reports, not speeches, so compare eras with care.
+
+Reviewers can use the [annotation subpage](https://tiroger.github.io/NLP-SOTU/annotate/) with personal links from the [owner dashboard](https://sotu-annotation-collection.tirogerl.chatgpt.site/admin). Labels save to a shared collection. See the [web review and export instructions](docs/annotation.md) and [service operations](services/annotations/OPERATIONS.md).
