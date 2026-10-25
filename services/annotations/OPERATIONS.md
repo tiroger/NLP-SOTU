@@ -5,7 +5,7 @@ The GitHub Pages interface is `site/annotate/`; this directory mirrors the indep
 Production: https://sotu-annotation-collection.tirogerl.chatgpt.site
 Owner dashboard: /admin (ChatGPT owner sign-in).
 
-The service is currently owner-private pending approval to enable external reviewers. Public service reachability permits anonymous reviewer requests with unguessable assignment tokens. Owner APIs still require trusted Sites owner identity or the server-held admin secret. Private links scope access to one assignment; tokens are stored only as SHA-256 hashes. A link grants access to its holder and should be shared privately.
+The service is publicly reachable for reviewers, enabled with owner approval. Reviewers submit anonymously using unguessable assignment tokens. Owner APIs still require trusted Sites owner identity or the server-held admin secret. Private links scope access to one assignment; tokens are stored only as SHA-256 hashes. A link grants access to its holder and should be shared privately.
 
 D1 stores assignments, labels, optional notes, revisions and timestamps. `data/study.json` freezes the 1,000 blind sentences and sample hash, without metadata, partitions or predictions. The schema is managed by committed Drizzle migrations; Sites applies hosted migrations during publication. Never alter schema inside request handlers. QA round `qa` is for synthetic service checks and is omitted from study exports.
 
