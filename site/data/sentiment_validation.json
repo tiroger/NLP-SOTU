@@ -1,0 +1,614 @@
+{
+  "schema": 1,
+  "reference": {
+    "dataset": "classla/ParlaSent",
+    "revision": "0587c2b6499fbc68a7623439c2af2b24748968dc",
+    "source": "https://www.clarin.si/repository/xmlui/handle/11356/1868",
+    "license": "CC-BY-SA-4.0",
+    "files": {
+      "ParlaSent_EN_test.jsonl": {
+        "sha256": "b3c05ee1fa9d4946c8e38dc4c0967e32f6c766125525b56158b5916e56d942ce",
+        "url": "https://huggingface.co/datasets/classla/ParlaSent/resolve/0587c2b6499fbc68a7623439c2af2b24748968dc/ParlaSent_EN_test.jsonl"
+      },
+      "ParlaSent_EN.jsonl": {
+        "sha256": "77285ca68109875d4e6b9876ec32aef4bafb745d6c5c4d500d5cbb6ee55eb3e3",
+        "url": "https://huggingface.co/datasets/classla/ParlaSent/resolve/0587c2b6499fbc68a7623439c2af2b24748968dc/ParlaSent_EN.jsonl"
+      },
+      "README.txt": {
+        "sha256": "848a892cede62d37f469532eba6d2f5e6f00d29234f0257a67737f8a8646c285",
+        "url": "https://huggingface.co/datasets/classla/ParlaSent/resolve/0587c2b6499fbc68a7623439c2af2b24748968dc/README.txt"
+      }
+    }
+  },
+  "model": {
+    "name": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7"
+  },
+  "protocol": "frozen external evaluation; no fitting or calibration on test",
+  "systems": {
+    "sotu_roberta": {
+      "n": 2600,
+      "accuracy": 0.693076923076923,
+      "macro_f1": 0.6897661657990773,
+      "per_class": {
+        "negative": {
+          "precision": 0.8368,
+          "recall": 0.6218787158145065,
+          "f1-score": 0.713506139154161,
+          "support": 841.0
+        },
+        "neutral": {
+          "precision": 0.6067961165048543,
+          "recall": 0.8239171374764596,
+          "f1-score": 0.6988817891373802,
+          "support": 1062.0
+        },
+        "positive": {
+          "precision": 0.7579737335834896,
+          "recall": 0.5796269727403156,
+          "f1-score": 0.656910569105691,
+          "support": 697.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          523.0,
+          295.0,
+          23.0
+        ],
+        [
+          81.0,
+          875.0,
+          106.0
+        ],
+        [
+          21.0,
+          272.0,
+          404.0
+        ]
+      ],
+      "confusion_order": [
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "brier_multiclass_sum": 0.4151968945170466,
+      "log_loss": 0.6982284733658887,
+      "reliability": [
+        {
+          "class": "negative",
+          "bin_low": 0.0,
+          "bin_high": 0.1,
+          "n": 1417,
+          "weight": 1417.0,
+          "mean_probability": 0.026385024315326532,
+          "observed_frequency": 0.05504587155963303
+        },
+        {
+          "class": "negative",
+          "bin_low": 0.1,
+          "bin_high": 0.2,
+          "n": 217,
+          "weight": 217.0,
+          "mean_probability": 0.14226852734011616,
+          "observed_frequency": 0.3225806451612903
+        },
+        {
+          "class": "negative",
+          "bin_low": 0.2,
+          "bin_high": 0.3,
+          "n": 138,
+          "weight": 138.0,
+          "mean_probability": 0.2469169693114942,
+          "observed_frequency": 0.4057971014492754
+        },
+        {
+          "class": "negative",
+          "bin_low": 0.3,
+          "bin_high": 0.4,
+          "n": 97,
+          "weight": 97.0,
+          "mean_probability": 0.34373734713495535,
+          "observed_frequency": 0.5567010309278351
+        },
+        {
+          "class": "negative",
+          "bin_low": 0.4,
+          "bin_high": 0.5,
+          "n": 122,
+          "weight": 122.0,
+          "mean_probability": 0.451545438539352,
+          "observed_frequency": 0.5819672131147541
+        },
+        {
+          "class": "negative",
+          "bin_low": 0.5,
+          "bin_high": 0.6,
+          "n": 123,
+          "weight": 123.0,
+          "mean_probability": 0.5537157130004927,
+          "observed_frequency": 0.6747967479674797
+        },
+        {
+          "class": "negative",
+          "bin_low": 0.6,
+          "bin_high": 0.7,
+          "n": 143,
+          "weight": 143.0,
+          "mean_probability": 0.6538176989884292,
+          "observed_frequency": 0.8111888111888111
+        },
+        {
+          "class": "negative",
+          "bin_low": 0.7,
+          "bin_high": 0.8,
+          "n": 151,
+          "weight": 151.0,
+          "mean_probability": 0.7502976723224032,
+          "observed_frequency": 0.8344370860927153
+        },
+        {
+          "class": "negative",
+          "bin_low": 0.8,
+          "bin_high": 0.9,
+          "n": 152,
+          "weight": 152.0,
+          "mean_probability": 0.84999583223374,
+          "observed_frequency": 0.9671052631578947
+        },
+        {
+          "class": "negative",
+          "bin_low": 0.9,
+          "bin_high": 1.0,
+          "n": 40,
+          "weight": 40.0,
+          "mean_probability": 0.9166594490997205,
+          "observed_frequency": 1.0
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.0,
+          "bin_high": 0.1,
+          "n": 199,
+          "weight": 199.0,
+          "mean_probability": 0.0569767808287908,
+          "observed_frequency": 0.04522613065326633
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.1,
+          "bin_high": 0.2,
+          "n": 268,
+          "weight": 268.0,
+          "mean_probability": 0.14872403726374697,
+          "observed_frequency": 0.09328358208955224
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.2,
+          "bin_high": 0.3,
+          "n": 273,
+          "weight": 273.0,
+          "mean_probability": 0.25120139470881986,
+          "observed_frequency": 0.17216117216117216
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.3,
+          "bin_high": 0.4,
+          "n": 239,
+          "weight": 239.0,
+          "mean_probability": 0.35149108243379956,
+          "observed_frequency": 0.200836820083682
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.4,
+          "bin_high": 0.5,
+          "n": 225,
+          "weight": 225.0,
+          "mean_probability": 0.45118184770157505,
+          "observed_frequency": 0.3022222222222222
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.5,
+          "bin_high": 0.6,
+          "n": 239,
+          "weight": 239.0,
+          "mean_probability": 0.5486532735278618,
+          "observed_frequency": 0.401673640167364
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.6,
+          "bin_high": 0.7,
+          "n": 249,
+          "weight": 249.0,
+          "mean_probability": 0.6521722793029037,
+          "observed_frequency": 0.36947791164658633
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.7,
+          "bin_high": 0.8,
+          "n": 318,
+          "weight": 318.0,
+          "mean_probability": 0.7487414441104179,
+          "observed_frequency": 0.5911949685534591
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.8,
+          "bin_high": 0.9,
+          "n": 380,
+          "weight": 380.0,
+          "mean_probability": 0.8505069719274901,
+          "observed_frequency": 0.7657894736842106
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.9,
+          "bin_high": 1.0,
+          "n": 210,
+          "weight": 210.0,
+          "mean_probability": 0.9257543548556912,
+          "observed_frequency": 0.9428571428571428
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.0,
+          "bin_high": 0.1,
+          "n": 1427,
+          "weight": 1427.0,
+          "mean_probability": 0.03280536920699821,
+          "observed_frequency": 0.04484933426769446
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.1,
+          "bin_high": 0.2,
+          "n": 278,
+          "weight": 278.0,
+          "mean_probability": 0.14309731334865936,
+          "observed_frequency": 0.23741007194244604
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.2,
+          "bin_high": 0.3,
+          "n": 158,
+          "weight": 158.0,
+          "mean_probability": 0.24330857196292638,
+          "observed_frequency": 0.4050632911392405
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.3,
+          "bin_high": 0.4,
+          "n": 114,
+          "weight": 114.0,
+          "mean_probability": 0.34885669666830105,
+          "observed_frequency": 0.4649122807017544
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.4,
+          "bin_high": 0.5,
+          "n": 101,
+          "weight": 101.0,
+          "mean_probability": 0.4465475941301068,
+          "observed_frequency": 0.5148514851485149
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.5,
+          "bin_high": 0.6,
+          "n": 84,
+          "weight": 84.0,
+          "mean_probability": 0.5479422247684913,
+          "observed_frequency": 0.5833333333333334
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.6,
+          "bin_high": 0.7,
+          "n": 90,
+          "weight": 90.0,
+          "mean_probability": 0.6467961421545828,
+          "observed_frequency": 0.6777777777777778
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.7,
+          "bin_high": 0.8,
+          "n": 108,
+          "weight": 108.0,
+          "mean_probability": 0.7516087155653862,
+          "observed_frequency": 0.7129629629629629
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.8,
+          "bin_high": 0.9,
+          "n": 95,
+          "weight": 95.0,
+          "mean_probability": 0.8553061093837453,
+          "observed_frequency": 0.8105263157894737
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.9,
+          "bin_high": 1.0,
+          "n": 145,
+          "weight": 145.0,
+          "mean_probability": 0.9474459645561143,
+          "observed_frequency": 0.9241379310344827
+        }
+      ],
+      "classwise_ece_10_bins": {
+        "negative": 0.08056572520572812,
+        "neutral": 0.11526912712349993,
+        "positive": 0.04102332580457891
+      },
+      "score_mae_vs_class_code": 0.39639702334080135,
+      "score_bias_vs_class_code": 0.04862508134972928,
+      "human_mean_class_code": -0.055384615384615386,
+      "model_mean_score": -0.006759534034886106,
+      "bootstrap": {
+        "unit": "source document",
+        "groups": 2600,
+        "draws": 2000,
+        "seed": 23,
+        "percentile_95": {
+          "accuracy": [
+            0.6746153846153846,
+            0.7103846153846154
+          ],
+          "macro_f1": [
+            0.6710810068745187,
+            0.707024818949002
+          ],
+          "score_bias_vs_class_code": [
+            0.02888725892615259,
+            0.0692781932535261
+          ],
+          "score_mae_vs_class_code": [
+            0.382546986718534,
+            0.41028250732709953
+          ],
+          "brier_multiclass_sum": [
+            0.39679953016404235,
+            0.43469962548890934
+          ],
+          "log_loss": [
+            0.6649840374109162,
+            0.7299057547189343
+          ]
+        }
+      }
+    },
+    "training_class_prior": {
+      "n": 2600,
+      "accuracy": 0.32346153846153847,
+      "macro_f1": 0.16293713067906615,
+      "per_class": {
+        "negative": {
+          "precision": 0.32346153846153847,
+          "recall": 1.0,
+          "f1-score": 0.4888113920371985,
+          "support": 841.0
+        },
+        "neutral": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1062.0
+        },
+        "positive": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 697.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          841.0,
+          0.0,
+          0.0
+        ],
+        [
+          1062.0,
+          0.0,
+          0.0
+        ],
+        [
+          697.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "confusion_order": [
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "brier_multiclass_sum": 0.7056642011834319,
+      "log_loss": 1.1510526049234677,
+      "reliability": [
+        {
+          "class": "negative",
+          "bin_low": 0.4,
+          "bin_high": 0.5,
+          "n": 2600,
+          "weight": 2600.0,
+          "mean_probability": 0.4880769230769229,
+          "observed_frequency": 0.32346153846153847
+        },
+        {
+          "class": "neutral",
+          "bin_low": 0.2,
+          "bin_high": 0.3,
+          "n": 2600,
+          "weight": 2600.0,
+          "mean_probability": 0.26153846153846155,
+          "observed_frequency": 0.4084615384615385
+        },
+        {
+          "class": "positive",
+          "bin_low": 0.2,
+          "bin_high": 0.3,
+          "n": 2600,
+          "weight": 2600.0,
+          "mean_probability": 0.2503846153846153,
+          "observed_frequency": 0.2680769230769231
+        }
+      ],
+      "classwise_ece_10_bins": {
+        "negative": 0.16461538461538444,
+        "neutral": 0.14692307692307693,
+        "positive": 0.017692307692307785
+      },
+      "score_mae_vs_class_code": 0.6754621301775149,
+      "score_bias_vs_class_code": -0.18230769230769228,
+      "human_mean_class_code": -0.055384615384615386,
+      "model_mean_score": -0.2376923076923077
+    },
+    "always_neutral": {
+      "n": 2600,
+      "accuracy": 0.4084615384615385,
+      "macro_f1": 0.19333697433096667,
+      "per_class": {
+        "negative": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 841.0
+        },
+        "neutral": {
+          "precision": 0.4084615384615385,
+          "recall": 1.0,
+          "f1-score": 0.5800109229929,
+          "support": 1062.0
+        },
+        "positive": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 697.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0.0,
+          841.0,
+          0.0
+        ],
+        [
+          0.0,
+          1062.0,
+          0.0
+        ],
+        [
+          0.0,
+          697.0,
+          0.0
+        ]
+      ],
+      "confusion_order": [
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "score_mae_vs_class_code": 0.5915384615384616,
+      "score_bias_vs_class_code": 0.055384615384615386,
+      "human_mean_class_code": -0.055384615384615386,
+      "model_mean_score": 0.0
+    },
+    "vader_default": {
+      "n": 2600,
+      "accuracy": 0.5173076923076924,
+      "macro_f1": 0.5180235614102743,
+      "per_class": {
+        "negative": {
+          "precision": 0.6830985915492958,
+          "recall": 0.46135552913198574,
+          "f1-score": 0.5507452093683464,
+          "support": 841.0
+        },
+        "neutral": {
+          "precision": 0.6409017713365539,
+          "recall": 0.3747645951035782,
+          "f1-score": 0.47296494355317886,
+          "support": 1062.0
+        },
+        "positive": {
+          "precision": 0.39617292700212614,
+          "recall": 0.8020086083213773,
+          "f1-score": 0.530360531309298,
+          "support": 697.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          388.0,
+          141.0,
+          312.0
+        ],
+        [
+          124.0,
+          398.0,
+          540.0
+        ],
+        [
+          56.0,
+          82.0,
+          559.0
+        ]
+      ],
+      "confusion_order": [
+        "negative",
+        "neutral",
+        "positive"
+      ],
+      "score_mae_vs_class_code": 0.5688226153846153,
+      "score_bias_vs_class_code": 0.23829253846153847,
+      "human_mean_class_code": -0.055384615384615386,
+      "model_mean_score": 0.18290792307692308
+    }
+  },
+  "implementation_sha256": "5c30d3505cf418773d7b90c3dea27068605dd22471bc2d51d48837e37ac5aedc",
+  "pipeline": {
+    "schema": 2,
+    "python": "3.12.13",
+    "models": {
+      "cardiffnlp/twitter-roberta-base-sentiment-latest": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "j-hartmann/emotion-english-distilroberta-base": "0e1cd914e3d46199ed785853e12b57304e04178b",
+      "sentence-transformers/all-mpnet-base-v2": "e8c3b32edf5434bc2275fc9bab85f82640a19130"
+    },
+    "sentence_max_length": 256,
+    "embedding_max_length": 384,
+    "pooling": "word-weighted complete chunks, embedding renormalized",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "spacy": "3.8.16",
+      "en-core-web-sm": "3.8.0",
+      "textstat": "0.7.13",
+      "torch": "2.14.1",
+      "transformers": "5.20.2",
+      "sentence-transformers": "6.2.0",
+      "umap-learn": "0.5.12"
+    },
+    "source_sha256": {
+      "models.py": "d6383af65f3f7132c4d822c18563382772f7f4a5b67599827341d97addb19014",
+      "text.py": "a00d092f0a185840d11a760d640e12eac0cab402a30645bc8fb10e7fb1946e04",
+      "process.py": "00c864c1d2d6551e8eb5a0f8b98b3e58d804e9ffe581e96829851bb62e441011"
+    },
+    "uv_lock_sha256": "ba1df6007776d823137c80146fa975eeb4a0c593174235188fdcbb1c605d98d5"
+  },
+  "vader_version": "3.3.2",
+  "scope": "modern UK parliamentary sentences; historical SOTU validation remains pending"
+}

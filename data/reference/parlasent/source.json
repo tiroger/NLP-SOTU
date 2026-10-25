@@ -1,0 +1,20 @@
+{
+  "dataset": "classla/ParlaSent",
+  "revision": "0587c2b6499fbc68a7623439c2af2b24748968dc",
+  "source": "https://www.clarin.si/repository/xmlui/handle/11356/1868",
+  "license": "CC-BY-SA-4.0",
+  "files": {
+    "ParlaSent_EN_test.jsonl": {
+      "sha256": "b3c05ee1fa9d4946c8e38dc4c0967e32f6c766125525b56158b5916e56d942ce",
+      "url": "https://huggingface.co/datasets/classla/ParlaSent/resolve/0587c2b6499fbc68a7623439c2af2b24748968dc/ParlaSent_EN_test.jsonl"
+    },
+    "ParlaSent_EN.jsonl": {
+      "sha256": "77285ca68109875d4e6b9876ec32aef4bafb745d6c5c4d500d5cbb6ee55eb3e3",
+      "url": "https://huggingface.co/datasets/classla/ParlaSent/resolve/0587c2b6499fbc68a7623439c2af2b24748968dc/ParlaSent_EN.jsonl"
+    },
+    "README.txt": {
+      "sha256": "848a892cede62d37f469532eba6d2f5e6f00d29234f0257a67737f8a8646c285",
+      "url": "https://huggingface.co/datasets/classla/ParlaSent/resolve/0587c2b6499fbc68a7623439c2af2b24748968dc/README.txt"
+    }
+  }
+}

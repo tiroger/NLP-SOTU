@@ -155,6 +155,10 @@ async function fillSummary() {
   $("#party-comparison").append(" ", el("a", { href: "data/comparisons.json", textContent: "Results and sensitivity checks" }));
   set("topic-count", s.topics.length);
   set("build-id", s.build_id.slice(0, 12));
+  const validation = await loadJSON("data/sentiment_validation.json");
+  const sentiment = validation.systems.sotu_roberta;
+  const vader = validation.systems.vader_default;
+  set("sentiment-validation", `On ${fmtInt.format(sentiment.n)} human-labeled English ParlaSent test sentences, the unchanged SOTU model achieves ${(100 * sentiment.accuracy).toFixed(1)}% accuracy and ${sentiment.macro_f1.toFixed(3)} macro-F1 (VADER: ${(100 * vader.accuracy).toFixed(1)}% and ${vader.macro_f1.toFixed(3)}). It overassigns neutral and its average net score is ${signed(sentiment.score_bias_vs_class_code)} above the human category-code average. No calibration or threshold tuning used this test set.`);
   set("sentences", fmtInt.format(speeches.reduce((n, d) => n + d.sentences, 0)));
   const latest = $('[data-summary="latest"]');
   latest.replaceChildren(

@@ -1,0 +1,52 @@
+{
+  "status": "pending",
+  "sample_sha256": "6505d5d5832506ac5044ec0f9672209d4ab671ea534e3c036f9c1808d5187b26",
+  "annotations_sha256": "0a377ad220b0755259e0d68db4d636f3739ac763b36496c8504df5611598c396",
+  "partitions": {
+    "development": {
+      "total": 200,
+      "adjudicated": 0,
+      "scored": 0,
+      "ambiguous": 0,
+      "status": "pending",
+      "test_metrics_withheld": false,
+      "coverage": {
+        "presidents": 9,
+        "speeches": 43,
+        "by_era": {
+          "(1789, 1860]": 50,
+          "(1860, 1912]": 50,
+          "(1912, 1945]": 50,
+          "(1945, 2030]": 50
+        },
+        "by_delivery": {
+          "spoken": 87,
+          "written": 113
+        }
+      }
+    },
+    "test": {
+      "total": 800,
+      "adjudicated": 0,
+      "scored": 0,
+      "ambiguous": 0,
+      "status": "pending",
+      "test_metrics_withheld": true,
+      "coverage": {
+        "presidents": 34,
+        "speeches": 172,
+        "by_era": {
+          "(1789, 1860]": 200,
+          "(1860, 1912]": 200,
+          "(1912, 1945]": 200,
+          "(1945, 2030]": 200
+        },
+        "by_delivery": {
+          "spoken": 241,
+          "written": 559
+        }
+      }
+    }
+  },
+  "limits": "Only independent human labels are scored. Partial completion can be selected. Final-test metrics describe held-out president pools, not all historical presidents. Human class codes measure categorical valence, not psychological intensity."
+}

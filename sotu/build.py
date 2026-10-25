@@ -6,6 +6,7 @@ Usage:
 
 import json
 import math
+import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -299,6 +300,14 @@ def main() -> None:
     df, topic_df, paragraph_df, embeddings = speech_table(speeches, processed, topic_names, topic_classifier())
     add_map_and_neighbors(df, embeddings)
     write_json(SITE_DATA / "comparisons.json", comparison_report(df, embeddings, era_adjusted), digits=6)
+    validation_dir = ROOT / "data" / "validation" / "sentiment"
+    validation = json.loads((validation_dir / "results.json").read_text())
+    if validation["implementation_sha256"] != file_hash(ROOT / "sotu" / "sentiment_validation.py"):
+        raise ValueError("Re-run python -m sotu.sentiment_validation before publication")
+    if validation["model"]["revision"] != models.REVISIONS[models.TONE_MODEL]:
+        raise ValueError("Sentiment benchmark uses a different model revision")
+    shutil.copyfile(validation_dir / "results.json", SITE_DATA / "sentiment_validation.json")
+    shutil.copyfile(validation_dir / "reliability.html", SITE_DATA / "sentiment_reliability.html")
     manifest = {"pipeline": pipeline_manifest(), "corpus_sha256": file_hash(ROOT / "data" / "speeches.jsonl"),
                 "analysis_sources": {p.name: file_hash(p) for p in sorted((ROOT / "sotu").glob("*.py"))},
                 "publication_sources": {str(p.relative_to(ROOT)): file_hash(p) for p in [ROOT / "site" / "index.html", ROOT / "site" / "app.js", ROOT / "site" / "style.css"]},
@@ -306,6 +315,12 @@ def main() -> None:
                 "topic_method": "hybrid" if LABELS_PATH.exists() else "centroid fallback",
                 "human_validation": {"historical_topics": "pending", "sentiment": "pending", "emotion": "pending"},
                 "runtime_device": models.device(), "umap_seed": 42,
+                "sentiment_validation": {"results_sha256": file_hash(validation_dir / "results.json"),
+                    "reliability_sha256": file_hash(validation_dir / "reliability.html"),
+                    "report_sha256": file_hash(validation_dir / "report.md"),
+                    "reference_source_sha256": file_hash(ROOT / "data" / "reference" / "parlasent" / "source.json")},
+                "sentiment_audit": {"status": "pending human annotations", "items": 1000,
+                    "sample_manifest_sha256": file_hash(ROOT / "data" / "validation" / "sentiment_audit_manifest.json")},
                 "annotation_sample_sha256": file_hash(ROOT / "data" / "validation" / "human_review.jsonl"),
                 "topic_interval_scope": "message bootstrap; excludes classification error", "bootstrap_seed": 0}
     manifest["build_id"] = fingerprint(manifest)

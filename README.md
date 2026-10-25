@@ -105,6 +105,20 @@ Independent historical topic, sentiment and emotion validation remains pending. 
 
 With labels present, `sotu.build` uses the hybrid classifier. Without them it falls back to the description-centroid method.
 
+## Validating sentiment
+
+The frozen SOTU model was evaluated on **2,600 human-labeled English ParlaSent test sentences**: **69.3% accuracy / 0.690 macro-F1**, compared with **51.7% / 0.518** for VADER and **40.8% accuracy** for always neutral. It overassigns neutral and has a **+0.049 mean signed score error** against human class codes (95% document-bootstrap interval +0.029 to +0.069). These results describe modern UK parliamentary language; historical SOTU accuracy remains unestablished. The model and published SOTU scores have not been recalibrated using this test set.
+
+[Full report](data/validation/sentiment/report.md) · [Probability reliability plots](data/validation/sentiment/reliability.html) · [Pinned reference and attribution](data/reference/parlasent/ATTRIBUTION.md).
+
+```bash
+uv run python -m sotu.sentiment_validation   # frozen model, VADER, fixed baselines, calibration and score diagnostics
+uv run python -m sotu.sentiment_audit ingest # after two independent readers complete their blind files
+uv run python -m sotu.sentiment_audit evaluate # development metrics; test metrics withheld
+```
+
+The expanded SOTU audit contains **1,000 blank human-review items**, with **200 development / 800 final-test sentences** and disjoint presidents. Reader files hide dates, parties, speakers and model outputs. Historical human validation is **pending**. Follow [the annotation protocol](docs/annotation.md); final-test metrics require complete adjudication and explicit `evaluate --release-test`. Preserve the earlier pilot, which must not be used to tune this final test.
+
 ## Adding next year's address
 
 A scheduled workflow ([`check-new-speeches.yml`](.github/workflows/check-new-speeches.yml)) checks the archive monthly and opens an issue when a new message appears. Then:

@@ -27,6 +27,25 @@ def verify(root=ROOT):
         else:
             content = (root / "data" / "validation" / name).read_bytes()
         assert hashlib.sha256(content).hexdigest() == digest, f"Stale topic input: {name}"
+    sentiment = read("sentiment_validation.json")
+    artifacts = manifest["sentiment_validation"]
+    validation_dir = root / "data" / "validation" / "sentiment"
+    for path, expected in [(validation_dir / "results.json", artifacts["results_sha256"]),
+            (site / "data" / "sentiment_validation.json", artifacts["results_sha256"]),
+            (validation_dir / "reliability.html", artifacts["reliability_sha256"]),
+            (site / "data" / "sentiment_reliability.html", artifacts["reliability_sha256"]),
+            (validation_dir / "report.md", artifacts["report_sha256"])]:
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == expected, f"Stale sentiment artifact: {path.name}"
+    assert sentiment["implementation_sha256"] == hashlib.sha256((root / "sotu" / "sentiment_validation.py").read_bytes()).hexdigest()
+    assert sentiment["model"]["revision"] == manifest["pipeline"]["models"][sentiment["model"]["name"]]
+    reference = root / "data" / "reference" / "parlasent"
+    assert hashlib.sha256((reference / "source.json").read_bytes()).hexdigest() == artifacts["reference_source_sha256"]
+    for name, metadata in sentiment["reference"]["files"].items():
+        assert hashlib.sha256((reference / name).read_bytes()).hexdigest() == metadata["sha256"]
+    metrics = sentiment["systems"]["sotu_roberta"]
+    assert metrics["n"] == sum(sum(row) for row in metrics["confusion_matrix"]) == 2600
+    assert 0 <= metrics["accuracy"] <= 1 and 0 <= metrics["macro_f1"] <= 1
+    assert hashlib.sha256((root / "data" / "validation" / "sentiment_audit_manifest.json").read_bytes()).hexdigest() == manifest["sentiment_audit"]["sample_manifest_sha256"]
     speeches, summary = read("speeches.json"), read("summary.json")
     assert summary["build_id"] == expected_id
     ids = {s["id"] for s in speeches}

@@ -1,13 +1,47 @@
 # Independent human validation
 
-Status: pending. The repository does not contain independent human historical topic, sentiment or emotion labels. Automated agreement, including agreement between two LLM runs, is not human validation.
+External sentiment evaluation is complete on the frozen ParlaSent English test set; see [the report](../data/validation/sentiment/report.md). Independent historical SOTU topic, sentiment and emotion labels are still pending. An external benchmark and agreement between automated methods do not establish historical accuracy.
 
-`uv run python -m sotu.human_review prepare` creates a fixed blind sample in `data/validation/human_review.jsonl`. Existing annotations are never overwritten. Sampling uses seed 23, four eras, and separate short (<20 words) and long paragraph strata. Sentence samples use the four era strata. Inclusion weights are recorded. Do not inspect model predictions before annotation or tune the models on this final audit.
+## Sentiment: the expanded audit
 
-Have two human readers independently complete `reviewer_a` and `reviewer_b`. Both use the policy taxonomy in `sotu/topics.py` and the policy conventions in `sotu.validate_topics.rubric()`. Each paragraph gets its dominant policy topic; greetings and passages without a policy point are Other. Preserve historical meanings. Use `ambiguous` if the text does not support a defensible single label.
+The new audit has **1,000 SOTU sentences**, with 50 development and 200 final-test sentences from each of four eras. Presidents are disjoint between development and final test: 9 development presidents and 34 test presidents. Allocation and sentence selection are fixed before annotation, seed 73. The master and its sampling manifest are `data/validation/sentiment_audit.jsonl` and `sentiment_audit_manifest.json`.
 
-For affect items, label the sentence's expressed valence as positive, negative or neutral. A negative event can carry negative valence even when a president approves of the response. Label expressed emotion as anger, disgust, fear, joy, neutral, sadness or surprise. These are textual judgments, not diagnoses of the president's emotional state. Use ambiguous rather than inventing an emotion. Do not infer tone from party, date or presidential reputation.
+Each reader independently completes their own blind file:
 
-After both readers finish, resolve disagreements through a third reader or documented discussion and complete `adjudicated`. Preserve both original labels. Run `uv run python -m sotu.human_review evaluate` after a rebuild to compare model outputs with the human judgments. Topic scoring trains president-grouped folds: each audit president is removed from both the human-coded benchmark and Claude-labeled paragraph training sources. Human audit labels never enter training. Sentiment and emotion use the pinned pretrained models without audit-label fine-tuning. This prevents training/test overlap even when an audit paragraph contains a benchmark training sentence. The report records completion, ambiguity, reviewer agreement and metrics weighted for the sampling strata. Partial completion is explicitly provisional; do not present selectively completed items as population accuracy. Inspect per-topic support and obtain additional independent samples for topics with inadequate support before making topic-specific claims.
+- `data/validation/sentiment_reader_a.jsonl`
+- `data/validation/sentiment_reader_b.jsonl`
 
-The existing Claude labels remain weak supervision and a development reference. The human audit must remain independent; future model tuning requires a new untouched test sample. No API call is needed for this workflow.
+These files contain shuffled text, opaque item IDs, a blank `sentiment` field and optional notes. They omit speaker, party, date, partition and model predictions. Do not consult the master metadata, other reader's judgments, or model output while labeling. Fill `sentiment` with `negative`, `neutral`, `positive`, or `ambiguous`; preserve the item IDs and text.
+
+Label **expressed textual valence**, not the president's psychological state, party reputation, or approval of a policy. A factual description of harmful conditions can be negative even if it supports a policy the speaker likes. Use historical meanings. For example, “Unemployment has fallen” expresses positive conditions; “Many families cannot afford housing” expresses negative conditions; “The bill was introduced yesterday” is neutral. Use ambiguous when mixed valence or missing context prevents a defensible predominant label. Do not silently treat ambiguous as neutral.
+
+Run:
+
+```bash
+uv run python -m sotu.sentiment_audit ingest
+uv run python -m sotu.sentiment_audit evaluate
+```
+
+Ingestion preserves the two judgments and accepts agreements automatically. A third reader or documented discussion must adjudicate disagreements in the master's `adjudicated.sentiment` field. The evaluator requires both reader labels and the adjudication, reports ambiguity separately, and never invents human judgments. Reader notes remain in the separate reader files for adjudication.
+
+The default evaluation exposes development metrics only. Use development labels for debugging, selecting a model, or fitting calibration. Freeze those decisions before releasing final-test metrics:
+
+```bash
+uv run python -m sotu.sentiment_audit evaluate --release-test
+```
+
+This requires all development and test items to have complete, adjudicated judgments. Do not tune on the final test. A later revision informed by test results requires another untouched test sample. The report includes per-era classification, classwise probability reliability, Brier/log loss, and mean signed error of P(positive) − P(negative) against human category codes −1/0/+1. Category codes do not establish an interval scale of psychological intensity.
+
+Sentence selection is random within each era/partition's selected-president pool. Recorded weights correct the unequal era sampling rates **within those pools**; estimates for the final test are not estimates for all presidents. Inspect coverage by era and delivery and rare-class support before making subgroup claims. The 200-sentence development set is a small pilot; calibration estimates may themselves be uncertain.
+
+The earlier 200 affect sentences in `human_review.jsonl` are preserved unchanged. They overlap final-test presidents, so their sentiment labels must not be used for model selection in this audit. The new sentiment workflow supersedes that pilot for final sentiment validation. The older emotion and topic workflow below remains available.
+
+## Topics and emotion: the original audit
+
+`data/validation/human_review.jsonl` contains 240 topic paragraphs and the earlier 200 affect sentences. The original preparation command never overwrites existing annotations. Topic sampling uses seed 23, four eras, and short (<20 words) and long paragraph strata. Inclusion weights are recorded.
+
+Two readers independently complete `reviewer_a` and `reviewer_b`. Topic readers use `sotu/topics.py` and `sotu.validate_topics.rubric()`, assigning the dominant policy topic. Greetings and passages without a policy point are Other. Preserve historical meanings; use ambiguous if no defensible single label applies.
+
+For emotion, label expressed anger, disgust, fear, joy, neutral, sadness or surprise. These are textual judgments, not diagnoses. Use ambiguous rather than inventing an emotion. Preserve both original labels and complete `adjudicated` after resolving disagreements.
+
+Run `uv run python -m sotu.human_review evaluate` after a rebuild. Topic scoring removes each test president from both the benchmark and Claude paragraph training sources. Human labels never enter that training. Emotion uses the pinned pretrained model. The report records completion, ambiguity, reviewer agreement and weighted metrics; partial completion is provisional. The existing Claude labels remain weak supervision and a development reference.
